@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LGMA QLD Covid Handbook</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
+  
+</head>
+
+<body>
+  
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    
+    <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
+    
+    <button class="dropdownBtn">
+      <a href="/Overview/overview.html">Overview</a>
+    </button>
+      <div class="dropdown">
+        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
+        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html" id="active">What Councils Said</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="Case_Studies/caseStudies.html">Case Studies</a>
+    </button>
+      <div class="dropdown">
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
+        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="/Framework/Framework.html">Framework</a>
+    </button>
+    
+  </div>
+
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <a id="returnTop" href="#">Return to Top</a>
+    <h1>What Councils Said</h1>
+    <p class="by-line">We surveyed local governments across Queensland and received detailed responses from 21 councils. Find out who they were by clicking on the ‘Councils’ icon and what they said collectively by clicking on any of the thematic icons representing the various aspects of their experiences.</p>
+
+    <div class="hexGraphic">
+      <a href="#advocacySection" class="hex" id="advocacy">
+        Advocacy
+      </a>
+      <a href="#plansSection" class="hex" id="plans">
+        Plans
+      </a>
+      <a href="#supportSection" class="hex" id="support">
+        Support
+      </a>
+      <a href="#councilList" class="hex" id="council">
+        Council
+      </a>
+      <a href="#moneySection" class="hex" id="money">
+        $$$
+      </a>
+      <a href="#servicesSection" class="hex" id="services">
+        Services
+      </a>
+      <a href="#staffSection" class="hex" id="staff">
+        Staff
+      </a>
+    </div>
+
+    <div class="section" id="councilList">
+      <H2>Councils</H2>
+      <ul>
+        <li><a href="https://www.balonne.qld.gov.au/" target="_blank" >Balonne Shire Council</a></li>
+        <li><a href="https://www.boulia.qld.gov.au/" target="_blank">Boulia Shire Council</a></li>
+        <li><a href="https://www.burke.qld.gov.au/" target="_blank">Burke Shire Council</a></li>
+        <li><a href="https://www.cairns.qld.gov.au/" target="_blank">Cairns Regional Council</a></li>
+        <li><a href="https://www.carpentaria.qld.gov.au/" target="_blank">Carpentaria Shire Council</a></li>
+        <li><a href="https://www.charterstowers.qld.gov.au/" target="_blank">Charters Towers Regional Council</a></li>
+        <li><a href="https://cherbourg.qld.gov.au/" target="_blank">Cherbourg Aboriginal Shire Council</a></li>
+        <li><a href="https://www.cook.qld.gov.au/" target="_blank">Cook Shire Council</a></li>
+        <li><a href="https://www.etheridge.qld.gov.au/" target="_blank">Etheridge Shire Council</a></li>
+        <li><a href="https://www.frasercoast.qld.gov.au/" target="_blank">Fraser Coast Regional Council</a></li>
+        <li><a href="https://www.grc.qld.gov.au/" target="_blank">Goondiwindi Regional Council</a></li>
+        <li><a href="https://www.hinchinbrook.qld.gov.au/" target="_blank">Hinchinbrook Shire Council</a></li>
+        <li><a href="https://www.isaac.qld.gov.au/" target="_blank">Isaac Regional Council</a></li>
+        <li><a href="https://www.longreach.qld.gov.au/" target="_blank">Longreach Regional Council</a></li>
+        <li><a href="https://msc.qld.gov.au/" target="_blank">Mareeba Shire Council</a></li>
+        <li><a href="https://www.moretonbay.qld.gov.au/Home" target="_blank">Moreton Bay Regional Council</a></li>
+        <li><a href="https://www.mountisa.qld.gov.au/" target="_blank">Mount Isa City Council</a></li>
+        <li><a href="https://www.rockhamptonregion.qld.gov.au/Home" target="_blank">Rockhampton Regional Council</a></li>
+        <li><a href="https://www.scenicrim.qld.gov.au/" target="_blank">Scenic Rim Regional Council</a></li>
+        <li><a href="https://www.southburnett.qld.gov.au/" target="_blank">South Burnett Regional Council</a></li>
+        <li><a href="https://www.sunshinecoast.qld.gov.au/" target="_blank">Sunshine Coast Council</a></li>
+        <li><a href="https://www.weipatownauthority.com.au/" target="_blank">Weipa Town Authority</a></li>
+        <li><a href="https://www.wdrc.qld.gov.au/" target="_blank">Western Downs Regional Council</a></li>
+      </ul>
+    </div>
+
+    <div class="section" id="plansSection">
+      <h2>Plans</h2>
+
+      <div id="existingPlans">
+        <div class="headerTab">
+          <h3>Existing Plans</h3>
+          <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+          <div class="contentTab">
+            <h4>What Relevant plans/strategies were in place prior to the pandemic?</h4>
+            <div id="q4"></div>
+            <h4>To what extent were they suited to the circumstances?</h4>
+            <div id="q6"></div>
+          </div>
+        </div>
+
+      </div>
+      <div id="newPlans">
+        <div class="headerTab">
+          <h3>New Plans</h3>
+          <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+          <div class="contentTab">
+            <h4>What plans/strategies were developed specifically for the pandemic response during the pandemic experience?</h4>
+            <h4>To what extent were they suited to the circumstances?</h4>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="section" id="moneySection">
+      <h2>$$$</h2>
+
+      <div id="financialImpact">
+        <h3>Financial Impact</h3>
+        <h4>To what extent was your organisation's financial position affected by the pandemic</h4>
+        <div id="q15"></div>
+        <h4>What measures did you put in place to mitigate these impacts</h4>
+        <h4>To what extent did they succeed</h4>
+      </div>
+      
+    </div>
+
+    <div class="section" id="staffSection">
+      <h2>Staff</h2>
+
+      <div id="workingFromHome">
+        <h3>Working from Home</h3>
+        <h4>Did you apply a working from home regime?</h4>
+        <h4>What were the positive and negative implications of the regime?</h4>
+      </div>
+      <div id="healthAndSafety">
+        <h3>Health and Safety</h3>
+        <h4>What measures did you put in place to protect employees from infection?</h4>
+        <h4>To what extent were they successful?</h4>
+      </div>
+      <div id="MHandWellbeing">
+        <h3>Mental Health and Wellbeing</h3>
+        <h4>What measures did you put in place to manage mental health and general well-being</h4>
+        <h4>To what extent were they successful?</h4>
+      </div>
+      
+    </div>
+
+    <div class="section" id="servicesSection">
+      <h2>Services</h2>
+
+      <div id="facilitiesAndVenues">
+        <h3>Facilities and Venues</h3>
+        <h4>What measures did you put in place to protect the public at your venues?</h4>
+        <h4>To what extent were they successful?</h4>
+      </div>
+      <div id="programmesAndServices">
+        <h3>Programmes and Services</h3>
+        <h4>To what extent were your services affected by the pandemic</h4>
+        <h4>Which services were impacted most?</h4>
+        <h4>To what extent were they successful?</h4>
+        <h4>To what extent were your regulation and enforcement functions affected by the pandemic?</h4>
+        <h4>What measures did you put in place to mitigate these impacts?</h4>
+        <h4>To what extent were they successful?</h4>
+      </div>
+      
+    </div>
+
+    <div class="section" id="supportSection">
+      <h2>Services</h2>
+
+      <div id="communitySupport">
+        <h3>Community Support</h3>
+        <h4>What did you put in place to support the community financially (eg grants, fee waiver etc)?</h4>
+        <h4>To what extent were these successful?</h4>
+        <h4>What other initiatives did you put in place to support the community (eg events)?</h4>
+        <h4>To what extent were these successful?</h4>
+      </div>
+      <div id="busComSupport">
+        <h3>Business Community Support</h3>
+        <h4>What did you put in palce to support the business community financially (eg grants, fee waiver etc)?</h4>
+        <h4>To what extent were they successful?</h4>
+        <h4>What other initiatives did you put in place to support the business community (eg events)?</h4>
+        <h4>To what extent were these successful?</h4>
+      </div>
+      <div id="economy">
+        <h3>Economy</h3>
+        <h4>What broader economic stimuls initiatives did you put in place?</h4>
+        <h4>To what extent were these successful?</h4>
+      </div>
+      
+    </div>
+
+    <div class="section" id="advocacySection">
+      <h2>Advocacy</h2>
+
+      <div id="community">
+        <h3>Community</h3>
+        <h4>What communmication initiatives did you put in palce to keep the community informed?</h4>
+        <h4>To what extent were these successful?</h4>
+      </div>
+      <div id="organisation">
+        <h3>Organisation</h3>
+        <h4>What communication initiatives did you put in place to keep Councillors and employees informed?</h4>
+        <h4>To what extent were these successful?</h4>
+      </div>
+      <div id="governments">
+        <h3>Governments</h3>
+        <h4>What level and format of engagement did you have with governments (Commonwealth and State)?</h4>
+        <h4>To what extent was your advocacy effective?</h4>
+        <h4>To what extent was information from governments effective</h4>
+      </div>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+
+  <!-- Footer bar -->
+  <div class="footbar">
+    <a id="left" href="/Overview/What_Others_Said/whatOthersSaid.html"> <  BACK</a>
+    <a id="right" href="/Case_Studies/caseStudies.html">NEXT  > </a>
+  </div>
+  
+</body>
+
+</html>
+<script src="/nav.js"></script>
+
+<style>
+
+  body {
+    overflow-y: auto;
+  }
+
+  h2 {
+    background-color: darkblue;
+    color: white;
+    padding: 15px;
+    margin: 0px;
+  }
+
+  .hexGraphic {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+  }
+  .hex:before {
+    content: " ";
+    width: 0; 
+    height: 0;
+    border-bottom: 30px solid gray;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+    position: absolute;
+    top: -30px;
+    left: 0px;
+  }
+  .hex {
+    margin: 5px;
+    margin-top: 30px;
+    display: inline-block;
+    width: 104px;
+    height: 60px;
+    background-color: gray;
+    position: relative;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+  } 
+  .hex:after {
+      content: "";
+      width: 0;
+      position: absolute;
+      bottom: -30px;
+      border-top: 30px solid gray;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+    left: 0px;
+  }
+  .hex:hover {
+    color: white;
+    background-color: blue;
+  }
+  .hex:hover:before {
+    border-bottom: 30px solid blue;
+  }
+  .hex:hover:after {
+    border-top: 30px solid blue;
+  }
+
+  
+  #council.hex:before {
+    top:-40px;
+    border-bottom: 40px solid gray;
+    border-left: 62px solid transparent;
+    border-right: 62px solid transparent;
+  }
+  #council.hex:after {
+    bottom:-40px;
+    border-top: 40px solid gray;
+    border-left: 62px solid transparent;
+    border-right: 62px solid transparent;
+  }
+  #council.hex {
+    margin-top: 40px;
+    line-height: 70px;
+    height: 70px;
+    width: 124px;
+  }
+  #council.hex:hover:before {
+    border-bottom: 40px solid blue;
+  }
+  #council.hex:hover:after {
+    border-top: 40px solid blue;
+  }
+
+  #advocacy.hex, #services.hex {
+    margin-left: 69px;
+    margin-right: 15px;
+    margin-top: 37px;
+  }
+
+  button.arrow {
+    position: relative;
+    float: right;
+    margin: 10px;
+    display: inline-block;
+  }
+  .headerTab {
+    background-color: gray;
+    width: 100%;
+    margin: 0px;
+  }
+  .headerTab h3 {
+    width: 50%;
+    margin: 0px;
+    padding: 15px;
+    display: inline-block;
+  }
+  .headerTab .contentTab {
+    background-color: white;
+    padding: 15px;
+    display: none;
+  }
+  
+</style>
+
+
+<script>
+
+  // Question 4
+    var traceq4 = {
+    x: ['Liam', 'Sophie', 'Jacob', 'Mia', 'William', 'Olivia'],
+    y: [8.0, 8.0, 12.0, 12.0, 13.0, 20.0],
+    type: 'bar',
+    orientation: 'h',
+    text: ['4.17 below the mean', '4.17 below the mean', '0.17 below the mean', '0.17 below the mean', '0.83 above the mean', '7.83 above the mean'],
+    marker: {
+      color: 'rgb(142,124,195)'
+    }
+  };
+  
+  var q4 = [traceq4];
+  
+  var layout = {
+    title: 'Number of Graphs Made this Week',
+    font:{
+      family: 'Raleway, sans-serif'
+    },
+    showlegend: false,
+    xaxis: {
+      tickangle: -45
+    },
+    yaxis: {
+      zeroline: false,
+      gridwidth: 2
+    },
+    bargap :0.05
+  };
+  
+  Plotly.newPlot('q4', q4, layout);
+    
+  // Question 6
+  var q6 = [
+    {
+      x: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
+      y: [2,	4,	7,	7,	3],
+      type: 'bar'
+    }
+  ];
+  
+  Plotly.newPlot('q6', q6);
+</script>
+
+

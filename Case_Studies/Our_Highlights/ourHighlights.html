@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LGMA QLD Covid Handbook</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+  
+</head>
+
+<body>
+  
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    
+    <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
+    
+    <button class="dropdownBtn">
+      Overview
+    </button>
+      <div class="dropdown">
+        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
+        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+      </div>
+    <button class="dropdownBtn">
+      Case Studies
+    </button>
+      <div class="dropdown">
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
+        <a href="/Case_Studies/Our_Highlights/ourHighlights.html" id="active">Our Highlights</a>
+        <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="/Framework/Framework.html">Framework</a>
+    </button>
+    
+  </div>
+
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <h1>Our Highlights</h1>
+    <p class="by-line">The best practice aspects of each Council are highlighted below.</p>
+
+    <table>
+      <tr>
+        <th></th>
+        <th>Council</th>
+        <th>Notable Highlights</th>
+      </tr>
+      <tr>
+        <td><img src="/Council_Logos/cairnsLogo.png" alt="Carins council logo"></td>
+        <td>Cairns Regional Council</td>
+        <td>Initial Recovery Plan adopted early, subsequent Pathway to Recovery Plan from COVID-19, business community engagement and support (including Investment Incentive Policy, establishment of the Cairns Resilient Businesses Network, ‘Meet the Buyer’ event, ‘Keep it in Cairns’ buy local campaign).</td>
+      </tr>
+      <tr>
+        <td><img src="/Council_Logos/cherbourgLogo.jpg" alt="Cherbourg council logo"></td>
+        <td>Cherbourg Aboriginal Shire Council</td>
+        <td>Initial response to closure, community engagement and support, honest but positive messaging, mental health support initiatives, re supply and food drops to families, rapid mobilisation of testing and employee support.</td>
+      </tr>
+      <tr>
+        <td><img src="/Council_Logos/cookLogo.png" alt="Cook council logo"></td>
+        <td>Cook Shire Council</td>
+        <td>Dedicated Call Centre, sustained and demanding closure exemptions administration, Cooktown and Cape York Expo, employee support and vaccination encouragement in remote towns.</td>
+      </tr>
+      <tr>
+        <td><img src="/Council_Logos/goondiwindiLogo.png" alt="Goondiwindi council logo"></td>
+        <td>Goondiwindi Regional Council</td>
+        <td>E-gate innovation (remote gate access), community and business engagement (webinars), employee support, vaccination results and advocacy.</td>
+      </tr>
+      <tr>
+        <td><img src="/Council_Logos/isaacLogo.jpg" alt="Isaac council logo"></td>
+        <td>Isaac Regional Council</td>
+        <td>Early adoption of Strategic and Tactical Pandemic and Recession Response Framework and associated Response Packages, comprehensive COVID-19 Recovery Plan, employee communication and support, community support, business engagement and support and advocacy.</td>
+      </tr>
+      <tr>
+        <td><img src="/Council_Logos/moretonbayLogo.jpg" alt="Moreton Bay council logo"></td>
+        <td>Moreton Bay Regional Council</td>
+        <td>Dedicated Call Centre, EMBARC website, Emergency Stimulus Package, Trigger and Response Guideline, employee support, business support and advocacy.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Footer bar -->
+  <div class="footbar">
+    <a id="left" href="/Case_Studies/Our_Story/ourStory.html"> <  BACK</a>
+    <a id="right" href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">NEXT  > </a>
+  </div>
+  
+</body>
+
+</html>
+<script src="/nav.js"></script>
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+  td img{
+    height:50px;
+    width: auto;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>

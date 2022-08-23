@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LGMA QLD Covid Handbook</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+  
+</head>
+
+<body>
+  
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    
+    <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
+    
+    <button class="dropdownBtn">
+      <a href="/Overview/overview.html">Overview</a>
+    </button>
+      <div class="dropdown">
+        <a href="/Overview/How_It_Hit/howItHit.html" id="active">How It Hit</a>
+        <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
+        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="/Case_Studies/caseStudies.html">Case Studies</a>
+    </button>
+      <div class="dropdown">
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
+        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="/Framework/Framework.html">Framework</a>
+    </button>
+    
+  </div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <h1>How it Hit</h1>
+    <p class="by-line">Click on the icons on the map to learn more about Queensland’s experience, then find out more
+about the COVID-19 pandemic experience from a State, National and Global perspective by clicking
+on the ‘Facts and Figures’ links below the map.</p>
+
+    <div id="map"></div>
+  </div>
+
+
+  <!-- Footer bar -->
+  <div class="footbar">
+    <a id="left" href="/Overview/overview.html"> <  BACK</a>
+    <a id="right" href="/Overview/What_Happened_When/whatHappenedWhen.html">NEXT  > </a>
+  </div>
+  
+</body>
+
+</html>
+<script src="/nav.js"></script>
+<style>
+  
+  #map { 
+    height: 600px;
+    width: 600px;
+    right: -500px;
+    top: -160px;
+    position: relative;
+  }
+
+  p.by-line {
+    width: 480px;
+  }
+
+  /* Styling for map info div */
+  .info {
+    padding: 5px;
+    background-color: lightgray;
+    position: relative;
+    height: 100px;
+    width: 200px;
+    margin: 0px;
+    
+  }
+  
+</style>
+
+<script>
+  
+  // Set up the leaflet map
+  var map = L.map('map').setView([-20, 146], 5);
+
+  // Base map of QLD from open street map
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  // control that shows lga name on hover
+	var info = L.control();
+
+	info.onAdd = function (map) {
+		this._div = L.DomUtil.create('div', 'info');
+		this.update();
+		return this._div;
+	};
+
+	info.update = function (props) {
+		this._div.innerHTML = '<h4>QLD LGAs</h4>' +  (props ?
+			'<b>' + props.qld_lga__3 + '</b><br />' : 'Hover over a LGA');
+	};
+
+	info.addTo(map);
+
+  // Style the map
+  function style(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'teal',
+			dashArray: '3',
+			fillOpacity: 0
+		};
+	}
+
+  var bioStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+  };
+  var lockdownStyle = {
+    "color": "blue",
+    "weight": 2,
+    "opacity": 0.65
+  }
+
+  // Change style when highlighted
+  function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 4,
+			color: '#666',
+			dashArray: '',
+			fillOpacity: 0.7
+		});
+
+		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+			layer.bringToFront();
+		}
+
+		info.update(layer.feature.properties);
+	}
+  
+
+  // Variable for storing data
+  var geojson;
+
+  // Event listeners
+  function resetHighlight(e) {
+		geojson.resetStyle(e.target);
+	}
+
+	function onEachFeature(feature, layer) {
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight
+		});
+	}
+  
+  // Filter data to only get certain LGAs
+  var bioLGAs = ["AURUKUN", "COOK", "HOPE VALE", "KOWANYAMA", "LOCKHART RIVER", "MAPOON", "NAPRANUM", "NORTHERN PENINSULA AREA", "PORMPURAAW", "TORRES STRAIT ISLAND", "TORRES", "WUJAL WUJAL", "BURKE", "DOOMADGEE", "CHERBOURG", "MORNINGTON", "PALM ISLAND", "WOORABINDA", "YARRABAH"];
+  var ld210108a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND"];
+  var ld210329a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND"];
+  var ld210629a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND", "SUNSHINE COAST", "NOOSA", "SOMERSET", "LOCKYER VALLEY", "SCENIC RIM", "GOLD COAST", "TOWNSVILLE", "PALM ISLAND", "MAGNETIC ISLAND"];
+  var ld210731a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND", "SUNSHINE COAST", "NOOSA", "SOMERSET", "LOCKYER VALLEY", "SCENIC RIM", "GOLD COAST"];
+  var ld210930a = ["BRISBANE", "GOLD COAST", "LOGAN", "MORETON BAY", "TOWNSVILLE", "MAGNETIC ISLAND", "PALM ISLAND"];
+  
+
+  function filterLGAs(bigJSON, array){
+    var returnJSON = bigJSON.features.filter(function (el) {
+      return array.indexOf(el.properties.qld_lga__3) >= 0; 
+    });
+
+    return returnJSON;
+  }
+
+  
+  $.getJSON('/QLDlgas.json', function (qldLGAs) {
+    geojson = L.geoJson(qldLGAs, {
+      style: style,
+      onEachFeature: onEachFeature
+    }).addTo(map);
+
+    
+    // add filtered layers to the map
+    biosec = L.geoJson(filterLGAs(qldLGAs, bioLGAs),{
+      style: bioStyle
+    });
+    ld210108 = L.geoJson(filterLGAs(qldLGAs, ld210108a),{
+      style: lockdownStyle
+    });
+    ld210329 = L.geoJson(filterLGAs(qldLGAs, ld210329a),{
+      style: lockdownStyle
+    });
+    ld210629 = L.geoJson(filterLGAs(qldLGAs, ld210629a),{
+      style: lockdownStyle
+    });
+    ld210731 = L.geoJson(filterLGAs(qldLGAs, ld210731a),{
+      style: lockdownStyle
+    });
+    ld210930 = L.geoJson(filterLGAs(qldLGAs, ld210930a),{
+      style: lockdownStyle
+    });
+    
+    
+
+    var baseLayers = {
+  	};
+  	var overlays = {
+      'Biosecurity Areas': biosec,
+      'Lockdown 08 Jan 2021': ld210108,
+      'Lockdown 29 Mar 2021': ld210329,
+      'Lockdown 29 Jun 2021': ld210629,
+      'Lockdown 31 Jul 2021': ld210731,
+      'Lockdown 30 Sep 2021': ld210930
+    
+  	};
+
+    var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+    
+    
+  });
+
+  
+</script>

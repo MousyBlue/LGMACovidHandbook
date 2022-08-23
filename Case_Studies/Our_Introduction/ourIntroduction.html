@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LGMA QLD Covid Handbook</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+  
+</head>
+
+<body>
+  
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    
+    <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
+    
+    <button class="dropdownBtn">
+      <a href="/Overview/overview.html">Overview</a>
+    </button>
+      <div class="dropdown">
+        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
+        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="/Case_Studies/caseStudies.html">Case Studies</a>
+    </button>
+      <div class="dropdown">
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html" id="active">Our Introduction</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
+        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
+      </div>
+    <button class="dropdownBtn">
+      <a href="/Framework/Framework.html">Framework</a>
+    </button>
+    
+  </div>
+
+  <!-- Page Content -->
+  <div id="pageContent">
+    <h1>Our Introduction</h1>
+    <p class="by-line">Click on each of the Council logos to read a concise introduction from representatives for each of
+the Case Study Councils.</p>
+
+    <div id="map"><div>
+
+    
+  </div>
+
+  <!-- Footer bar -->
+  <div class="footbar">
+    <a id="left" href="/Case_Studies/caseStudies.html"> <  BACK</a>
+    <a id="right" href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">NEXT  > </a>
+  </div>
+  
+</body>
+
+</html>
+<script src="/nav.js"></script>
+
+<style>
+  
+  #map { 
+    height: 600px;
+    width: 600px;
+    right: -500px;
+    top: -120px;
+    position: relative;
+  }
+
+  p.by-line {
+    width: 480px;
+  }
+
+  /* Styling for map info div */
+  .info {
+    padding: 5px;
+    background-color: lightgray;
+    position: fixed;
+    height: 480px;
+    width: 480px;
+    margin: 0px;
+    left: 5%;
+    top: 20%;
+  }
+  .leaflet-top {
+    z-index: 50;
+  }
+  
+</style>
+
+<script>
+  
+  // Set up the leaflet map
+  var map = L.map('map').setView([-20, 146], 5);
+
+  // Base map of QLD from open street map
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  // control that shows lga name on hover
+	var info = L.control();
+
+	info.onAdd = function (map) {
+		this._div = L.DomUtil.create('div', 'info');
+		this.update();
+		return this._div;
+	};
+
+	info.update = function (props) {
+    console.log(props);
+    if (props == undefined){
+      this._div.innerHTML = '<h4>QLD LGAs</h4><b> Hover over a LGA';
+    }
+    else {
+      if (props.qld_lga__3 == "CAIRNS"){
+        this._div.innerHTML = '<h4>QLD LGAs</h4><br>' +props.qld_lga__3 +
+          '<br> "tbc"';
+      }
+      else if (props.qld_lga__3 == "CHERBOURG") {
+        this._div.innerHTML = '<h4>QLD LGAs</h4><br>' +props.qld_lga__3 +
+          '<i>"Cherbourg Community responded well to COVID-19. Our LDMG and associated sub-groups adapted quickly to constantly changing direction from Government and Health officials. Overall good communication between local health, essential workers, close relationship with local media, food drops, care packages and a galvanised workforce… all contributed to softening the social and emotional blows, and while there were no reported cases of COVID-19 initially, several lives were lost to suicide in Cherbourg within the first six months of the checkpoint being established.<br> A Federal Government blanket decision to install Checkpoints at all first nations communities brought immense strain to our LDMG, council and workforce; managing the checkpoint, listing who could come and go from the community, how often and how long for. The lessons learned; government decisions of this nature need to be resourced from above without burden on local government to act outside of its mandated services."</i><br><br>Written by:<br><ul><li>Sam Murray – Disaster Response Coordinator</li><li>Edwina Stewart – Disaster Recovery Coordinator</li><li>Chatur Zala – Chief Executive Officer</li></ul>';
+      }
+      else if (props.qld_lga__3 == "COOK") {
+        this._div.innerHTML = '<h4>QLD LGAs</h4><br>' +props.qld_lga__3 +
+          '<i>"Cook Shire Council is the gatekeeper for Cape York and its many and varied multicultural communities. In March 2020, the Government determined an imminently serious pandemic threat to indigenous people and invoked, via the Biosecurity Act, roadblock restriction to Cape York, manned by police and army.<br>Strict access criteria were established and the authority to approve travel was delegated to a control group comprising Mayor and CEO of Cook Shire Council and Queensland Police station Officer in Charge.<Br>We urgently developed and enacted protocols for liaising with the public and Government agencies by using the full, but inadequate, resources of Cook Shire Council. The end result was highly successful, with no COVID-19 cases or community transmission recorded until vaccination rates across the region were at acceptable risk levels.<br>This was a unique and first-time event and challenge. The key observation was the value of local capacity, local solutions and disaster management experience. The key need was and is, for adequate and cohesive resourcing as happens under our LDMG / DDMG regime."</i><br><br>Written by:<br><ul><li>Mayor Peter H Scott</li></ul>';
+      }
+      else if (props.qld_lga__3 == "GOONDIWINDI") {
+        this._div.innerHTML = '<h4>QLD LGAs</h4><br>' +props.qld_lga__3 +
+          '<i>"COVID-19 presented a set of challenges unlike anything that has been faced by Council before, and with our LGA boundary sharing some 300km of State border with New South Wales, we found ourselves in a unique set of circumstances. The biggest impact to our community by far was the ongoing state border closures. During these times of uncertainty, the community turned to Council for guidance, leadership and reassurance.Under the collaborative leadership of our Mayor, the Honourable Councillor Lawrence Springborg AM, Local Disaster Management Group and the executive team of Council we successfully navigated the ever-changing environment that was to become our “new normal” and managed to not only survive in the face of adversity but thrive and innovate. We were the first Council to implement cutting-edge Bluetooth e-gate technology on remote state border crossings and received the Butch Lenton Bush Council Innovation Award for our efforts. Our residents led the charge with the highest per capita vaccination rate in Queensland, lending us to become known as “Fortress Goondiwindi”; and as a Council we successfully advocated for financial support for local businesses who had been impacted by border closures.<br> I am proud of the work we did during the pandemic – our processes and innovative thinking have become the benchmark for how challenges of this nature could be managed in the future."</i><br><br>Written by:<br><ul><li>Chief Executive Officer, Carl Manton</li></ul>';
+      }
+      else if (props.qld_lga__3 == "ISAAC") {
+        this._div.innerHTML = '<h4>QLD LGAs</h4><br>' +props.qld_lga__3 +
+          '<i>"I can genuinely say: the health impacts, social disruptions and economic setbacks caused by COVID-19 were like no other for the Isaac region. However, COVID-19, unprecedented in our lifetimes, truly highlighted the resilience of our communities and the agility of local government.<br>As a council, the way we did business changed almost overnight. There was no manual for leading through a pandemic and no standard operating procedure laying out how we should respond. Being the closest level of government to the people, we did what we know best – put our people first, community and staff. This helped guide our decision-making and complemented the disaster management framework we used to respond to the situation.<br>I am incredibly proud of our Council team for handling the response in the Isaac region. After the pandemic was declared, we moved quickly to have plans that supported our staff with remote working solutions. We developed funding and support programmes to assist local small businesses and began work on a region-wide COVID-19 recovery plan.<br>What I learned from the pandemic is the importance of place-based responses. Something that worked for one local government area may not work for another, each area is unique and faces its own challenges, and this needs to be respected when planning a response."</i><br><br>Written by:<br><ul><li>Mayor Anne Baker</li></ul>';
+      }
+      else if (props.qld_lga__3 == "MORETON BAY") {
+        this._div.innerHTML = '<h4>QLD LGAs</h4><br>' +props.qld_lga__3 +
+          '<i>"“Local governments had a key role in tackling the COVID-19 pandemic. Our task was to take short-term measures quickly and to ensure our activities were supported and coordinated effectively with other agencies operating to ensure protection and care for those in need.<br>Recognising our responsibility, we attempted to provide information to our residents as quickly as possible but were often hampered due to significant stratification of communications between different levels of government.<br>We focused considerable effort on supporting the economic foundation of our community, rapidly developing a package of community and economic support measures as a $15 million “Emergency Stimulus Package”.<br>The communication process was a very difficult task, but we have benefitted from now having learnt many important lessons in business continuity and resilience for service delivery to our community. All of this was underpinned by the magnificent support of our staff and the resilience of our Moreton Bay community.”"</i><br><br>Written by:<br><ul><li>Chief Executive Officer, Greg Chemello</li></ul>';
+      }
+  		else {
+        this._div.innerHTML = '<h4>QLD LGAs</h4><b> Hover over a LGA';
+      }
+    }
+      
+	};
+
+	info.addTo(map);
+
+  
+  // Style the map
+  function style(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'teal',
+			dashArray: '3',
+			fillOpacity: 0
+		};
+	}
+
+  var bioStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+  };
+  var lockdownStyle = {
+    "color": "blue",
+    "weight": 2,
+    "opacity": 0.65
+  }
+
+  // Change style when highlighted
+  function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 4,
+			color: '#666',
+			dashArray: '',
+			fillOpacity: 0.7
+		});
+
+		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+			layer.bringToFront();
+		}
+
+		info.update(layer.feature.properties);
+	}
+  
+
+  // Variable for storing data
+  var geojson;
+
+  // Event listeners
+  function resetHighlight(e) {
+		geojson.resetStyle(e.target);
+	}
+
+	function onEachFeature(feature, layer) {
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight
+		});
+	}
+  
+  // Filter data to only get certain LGAs
+  var lgaArray = ["CAIRNS", "CHERBOURG", "COOK", "GOONDIWINDI", "ISAAC", "MORETON BAY"];
+
+  function filterLGAs(bigJSON, array){
+    var returnJSON = bigJSON.features.filter(function (el) {
+      return array.indexOf(el.properties.qld_lga__3) >= 0; 
+    });
+
+    return returnJSON;
+  }
+
+  // Making the icons
+  var LeafIcon = L.Icon.extend({
+    options: {
+        iconSize:     [50, 50]
+    }
+  });
+
+  var cairnsIcon = new LeafIcon({iconUrl: '/Council_Logos/cairnsLogo.png'}),
+    cherbourgIcon = new LeafIcon({iconUrl: '/Council_Logos/cherbourgLogo.jpg'}),
+    cookIcon = new LeafIcon({iconUrl: '/Council_Logos/cookLogo.png'}),
+    goondiIcon = new LeafIcon({iconUrl: '/Council_Logos/goondiwindiLogo.png'}),
+    isaacIcon = new LeafIcon({iconUrl: '/Council_Logos/isaacLogo.jpg'}),
+    morebayIcon = new LeafIcon({iconUrl: '/Council_Logos/moretonbayLogo.jpg'});
+
+  L.marker([-16.92, 145.77], {icon: cairnsIcon}).addTo(map).bindPopup("Cairns");
+  L.marker([-26.29, 151.95], {icon: cherbourgIcon}).addTo(map).bindPopup("Cherbourg");
+  L.marker([-14.28, 143.05], {icon: cookIcon}).addTo(map).bindPopup("Cook");
+  L.marker([-28.54, 150.3], {icon: goondiIcon}).addTo(map).bindPopup("Goondiwindi");
+  L.marker([-22.35, 147.28], {icon: isaacIcon}).addTo(map).bindPopup("Isaac");
+  L.marker([-27.09, 152.92], {icon: morebayIcon}).addTo(map).bindPopup("Moreton Bay");
+
+  
+  $.getJSON('/QLDlgas.json', function (qldLGAs) {
+    
+    geojson = L.geoJson(filterLGAs(qldLGAs, lgaArray), {
+      style: style,
+      onEachFeature: onEachFeature
+    }).addTo(map);
+
+    
+  });
+
+  
+</script>
