@@ -20,11 +20,15 @@ for (i = 0; i < dropdownArrow.length; i++) {
   dropdownArrow[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var dropdownAContent = this.nextElementSibling;
-    if (dropdownAContent.style.display === "block") {
-      dropdownAContent.style.display = "none";
+    if (dropdownAContent.style.height === "auto") {
+      dropdownAContent.style.height = "0px";
+      dropdownAContent.style.padding = "0px";
+      dropdownAContent.style.opacity = "0";
       this.style.transform = "rotate(0deg)";
     } else {
-      dropdownAContent.style.display = "block";
+      dropdownAContent.style.height = "auto";
+      dropdownAContent.style.padding = "15px";
+      dropdownAContent.style.opacity = "1";
       this.style.transform = "rotate(180deg)";
     }
   });

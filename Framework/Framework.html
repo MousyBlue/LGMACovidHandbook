@@ -61,10 +61,10 @@
     </ol>
     <p>Just click on each of the cells in the table below to follow the respective links and then access templates and references by clicking on the links in the second tier matrices.</p>
 
-    <table>
+    <table class="mainTable">
       <tr>
         <th></th>
-        <th>THINGS WE CAN INFLUENCE OR CONTROL</th>
+        <th colspan="8">THINGS WE CAN INFLUENCE OR CONTROL</th>
       </tr>
       <tr>
         <th></th>
@@ -1521,6 +1521,10 @@
 <script src="/nav.js"></script>
 
 <style>
+
+  body {
+    overflow-y: auto;
+  }
   
   a#returnTop {
     position: fixed;
@@ -1538,8 +1542,19 @@
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+  .mainTable a {
+    text-decoration: none;
+    color: #333;
+  }
+  .mainTable td:not(:first-of-type):hover {
+    background-color: gray;
+  }
 
   .frameworkPage {
     height: 100%;
+  }
+
+  .frameworkPage table tr:not(:first-of-type):hover {
+    background-color: gray;
   }
 </style>

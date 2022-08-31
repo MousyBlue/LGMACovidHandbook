@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>LGMA QLD Covid Handbook</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <script src="/script.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  
+</head>
+
+<body>
+  <div class="pageSlider">
+    <div class="page" id="cairns" style="z-index:1;">
+      <table class="pagebox">
+        <tr>
+          <td rowspan="2"><img src="/Council_Logos/cairnsLogo.png" alt="Carins Logo"></td>
+          <td>
+            <h3>Carins Regional Council</h3>
+            <ol>
+              <li>Involve the right people with the right skills.</li>
+              <li>Business continuity plan needs to include pandemic risk.</li>
+              <li>Look after your people.</li>
+              <li>Early transparent engagement and communication with feedback
+  loop.</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="#"></a>
+            <a onclick="nextSlide('cairns', 'cherbourg')">Cherbourg<span class="material-symbols-outlined">arrow_forward</span></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="page" id="cherbourg" style="z-index:2;">
+      <table class="pagebox">
+        <tr>
+          <td rowspan="2"><img src="/Council_Logos/cherbourgLogo.png" alt="Cherbourg Logo"></td>
+          <td>
+            <h3>Cherbourg Aboriginal Shire Council</h3>
+            <ol>
+              <li>Structure with key relationships and communication with agencies.</li>
+              <li>Pandemic sub-plan in the disaster management plan.</li>
+              <li>Communication management must be well done.</li>
+              <li>Don’t be afraid to ask for help when needed.</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick="previousSlide('cherbourg', 'cairns')"><span class="material-symbols-outlined">arrow_back</span>Carins</a>
+            <a onclick="nextSlide('cherbourg', 'cook')">Cook<span class="material-symbols-outlined">arrow_forward</span></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="page" id="cook" style="z-index:3;">
+      <table class="pagebox">
+        <tr>
+          <td rowspan="2"><img src="/Council_Logos/cookLogo.png" alt="Cook Logo"></td>
+          <td>
+            <h3>Cook Shire Council</h3>
+            <ol>
+              <li>Adaptability is critical specially for small council.</li>
+              <li>Trust was really important (private information of others) – external and internal (e.g. job security).</li>
+              <li>Empathy for others (especially neighbouring councils) with critical circumstances.</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick="previousSlide('cook', 'cherbourg')"><span class="material-symbols-outlined">arrow_back</span>Cherbourg</a>
+            <a onclick="nextSlide('cook', 'goondiwindi')">Goondiwindi<span class="material-symbols-outlined">arrow_forward</span></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="page" id="goondiwindi" style="z-index:4;">
+      <table class="pagebox">
+        <tr>
+          <td rowspan="2"><img src="/Council_Logos/goondiwindiLogo.png" alt="Goondiwindi Logo"></td>
+          <td>
+            <h3>Goondiwindi Regional Council</h3>
+            <ol>
+              <li>Include pandemic in disaster management plan and business
+  continuity plan.</li>
+              <li>Lead by example.</li>
+              <li>Immediacy of response and reprioritisation of work.</li>
+              <li>Celebrate successes.</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick="previousSlide('goondiwindi', 'cook')"><span class="material-symbols-outlined">arrow_back</span>Cook</a>
+            <a onclick="nextSlide('goondiwindi', 'isaac')">Isaac<span class="material-symbols-outlined">arrow_forward</span></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="page" id="isaac" style="z-index:5;">
+      <table class="pagebox">
+        <tr>
+          <td rowspan="2"><img src="/Council_Logos/isaacLogo.png" alt="Isaac Logo"></td>
+          <td>
+            <h3>Isaac Regional Council</h3>
+            <ol>
+              <li>Value in disaster management and business continuity planning and testing, including out of the box thinking around potential scenarios and in particular potential limitation of “lead agency” for disaster
+  management.</li>
+              <li>Importance in flexibility and resilience of Information Technology
+  systems.</li>
+              <li>Support, trust and flexibility for staff is critical to manage sometimes
+  unknown situations.</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick="previousSlide('isaac', 'goondiwindi')"><span class="material-symbols-outlined">arrow_back</span>Goondiwindi</a>
+            <a onclick="nextSlide('isaac', 'moretonbay')"> Moreton Bay<span class="material-symbols-outlined">arrow_forward</span></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="page" id="moretonbay" style="z-index:6;">
+      <table class="pagebox">
+        <tr>
+          <td rowspan="2"><img src="/Council_Logos/moretonbayLogo.png" alt="Moreton Bay Logo"></td>
+          <td>
+            <h3>Moreton Bay Regional Council</h3>
+            <ol>
+              <li>Regularly review and exercise the business continuity plan.</li>
+              <li>Ensure decisions and actions are supported by relevant risk assessment.</li>
+              <li>Communication at all levels is critical.</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a onclick="previousSlide('moretonbay', 'isaac')"><span class="material-symbols-outlined">arrow_back</span>Isaac</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+</body>
+  
+</html>
+
+<style>
+  body {
+    width: 800px;
+    height: 300px;
+    scroll-behavior: smooth;
+    border: none;
+  }
+  .page {
+    position: absolute;
+    margin-left: 800px;
+    transition: 1s;
+  }
+  .page#cairns {
+    margin-left: 0px;
+  }
+
+  table h3 {
+    border-bottom: 2px solid black;
+  }
+  
+  table.pagebox {
+    width: 800px;
+    height: 300px;
+    position: static;
+    background-color: white;
+  }
+  table td {
+    margin: 0px;
+    padding: 10px;
+  }
+  table td img {
+    max-height: 280px;
+    max-width: 280px;
+  }
+
+  table a:hover {
+    cursor: pointer;
+    color: gray;
+  }
+  table a span {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    bottom: -5px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  table a:first-of-type {
+    float: left;
+  }
+  table a:nth-of-type(2) {
+    float: right;
+  }
+  
+</style>
+
+<script>
+
+  function nextSlide(current, next) {
+    
+    var currentSlide = document.getElementById(current);
+    var nextSlide = document.getElementById(next);
+
+    nextSlide.style.margin = '0px';
+    currentSlide.style.marginLeft = '-800px';
+  }
+
+  function previousSlide(current, previous) {
+    
+    var currentSlide = document.getElementById(current);
+    var previousSlide = document.getElementById(previous);
+
+    previousSlide.style.margin = '0px';
+    currentSlide.style.marginLeft = '800px';
+  }
+  
+</script>

@@ -52,7 +52,8 @@
 the responses by Queensland councils to the pandemic. Click on their image to find out what they
 said.</p>
     <div id="IDs">
-      <div class="idCard">
+      <a href="#" target="_blank">
+        <div class="idCard">
         <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/01/cute-hedgehogs-in-hats-5890a0f187f35__700.jpg" class="idImg" alt="Pirate hedgehog">
         <div class="idInfo">
           <p>
@@ -60,14 +61,13 @@ said.</p>
             <b>Organisation: </b> Piracy<br>
             <b>Position: </b> Captain<br>
             <br>
-            <i>"Maybe some cool quote to attract ppl"</i>
+            <i style="text-align:center;">"Maybe some cool quote to attract ppl"</i>
           </p>
-          <a href="#">Link to pdf</a>
         </div>
       </div>
-    </div>
-    <div id="IDs">
-      <div class="idCard">
+      </a>
+      <a href="#" target="_blank">
+        <div class="idCard">
         <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/01/cute-hedgehogs-in-hats-5890a0f187f35__700.jpg" class="idImg" alt="Pirate hedgehog">
         <div class="idInfo">
           <p>
@@ -75,14 +75,13 @@ said.</p>
             <b>Organisation: </b> Piracy<br>
             <b>Position: </b> Captain<br>
             <br>
-            <i>"Maybe some cool quote to attract ppl"</i>
+            <i style="text-align:center;">"Maybe some cool quote to attract ppl"</i>
           </p>
-          <a href="#">Link to pdf</a>
         </div>
       </div>
-    </div>
-    <div id="IDs">
-      <div class="idCard">
+      </a>
+      <a href="#" target="_blank">
+        <div class="idCard">
         <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/01/cute-hedgehogs-in-hats-5890a0f187f35__700.jpg" class="idImg" alt="Pirate hedgehog">
         <div class="idInfo">
           <p>
@@ -90,11 +89,11 @@ said.</p>
             <b>Organisation: </b> Piracy<br>
             <b>Position: </b> Captain<br>
             <br>
-            <i>"Maybe some cool quote to attract ppl"</i>
+            <i style="text-align:center;">"Maybe some cool quote to attract ppl"</i>
           </p>
-          <a href="#">Link to pdf</a>
         </div>
       </div>
+      </a>
     </div>
     
   </div>
@@ -113,19 +112,15 @@ said.</p>
 
 <style>
 
-  p.by-line {
-    width: 500px;
-  }
-
   #IDs {
-    position: relative;
-    left: 300px;
-    top: -140px;
     text-align: center;
   }
+  #IDs a {
+    text-decoration: none;
+  }
   .idCard {
-    height: 140px;
-    width: 350px;
+    height: 400px;
+    width: 240px;
     border-radius: 20px;
     border: 3px solid gray;
     padding: 10px;
@@ -133,18 +128,26 @@ said.</p>
     display:inline-block;
     transition: 1s;
     text-align: left;
+
+    color: var(--text-colour-dark);
   }
   .idCard:hover {
-    width: 400px;
-    height: 160px;
+    border-width: 6px;
   }
   .idCard p {
     margin: 0px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .idInfo {
+    padding: 5px;
+  }
+  .idInfo i {
+    display: block;
+    text-align: center;
   }
   .idImg {
-    height: 100%;
+    width: 100%;
     border-radius: 20px;
-    float: left;
-    margin-right: 20px;
   }
 </style>

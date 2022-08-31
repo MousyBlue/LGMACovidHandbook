@@ -7,6 +7,7 @@
   <title>LGMA QLD Covid Handbook</title>
   <link href="/style.css" rel="stylesheet" type="text/css" />
   <script src="/script.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
   
 </head>
@@ -50,39 +51,56 @@
   <!-- Page Content -->
   <div id="pageContent">
     <h1>What Happened When</h1>
-    <p class="by-line">Find out more about the chronological sequence of events by clicking the icons below.</p>
-
+    <p class="by-line">Find out more about the chronological sequence of events by clicking the icons shown on the timeline to the right.</p>
 
     <div class="timeline">
-      <div id="line"></div>
+      <div class="line">
+        <div id="line1"></div>
+        <div id="line2"></div>
+        <div id="line3"></div>
+        <div id="line4"></div>
+        <div id="line5"></div>
+      </div>
       <div class="container left" id="tl1">
-        <button class="dot" onclick="timeline1()"></button>
-        <div class="desc">Global</div>
+        <button class="dot" onclick="timeline1()">
+          <span class="material-symbols-outlined">public</span>
+        </button>
+        <!--<div class="desc">Global</div>-->
         <div class="content" id="content1">
+          <div id="arrow1" class="rArrow"></div>
           <h2>30 Jan 2020</h2>
           <p>The WHO Director General declared the novel coronavirus outbreak a public health emergency of international concern (PHEIC), WHO's highest level of alarm.</p>
         </div>
       </div><br>
       <div class="container right" id="tl2">
-        <button class="dot" onclick="timeline2()"></button>
-        <div class="desc">National</div>
+        <button class="dot" onclick="timeline2()">
+          <span class="material-symbols-outlined">diversity_3</span>
+        </button>
+        <!--<div class="desc">National</div>-->
         <div class="content" id="content2">
+          <div id="arrow2" class="lArrow"></div>
           <h2>15 Mar 2020</h2>
           <p>First meeting of National Cabinet where leaders banned cruise ships, non-essential public gatherings of more than 500 people were outlawed, and an edict for all international arrivals to self-isolate for 14 days was agreed to.</p>
         </div>
       </div><br>
       <div class="container left" id="tl3">
-        <button class="dot" onclick="timeline3()"></button>
-        <div class="desc">State</div>
+        <button class="dot" onclick="timeline3()">
+          <span class="material-symbols-outlined">location_city</span>
+        </button>
+        <!--<div class="desc">State</div>-->
         <div class="content" id="content3">
+          <div id="arrow3" class="rArrow"></div>
           <h2>24 Mar 2020</h2>
           <p>The Premier announced that Queensland would restrict access at the border followed by the first death of a COVID patient the next day.</p>
         </div>
       </div><Br>
       <div class="container right" id="tl4">
-        <button class="dot" onclick="timeline4()"></button>
-        <div class="desc">Local</div>
+        <button class="dot" onclick="timeline4()">
+          <span class="material-symbols-outlined">cottage</span>
+        </button>
+        <!--<div class="desc">Local</div>-->
         <div class="content" id="content4">
+          <div id="arrow4" class="lArrow"></div>
           <h2>30 Mar 2020</h2>
           <p>Queensland entered its first lockdown, with travel outside the home banned except for essential reasons.</p>
         </div>
@@ -91,29 +109,51 @@
 
     <div class="extraStuff">
       <div class="extraInfo" id="extra1">
-        <h3>For Additional Resources (Global)</h3>
-        <ul>
-          <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/interactive-timeline" target="_blank">Timeline of WHO's response to COVID-19</a></li>
-          <li><a href="https://www.bing.com/covid/local/australia?form=C19ANS" target="_blank">Coronavirus Australia - live map tracker
-from Microsoft Bing</a></li>
-        </ul>
+        <h3>
+          <span class="material-symbols-outlined">public</span>
+          Global Response
+        </h3>
+        <div class="addRes">
+          <h4>For additional resources, see;</h4>
+          <ul>
+            <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/interactive-timeline" target="_blank">Timeline of WHO's response to COVID-19</a></li>
+            <li><a href="https://www.bing.com/covid/local/australia?form=C19ANS" target="_blank">Coronavirus Australia - live map tracker
+  from Microsoft Bing</a></li>
+          </ul>
+        </div>
       </div>
       <div class="extraInfo" id="extra2">
-        <h3>For Additional Resources (National)</h3>
-
+        <h3>
+          <span class="material-symbols-outlined">diversity_3</span>
+          National Response
+        </h3>
+        <div class="addRes">
+          <h4>For additional resources, see;</h4>
+        </div>
       </div>
       <div class="extraInfo" id="extra3">
-        <h3>For Additional Resources (State)</h3>
-        <ul>
-          <li><a href="https://www.brisbanetimes.com.au/politics/queensland/going-viral-timeline-shows-how-covid-19-infected-queensland-20210112-p56tj7.html" target="_blank">Queensland coronavirus: Timeline of how COVID-19 spread in Queensland
-(brisbanetimes.com.au)</a></li>
-          <li><a href="https://www.aph.gov.au/About_Parliament/Parliamentary_Departments/Parliamentary_Library/pubs/rp/rp2021/Chronologies/COVID-19StateTerritoryGovernmentAnnouncements" target="_blank">COVID-19: a chronology of state and territory government announcements (up until 30 June 2020) – Parliament of Australia (aph.gov.au)</a></li>
-          <li><a href="https://documents.parliament.qld.gov.au/tableOffice/TabledPapers/2020/5620T1656.pdf" target="_blank">Queensland
-Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a></li>
-        </ul>
+        <h3>
+          <span class="material-symbols-outlined">location_city</span>
+          State Response
+        </h3>
+        <div class="addRes">
+          <h4>For additional resources, see;</h4>
+          <ul>
+            <li><a href="https://www.brisbanetimes.com.au/politics/queensland/going-viral-timeline-shows-how-covid-19-infected-queensland-20210112-p56tj7.html" target="_blank">Queensland coronavirus: Timeline of how COVID-19 spread in Queensland</a></li>
+            <li><a href="https://www.aph.gov.au/About_Parliament/Parliamentary_Departments/Parliamentary_Library/pubs/rp/rp2021/Chronologies/COVID-19StateTerritoryGovernmentAnnouncements" target="_blank">COVID-19: a chronology of state and territory government announcements (up until 30 June 2020) – Parliament of Australia</a></li>
+            <li><a href="https://documents.parliament.qld.gov.au/tableOffice/TabledPapers/2020/5620T1656.pdf" target="_blank">Queensland
+  Government response to COVID-19 (Report 3: 2020–21)</a></li>
+          </ul>
+        </div>
       </div>
       <div class="extraInfo" id="extra4">
-        <h3>For Additional Resources (Local)</h3>
+        <h3>
+          <span class="material-symbols-outlined">cottage</span>
+          Local Response
+        </h3>
+        <div class="addRes">
+          <h4>For additional resources, see;</h4>
+        </div>
 
       </div>
     </div>
@@ -152,24 +192,59 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
 
   .timeline {
     width: 700px;
-    height: 650px;
+    height: 620px;
     position: relative;
     left: 410px;
-    top: -140px;
+    top: -160px;
+    color: white;
+    background-color: #eee;
+    border: 5px solid #eee;
   }
 
-  .timeline #line {
-    border: 10px solid gray;
-    border-radius: 5px;
-    width: 0px;
+  .timeline .line {
+    width: 20px;
     height: 100%;
     position: relative;
     left: 340px;
     
   }
+  .line div {
+    width: 2px;
+    position: absolute;
+    background-color: white;
+    border-width: 9px;
+    border-style: solid;
+  }
+  .line #line1 {
+    border-color: #495273;
+    border-top-color: #eee;
+    top: 0%;
+    height: 15%;
+  }
+  .line #line2 {
+    border-color: #486073;
+    top: 15%;
+    height: 30%;
+  }
+  .line #line3 {
+    border-color: #486e73;
+    top: 45%;
+    height: 20%;
+  }
+  .line #line4 {
+    border-color: #48736a;
+    top: 65%;
+    height: 15%;
+  }
+  .line #line5 {
+    border-color: #48735b;
+    top: 80%;
+    height: 17%;
+    border-bottom-color: #eee;
+  }
 
   .container {
-    width: 390px;
+    width: 387px;
     display: block;
     position: absolute;
   }
@@ -196,6 +271,7 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
     transition: 0.5s;
     max-height: 160px;
     background-color: teal;
+    margin-top: 20px;
   }
   .left .content {
     border-radius: 30px 0px 0px 30px;
@@ -212,48 +288,150 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
 
   .dot {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    border: 3px solid teal;
+    width: 55px;
+    height: 55px;
+    border: 3px solid white;
     display: inline-block;
-    margin: 20px;
-    background-color: gray;
+    margin: 10px;
     padding: 0px;
     cursor: pointer;
+    color: white;
   }
+  .dot .material-symbols-outlined {
+    line-height: 40px;
+    font-size: 40px;
+  }
+  #tl1 .material-symbols-outlined {
+    line-height: 50px;
+  }
+  #tl4 .material-symbols-outlined {
+    line-height: 45px;
+  }
+  
   .right .dot {
     float: left;
   }
   .left .dot {
     float: right;
   }
-  .dot:hover ~ .content {
-    border: 2px solid gray;
+
+  .rArrow {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid green;
+    position: absolute;
+    right: 87px;
+    top: 0px;
+    margin-top: 20px;
+    transition: 0.5s;
   }
+  .lArrow {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid green;
+    position: absolute;
+    left: 87px;
+    top: 0px;
+    margin-top: 20px;
+    transition: 0.5s;
+  }
+  
   
   .container#tl1{
     top: 10%;
+  }
+  #tl1 .dot, #tl1 .content {
+    background-color: #495273;
+  }
+  #tl1 .rArrow{
+    border-left-color: #495273;
   }
   .container#tl2 {
     top: 40%;
     right: 0px;
   }
+  #tl2 .dot, #tl2 .content {
+    background-color: #486073;
+  }
+  #tl2 .lArrow{
+    border-right-color: #486073;
+  }
   .container#tl3 {
     top: 60%;
+  }
+  #tl3 .dot, #tl3 .content {
+    background-color: #486e73;
+  }
+  #tl3 .rArrow{
+    border-left-color: #486e73;
   }
   .container#tl4 {
     top: 75%;
     right: 0px;
   }
+  #tl4 .dot, #tl4 .content {
+    background-color: #48736a;
+  }
+  #tl4 .lArrow{
+    border-right-color: #48736a;
+  }
 
   .extraStuff {
     position: relative;
-    top: -600px;
-    width: 300px;
+    top: -650px;
+    width: 350px;
   }
   .extraInfo {
     display: none;
   }
+
+  .extraInfo .material-symbols-outlined {
+    font-size: 40px;
+    position: relative;
+    top: 10px;
+    padding: 7px;
+  }
+  .extraInfo h3 {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  #extra1 {
+    color: #363c54;
+  }
+  #extra2 {
+    color: #354655;
+  }
+  #extra3 {
+    color: #355155;
+  }
+  #extra4 {
+    color: #35554e;
+  }
+
+  .addRes {
+    margin-left: 20px;
+  }
+  .addRes h4 {
+    margin-top:20px;
+    margin-bottom: 0px;
+  }
+  
+  .addRes ul a {
+    text-decoration: none;
+    color: #222;
+  }
+  .addRes ul a:hover {
+    color: #555;
+  }
+  .addRes ul li {
+    margin-bottom: 20px;
+  }
+  
 
 </style>
 
@@ -261,10 +439,12 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
   function timeline1() {
     var extra = document.getElementById("extra1");
     var content =  document.getElementById("content1");
+    var arrow =  document.getElementById("arrow1");
 
     if (extra.style.display === "block"){
       extra.style.display = "none";
-      content.style.backgroundColor = "teal";
+      content.style.backgroundColor = "#495273";
+      arrow.style.borderLeftColor = "#495273";
       content.style.height = "20px";
       content.style.width = "100px";
       content.style.marginLeft = "150px";
@@ -275,25 +455,32 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
       content.style.height = "auto";
       content.style.width = "250px";
       content.style.marginLeft = "0px";
-      content.style.backgroundColor = "lightblue";
+      content.style.backgroundColor = "#363c54";
+      arrow.style.borderLeftColor = "#363c54";
       
       document.getElementById("extra2").style.display = "none";
       document.getElementById("extra3").style.display = "none";
       document.getElementById("extra4").style.display = "none";
 
-      document.getElementById("content2").style.backgroundColor = "teal";
-      document.getElementById("content3").style.backgroundColor = "teal";
-      document.getElementById("content4").style.backgroundColor = "teal";
+      document.getElementById("content2").style.backgroundColor = "#486073";
+      document.getElementById("content3").style.backgroundColor = "#486e73";
+      document.getElementById("content4").style.backgroundColor = "#48736a";
+
+      document.getElementById("arrow2").style.borderRightColor = "#486073";
+      document.getElementById("arrow3").style.borderLeftColor = "#486e73";
+      document.getElementById("arrow4").style.borderRightColor = "#48736a";
     }
   }
 
   function timeline2() {
     var extra = document.getElementById("extra2");
     var content = document.getElementById("content2");
+    var arrow = document.getElementById("arrow2");
 
     if (extra.style.display === "block"){
       extra.style.display = "none";
-      content.style.backgroundColor = "teal";
+      content.style.backgroundColor = "#486073";
+      arrow.style.borderRightColor = "#486073";
       content.style.height = "20px";
       content.style.width = "100px";
       content.style.marginRight = "150px";
@@ -304,25 +491,32 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
       content.style.height = "auto";
       content.style.width = "250px";
       content.style.marginRight = "0px";
-      content.style.backgroundColor = "lightblue";
+      content.style.backgroundColor = "#354655";
+      arrow.style.borderRightColor = "#354655";
 
       document.getElementById("extra1").style.display = "none";
       document.getElementById("extra3").style.display = "none";
       document.getElementById("extra4").style.display = "none";
 
-      document.getElementById("content1").style.backgroundColor = "teal";
-      document.getElementById("content3").style.backgroundColor = "teal";
-      document.getElementById("content4").style.backgroundColor = "teal";
+      document.getElementById("content1").style.backgroundColor = "#495273";
+      document.getElementById("content3").style.backgroundColor = "#486e73";
+      document.getElementById("content4").style.backgroundColor = "#48736a";
+
+      document.getElementById("arrow1").style.borderLeftColor = "#495273";
+      document.getElementById("arrow3").style.borderLeftColor = "#486e73";
+      document.getElementById("arrow4").style.borderRightColor = "#48736a";
     }
   }
 
   function timeline3() {
     var extra = document.getElementById("extra3");
     var content = document.getElementById("content3");
+    var arrow =  document.getElementById("arrow3");
 
     if (extra.style.display === "block"){
       extra.style.display = "none";
-      content.style.backgroundColor = "teal";
+      content.style.backgroundColor = "#486e73";
+      arrow.style.borderLeftColor = "#486e73";
       content.style.height = "20px";
       content.style.width = "100px";
       content.style.marginLeft = "150px";
@@ -330,7 +524,8 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
     }
     else {
       extra.style.display = "block";
-      content.style.backgroundColor = "lightblue";
+      content.style.backgroundColor = "#355155";
+      arrow.style.borderLeftColor = "#355155";
       content.style.height = "auto";
       content.style.width = "250px";
       content.style.marginLeft = "0px";
@@ -339,19 +534,25 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
       document.getElementById("extra1").style.display = "none";
       document.getElementById("extra4").style.display = "none";
 
-      document.getElementById("content2").style.backgroundColor = "teal";
-      document.getElementById("content1").style.backgroundColor = "teal";
-      document.getElementById("content4").style.backgroundColor = "teal";
+      document.getElementById("content2").style.backgroundColor = "#486073";
+      document.getElementById("content1").style.backgroundColor = "#495273";
+      document.getElementById("content4").style.backgroundColor = "#48736a";
+
+      document.getElementById("arrow2").style.borderRightColor = "#486073";
+      document.getElementById("arrow1").style.borderLeftColor = "#495273";
+      document.getElementById("arrow4").style.borderRightColor = "#48736a";
     }
   }
 
   function timeline4() {
     var extra = document.getElementById("extra4");
     var content =  document.getElementById("content4");
+    var arrow =  document.getElementById("arrow4");
 
     if (extra.style.display === "block"){
       extra.style.display = "none";
-      content.style.backgroundColor = "teal";
+      content.style.backgroundColor = "#48736a";
+      arrow.style.borderRightColor = "#48736a";
       content.style.height = "20px";
       content.style.width = "100px";
       content.style.marginRight = "150px";
@@ -359,7 +560,8 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
     }
     else {
       extra.style.display = "block";
-      content.style.backgroundColor = "lightblue";
+      content.style.backgroundColor = "#35554e";
+      arrow.style.borderRightColor = "#35554e";
       content.style.height = "auto";
       content.style.width = "250px";
       content.style.marginRight = "0px";
@@ -368,9 +570,13 @@ Government response to COVID-19 (Report 3: 2020–21) (parliament.qld.gov.au)</a
       document.getElementById("extra3").style.display = "none";
       document.getElementById("extra1").style.display = "none";
 
-      document.getElementById("content2").style.backgroundColor = "teal";
-      document.getElementById("content3").style.backgroundColor = "teal";
-      document.getElementById("content1").style.backgroundColor = "teal";
+      document.getElementById("content2").style.backgroundColor = "#486073";
+      document.getElementById("content3").style.backgroundColor = "#486e73";
+      document.getElementById("content1").style.backgroundColor = "#495273";
+
+      document.getElementById("arrow2").style.borderRightColor = "#486073";
+      document.getElementById("arrow3").style.borderLeftColor = "#486e73";
+      document.getElementById("arrow1").style.borderLeftColor = "#495273";
     }
   }
 </script>
