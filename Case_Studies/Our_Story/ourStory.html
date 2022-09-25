@@ -8,6 +8,98 @@
   <link href="/style.css" rel="stylesheet" type="text/css" />
   <script src="/script.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <style>
+  
+    body {
+      overflow-y: auto;
+    }
+  
+    h2 {
+      width: 50%;
+      padding: 15px;
+      margin: 0px;
+      display:inline-block;
+    }
+    
+    table.councilLogos {
+      text-align:center;
+      vertical-align: middle;
+      position: relative;
+      margin: 70px auto;
+    }
+    td {
+      padding: 20px;
+    }
+    .councilLogos img {
+      width: 170px;
+      height: auto;
+    }
+  
+    .interview {
+      background-color: #3A415A;
+      color: #f7ae4f;
+      width: 98%;
+    }
+    .interviewContent {
+      background-color: #eee;
+      color: #333;
+      padding: 0px;
+      height: 0px;
+      opacity: 0;
+      overflow: hidden;
+      transition: .5s;
+    }
+  
+    button.arrow {
+      position: relative;
+      float: right;
+      margin: 15px;
+      display: inline-block;
+      background-color: #eee;
+      color: #111;
+      border: none;
+    }
+    button.arrow:hover {
+      background-color: white;
+    }
+  
+    ul li::marker {
+      color: #f7ae4f;
+    }
+  
+    .imgRow, imgRow2, imgRow3, imgRow4, imgRow5 {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    .imgRow img {
+      padding: 0.3%;
+      width: 32%;
+      flex: 0 1 32%;
+    }
+    
+    .imgRow2 img {
+      padding: 0.3%;
+      height: 243px;
+    }
+    .imgRow3 img {
+      padding: 0.3%;
+      height: 263px;
+    }
+    .imgRow4 img {
+      padding: 0.3%;
+      height: 283px;
+    }
+    .imgRow5 img {
+      padding: 0.3%;
+      height: 258px;
+    }
+    
+  </style>
   
 </head>
 
@@ -19,34 +111,37 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
     
     <button class="dropdownBtn">
-      <a href="/Overview/overview.html">Overview</a>
+      Overview
     </button>
       <div class="dropdown">
-        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
         <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
         <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
-        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
       </div>
     <button class="dropdownBtn">
-      <a href="/Case_Studies/caseStudies.html">Case Studies</a>
+      Case Studies
     </button>
       <div class="dropdown">
-        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
-        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html" id="active">Our Story</a>
-        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
+        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html" id="active">Council Stories</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
       </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
+
+    <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
     
   </div>
 
   <!-- Page Content -->
   <div id="pageContent">
-    <h1>Our Story</h1>
+    <a id="returnTop" href="#">Return to Top</a>
+    <h1>Council Stories</h1>
     <p class="by-line">We interviewed representatives of each of the Case Study Councils and learned of the story for each Council. Click on the respective Council logo to read about each of their experiences.     </p>
     
     <table class="councilLogos">
@@ -75,15 +170,23 @@
     </table>
 
     <div class="interview" id="cairns">
-      <h2>Cairns Regional Council</h2>
-      <ol>
+      <h2>Cairns Regional Council
+      </h2>
+      <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+      <div class="interviewContent">
+        <div class="imgRow">
+          <img src="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Images/COVID%20health%20advice%20at%20Tanks%20performing%20arts%20centre.jpg" alt="COVID health advice at Tanks performing arts center">
+          <img src="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Images/Covid_IndustryGroup_23Apr2020_02.jpg" alt="Socially distanced COVID Industry Group meeting">
+          <img src="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Images/Crowd%20control%20at%20MMP.jpg" alt="Crowd Control at MMP">
+        </div>
+        <ol>
         <li>
           <b>Before the pandemic how well prepared do you think your community was for such an event?</b><br>
           <p>Our community copes with regular cyclones and is generally well prepared for natural disasters so it is always effectively on stand-by. But the pandemic lockdown and economic impacts were unique and very severe. It caused a major impact on tourism which destroyed some businesses. It also impacted detrimentally on the agricultural industry which is normally reliant on itinerant workforce that was suddenly no longer available.</p>
         </li>
         <li>
           <b>Before the pandemic how well prepared do you think your organisation was for such an event?</b><br>
-          <p>The Executive Leadership Team met weekly and made quick decisions. The Business Continuity Plan (BCP) Team also met regularly. Communication got better as time passed with seventy, Corona Updates passing on State Government information. There were also 69 safety alerts issues and regular updates from Chief Executive Officer (CEO) and the human resources section.<br>
+          <p>The Executive Leadership Team met weekly and made quick decisions. The Business Continuity Plan (BCP) Team also met regularly. Communication got better as time passed with seventy, Corona Updates passing on State Government information. There were also 69 safety alerts issues and regular updates from Chief Executive Officer (CEO) and the human resources section.<br><br>
             We complied with Chief Health Officer’s (CHO) Public Health Directives. We practised trial work from home days to make sure technology and other arrangements were in place. The greatest impact was felt in final months due to the short lockdowns. Closure of libraries resulted in stand-down of some employees. This was difficult and the organisation wasn’t prepared for it. Initially there was a lack of clarity on how to respond. We tried to redeploy staff which was relatively new to the organisation. Some staff were disappointed and felt there was a lack of consultation regarding leave provisions, work from home arrangements, back up for IT arrangements and safety requirements. However, working from home has been embraced and is now part of the workplace flexibility.</p>
         </li>
         <li>
@@ -93,15 +196,21 @@ pre-existing plans weren’t necessarily pandemic related, but they still had so
         </li>
         <li>
           <b>How quickly did you activate the existing plans?</b><br>
-          <p></p>
+          <p>Almost immediately. The Business Continuity Team (BCT) is able to convene by telephone to ascertain which components of the plans were relevant to the pandemic context.</p>
         </li>
         <li>
           <b>In the survey you said you developed a suite of pandemic specific plans from March 2020 including the Cairns COVID-19 Local Recovery Plan which included input from over 100 local stakeholders across the Economic and Human and Social pillars. How did they eventually serve your needs? What aspects were most useful?</b><br>
-          <p></p>
+          <p>It's difficult to ascribe a rank of usefulness to the plans as they each had individual, unique objectives. Perhaps the ongoing engagement itself with community was most useful, as it allowed Council to refine recovery efforts, and ensure that measures could become increasingly targeted.<Br><br>
+            For example, our 12-month progress report on the Cairns COVID-19 Local Recovery Plan specifically, ultimately revealed that the economic impact of the pandemic had been less severe than expected, but there remained significant concerns about community health and social wellbeing.<Br><Br>
+            However, the tourism and international education sector continued to be significantly adversely impacted by travel and border restrictions. Further, access to affordable and secure housing remained one of the most significant issues affecting the community.<br><br>
+            The research also outlined ongoing concerns about mental health, financial hardship due to loss of or inconsistent employment, domestic and family violence, and addictive behaviours.</p>
         </li>
         <li>
           <b>Was there a structured framework designed to manage the development of these plans? Was that the role of the “Pathway to Recovery from COVID-19” adopted in May 2020. How did this eventually serve your needs? What aspects were most useful?</b><br>
-          <p></p>
+          <p>For obvious reasons, the organisation didn’t have the luxury of a lengthy planning window, nor the ability to forecast the direction/impacts of the pandemic. However, the existing decision making framework of Council meant that we had capacity to be agile, and to pivot where required to meet needs.<br><br>
+            When it came to assessing what those needs were, the Cairns Rapid Search and Needs Assessment was undertaken in partnership with James Cook University. Directly from that report:<br><br>
+            <i style="display:block;padding-left:20px;">“The Cairns region is identified as a high impact area for the consequences of COVID-19. Being a rural-regional location and economically being largely reliant on the tourism industry, its unique socio-economic characteristics has rendered it as ‘highly vulnerable,’ with significant impacts on the social, economic and emotional health of the local population.<br><br>
+              Despite the regions vulnerability we have an opportunity to meet our challenges in new and innovative ways that build on the regions many strengths. Cairns Regional Council (CRC) has been proactive in developing and acknowledging local responses to COVID-19 and in building an evidence base to guide response and recovery strategies. CRC has partnered with James Cook University to undertake a Rapid Social Needs Assessment (RNA). The project has three primary aims; 1. To determine a rapid and preliminary understanding of the social impacts of COVID-19 experienced by the Cairns community; 2. Create and evidence-based response strategies to inform short term to medium -term recovery planning and investment priorities, accounting for lag effects and the potential for resurgence; and 3. The work will also inform long-term recovery information needs and planning.”</i></p>
         </li>
         <li>
           <b>What was your community’s reaction to COVID-19 at first? How did this evolve?</b><br>
@@ -125,7 +234,7 @@ pre-existing plans weren’t necessarily pandemic related, but they still had so
         </li>
         <li>
           <b>How did the community support initiatives evolve? How did the community respond to each of the initiatives?</b><br>
-          <p></p>
+          <p>As mentioned earlier, the ongoing engagement with community allowed Council to continually refine and target measures.</p>
         </li>
         <li>
           <b>What were the main challenges in communicating and engaging with your community? How did you address these challenges?</b><br>
@@ -133,7 +242,17 @@ pre-existing plans weren’t necessarily pandemic related, but they still had so
         </li>
         <li>
           <b>What were the findings of your survey seeking ‘pulse of the pandemic’ in May 2021?</b><br>
-          <p></p>
+          <p>Identified impacts of the pandemic included:
+            <ul>
+              <li>Micro-economic impacts at the household level on employment, significant underemployment and unemployment, and financial stress and inadequate income.</li>
+              <li>Housing impacts with challenges of affordability, particularly within the rental property market.</li>
+              <li>Social connectivity and isolation impact with adverse mental health impacts, including less interaction with family and friends.</li>
+              <li>Health impacts related to both physical and mental health. Includes lack of access to health support including GPs, specialists and mental health professionals, with long waiting periods for appointments.</li>
+              <li>Domestic and family violence with increasing severity and complexity of violence and reduced protective factors. Includes reduced safety refuge options such as women’s shelters due to social distancing measures, being stuck at home with the perpetrator, lack of interstate travel, isolation for survivors and their children and weaponization of COVID-19 by perpetrators.</li>
+              <li>Digital connectivity and technologies were challenging in an environment of increasing online services and information. The challenges were access to devices, poor connectivity, affordability and cost and digital skills. Additionally, adjusting to online service access was difficult for some clients, particularly those in trust-based relationships with service providers. While online services were used by many, there was a significant proportion of the population excluded based on access, skills and a lack of functional English.</li>
+              <li>Lack of access to services including the right kind of service, disconnection from service providers, isolation and lack of awareness, waiting periods and in some cases costs of services were major barriers coinciding with increases in referrals, complexity of the issues and gaps in delivery.</li>
+              <li>Future outlook with many respondents not feeling positive or hopeful towards the future.</li>
+            </ul></p>
         </li>
         <li>
           <b>Specifically, how did you manage your community’s compliance with Public Health Directives?</b><br>
@@ -141,12 +260,21 @@ pre-existing plans weren’t necessarily pandemic related, but they still had so
         </li>
         <li>
           <b>Specifically, what influence did you have on your community’s uptake of vaccinations?</b><br>
-          <p>Council’s website was used for promotion following the CHO messaging. This further impacted
-businesses. Council didn’t impose a vaccination mandate on staff. Recording and monitoring of vaccinations was handled well.</p>
+          <p>Council;
+            <ul>
+              <li>established a Pandemic Sub-committee which helped centralise and expedite any and all COVID-19/Vaccine requests or initiatives(Members include Local Disaster Coordinator, Executive Team, First People’s Officer, Marketing & Communications, Finance, Works, Community Development, Regulatory Services, Workplace Health & Safety).
+</li>
+              <li>worked with Cairns and Hinterland Hospital and Health Service to provide assistance in relation to Covid vaccine pop up clinics.</li>
+              <li>met with the National Covid Vaccine Taskforce Assessment Team to understand about the barriers and possible interventions.</li>
+              <li>developed an initiative in conjunction with the North Queensland Cowboys in an effort to increase vaccination rates in cohorts with low levels of vaccination uptake.</li>
+              <li>worked closely with Aboriginal Health Services in both Cairns and Yarrabah to understand where they need assistance, and conveying that information back to the National Covid Vaccine taskforce.</li>
+              <li>deployed variable messaging roadside signs in the highest volume traffic roadways, encouraging Cairns residents to get vaccinated consistent with Queensland Health advice.</li>
+            </ul>
+          </p>
         </li>
         <li>
           <b>In your survey response you listed a host of business support and economic stimulus initiatives. Would you like to tell me a little more about the most effective of these initiatives e.g. Investment Incentive Policy, establishment of the Cairns Resilient Businesses Network, ‘Meet the Buyer’ event, ‘Keep it in Cairns’ buy local campaign and acceleration of Council’s capital works programme?</b><br>
-          <p></p>
+          <p>Arguably the most impactful response (from an economic/business stimulus initiative response) was the acceleration of Council’s capital works program – namely the Cairns Esplanade Dining Precinct. The dual benefit of firstly being able to minimise impacts to traders with the disproportionately low volume of foot traffic due to the impacts of border closures, and secondly provide economic stimulus and act as a attractant for future domestic and international visitors, was of great effect. The added benefit was the impact to morale, given the utility and enjoyment for community members.</p>
         </li>
         <li>
           <b>What were the best aspects of your organisation’s handling of the pandemic?</b><br>
@@ -157,12 +285,26 @@ businesses. Council didn’t impose a vaccination mandate on staff. Recording an
           <p>Managing ‘business as usual’ and responding to pandemic disaster simultaneously was very demanding. Perhaps better prioritisation might have mitigated this impact.</p>
         </li>
       </ol>
-      <br><br><br><br>
+        <div class="imgRow">
+          <img src="cairns/cairns4.jpg" alt="Socially distanced meeting at ERRSC March 2020">
+          <img src="cairns/cairns5.jpg" alt="Social distancing at Munro Martin Parklands">
+          <img src="cairns/cairns6.jpg" alt="Presentation at ERRSC March 2020">
+        </div>
+        
+        <p><small>Approved by Mica Martin 1/9/2022</small></p>
+      </div>
     </div>
 
     <div class="interview" id="cherbourg">
       <h2>Cherbourg Aboriginal Shire Council</h2>
-      <ol>
+      <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+      <div class="interviewContent">
+        <div class="imgRow">
+          <img src="cherbourg/cherbourg1.jpg" alt="Woman Checking Off Checklist">
+          <img src="cherbourg/cherbourg2.jpg" alt="Cherbourg Group meet with QLD Premier">
+          <img src="cherbourg/cherbourg3.jpg" alt="Cars wait to get in to covid checkpoint">
+        </div>
+        <ol>
         <li>
           <b>Before the pandemic how well prepared do you think your community was for such an event?</b>
           <p>The pandemic occurred in two parts – no one was prepared initially but in the later stage when borders opened in 2021 the community was well prepared. It took 6-8 months to get ready but there were no cases in Cherbourg in that time so there was plenty of time to get ready.</p>
@@ -231,12 +373,25 @@ community and were concerned at first. Frank and open communication was importan
           <p>Insufficient documentation.</p>
         </li>
       </ol>
-      
+        <div class="imgRow2">
+          <img src="cherbourg/cherbourg4.jpg" alt="Foodbank truck delivering supplies">
+          <img  id="middle" src="cherbourg/cherbourg5.jpg" alt="Vaccination superhero">
+          <img src="cherbourg/cherbourg6.jpg" alt="Food delivery for schoolkids">
+        </div>
+        <p><small>Approved by Chatur Zala 17/7/2022</small></p>
+      </div>
     </div>
 
     <div class="interview" id="cook">
       <h2>Cook Shire Council</h2>
-      <ol>
+      <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+      <div class="interviewContent">
+        <div class="imgRow">
+          <img src="cook/cook1.jpg" alt="Council meeting via zoom">
+          <img src="cook/cook2.jpg" alt="Buy local campagin">
+          <img src="cook/cook3.jpg" alt="COVID help call center">
+        </div>
+        <ol>
         <li>
           <b>Before the pandemic how well prepared do you think your community was for such an event?</b>
           <p>We were not prepared for pandemic but well prepared for disasters. We have good disaster management plans and relationships and are well practised with cyclones and fires. We’ve also recently developed mass gathering protocols due to a sporting event fatality (Coroner’s recommendation).</p>
@@ -251,13 +406,13 @@ community and were concerned at first. Frank and open communication was importan
         </li>
         <li>
           <b>How quickly did you activate the existing plans?</b>
-          <p>The Cape was locked down early by the Commonwealth Government so Cook Shire was forced to be an early developer of responses and procedures (including the first to establish entry application forms). The BD included reference to ‘essential worker’ so there was confusion as to who was affected due to very loose definitions. Council had to interpret and make assessment as to how to apply the BD and developed forms/procedures.<br> 
+          <p>The Cape was locked down early by the Commonwealth Government so Cook Shire was forced to be an early developer of responses and procedures (including the first to establish entry application forms). The BD included reference to ‘essential worker’ so there was confusion as to who was affected due to very loose definitions. Council had to interpret and make assessment as to how to apply the BD and developed forms/procedures.<br><br>
             Council also established a dedicated call centre to cope with deluge of calls. We redeployed staff from other positions to respond. We had to capture questions and get answers and make referrals where appropriate. The Commonwealth Government initially was not ready or sufficiently prepared to respond.<br>
             Circumstances changed every few days. Quarantine was protracted for some weeks. A Quarantine Hotel was set up in Cairns. Circumstances such as pets, dying relatives, school holidays children, mustering cattle droves were not anticipated or understood by the Commonwealth Government. Medical evacuation was provided for some but not all with inconsistency. Many private patients elected not to travel to Cairns for essential medical treatment because they could not leave without return quarantine for two weeks.<br>
-            Commuting workers couldn’t enter for work unless deemed to be essential workers, or re-enter after leaving for work (unless completed quarantine which was completely impractical for workers with families and other responsibilities and no funds).<br>
-            This all took place between 20/3/20 – 15/7/20.<br>
-            During this period, it moved under control of Queensland CHO. However, there was still the need for local interpretation as to whether or not to refer applications to the CHO. A small group comprising the Mayor, Chief Executive Officer and a QPS Officer met and considered applications on a seven day a week basis for approximately four months. This was very difficult and consideration of desperate applications e.g. newborn babies quarantined with families was stressful. They changed the rules and designated Quarantine Hotels. In one example a staff member was locked up with wife, new-born baby, 7-year-old and parents-in-law visiting from Philippines for say 6 weeks.<br>
-            Change of information resulted in incorrect or outdated information circulating. We learnt of announcements mostly on TV. There was mixed messaging due to the Biosecurity Declaration (BD) application. The later ‘50km rule’ was a nonsense due to large distances between remote towns. Mayors of aboriginal shires were disadvantaged not being involved in approving applications for entry of essential workers and often did not know who was entering their communities. The whole thing was handled as a health issue not a disaster. Mental health, economic impact etc. also had to be considered.<br>
+            Commuting workers couldn’t enter for work unless deemed to be essential workers, or re-enter after leaving for work (unless completed quarantine which was completely impractical for workers with families and other responsibilities and no funds).<br><br>
+            This all took place between 20/3/20 – 15/7/20.<br><br>
+            During this period, it moved under control of Queensland CHO. However, there was still the need for local interpretation as to whether or not to refer applications to the CHO. A small group comprising the Mayor, Chief Executive Officer and a QPS Officer met and considered applications on a seven day a week basis for approximately four months. This was very difficult and consideration of desperate applications e.g. newborn babies quarantined with families was stressful. They changed the rules and designated Quarantine Hotels. In one example a staff member was locked up with wife, new-born baby, 7-year-old and parents-in-law visiting from Philippines for say 6 weeks.<br><Br>
+            Change of information resulted in incorrect or outdated information circulating. We learnt of announcements mostly on TV. There was mixed messaging due to the Biosecurity Declaration (BD) application. The later ‘50km rule’ was a nonsense due to large distances between remote towns. Mayors of aboriginal shires were disadvantaged not being involved in approving applications for entry of essential workers and often did not know who was entering their communities. The whole thing was handled as a health issue not a disaster. Mental health, economic impact etc. also had to be considered.<br><Br>
             The BD closure impacted small businesses severely e.g. hospitality industry. Domestic Violence and drinking increased. There was no telecommunication at BD roadblock (mobile blackspot). It took a 1-hour drive to get into mobile range. This made it particularly difficult if turned back at roadblock – where were people to go?</p>
         </li>
         <li>
@@ -270,7 +425,7 @@ community and were concerned at first. Frank and open communication was importan
         </li>
         <li>
           <b>What was your community’s reaction to COVID-19 at first? How did this evolve?</b>
-          <p>They did not think it was real. There were conspiracy theories and they questioned the need for lockdown. International news was considered irrelevant at first.<br>
+          <p>They did not think it was real. There were conspiracy theories and they questioned the need for lockdown. International news was considered irrelevant at first.<br><Br>
             Reaction to Government action is more important to understand. The District Disaster Management Group Executive Officer (DDMG XO) advised on Saturday of lockdown and transition of a few days before 25 March 2020. Some were trapped out of community. There were many abusive calls to newly established Council Call Centre. There was then realisation of lockdown impact and confusion about ‘essential worker’ definition. Some then wanted to keep border closure for protection when it was proposed to be removed. People thought Council was making the decisions. Council had to make assessment on exemptions. In some cases, applicants went around Council and that undermined decision making.</p>
         </li>
         <li>
@@ -296,12 +451,12 @@ community and were concerned at first. Frank and open communication was importan
         </li>
         <li>
           <b>What were the main challenges in communicating and engaging with your community? How did you address these challenges? In particular, please tell me more about the COVID-19 Call Centre and the implications of the Biosecurity Determination for remote communities.</b>
-          <p>There was uncertainty of the BD application and angst within community wanting to come in and out of Cape. There was also uncertainty in surrounding Aboriginal Shire Councils. Different information confused the community and changed sometimes daily. So the challenge was to establish one source of truth.<br>
+          <p>There was uncertainty of the BD application and angst within community wanting to come in and out of Cape. There was also uncertainty in surrounding Aboriginal Shire Councils. Different information confused the community and changed sometimes daily. So the challenge was to establish one source of truth.<br><br>
             There was no ‘lead’ agency due to Commonwealth and State agencies with different roles dependent on Cook Shire being in the middle. There were lots of rumours (social media) which caused further confusion. The CHO and Premier announcements were not foreshadowed. People were affected socially and mentally. There was a lack of understanding by other Governments of the importance of this issue. Some private medical patients were prevented or made difficult (return quarantine) to get treatment. People put their lives on hold and South-East Queensland (SEQ) did not understand this. Medical and dental services etc. are limited in the Cape so SEQ underestimated the impact on lack of access to such services that might be taken for granted. There was no system to deal with these. The BD quarantine requirements made it inhibitive, unlike border bubble exemptions on State borders.</p>
         </li>
         <li>
           <b>Specifically, how did you manage your community’s compliance with Public Health Directives?</b>
-          <p>Some did fight the Public Health Directives (PHDs) e.g. there was vandalism of barriers. People who had court orders (family custody) caused difficulty. Council facilities managed compliance e.g. café run by Council. People rudely treat staff. Environmental Health Officers (EHO’s) were required to enforce but the size of the jurisdiction and limited resourcing (1 EHO across entire Cape York) meant it was not feasible.<br>
+          <p>Some did fight the Public Health Directives (PHDs) e.g. there was vandalism of barriers. People who had court orders (family custody) caused difficulty. Council facilities managed compliance e.g. café run by Council. People rudely treat staff. Environmental Health Officers (EHO’s) were required to enforce but the size of the jurisdiction and limited resourcing (1 EHO across entire Cape York) meant it was not feasible.<br><br>
             There was also a question of legal authority for QPS enforcement. DoH did do some enforcement checks of business compliance. QPS enforced the BD directive (without authority?). Australian Defence Forces (ADF) presence as well may have addressed this. It was difficult to enforce community activities and events e.g. rodeo race days. Community was disappointed that some events could not be delivered. There was a constraint on insurance coverage due to camping risk of COVID-19 compliance. Cooktown races was a big test. Preparing the Compliance Plan requirement was onerous (e.g. 48 pages for the EXPO). Council’s event EXPO 2021 compliance cost extra $80k.</p>
         </li>
         <li>
@@ -325,12 +480,25 @@ community and were concerned at first. Frank and open communication was importan
           <p>Difficult and stressful operation of Call Centre. Maybe more pro-active support would have been better. Some staff worked continuously for a few weeks which was a risk to staff well-being. But got the job done and supported each other where required.</p>
         </li>
       </ol>
+        <div class="imgRow">
+          <img src="cook/cook4.jpg" alt="Coen Peninsula Development Road police control check point road block">
+          <img src="cook/cook5.jpg" alt="Vehicle checkpoint at cape york">
+          <img src="cook/cook6.jpg" alt="Mount Carbin Interception Point">
+        </div>
+      </div>
       
     </div>
 
     <div class="interview" id="goondiwindi">
       <h2>Goondiwindi Regional Council</h2>
-      <ol>
+      <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+      <div class="interviewContent">
+        <div class="imgRow3">
+          <img src="goondiwindi/goondiwindi1.jpg" alt="Library with social distancing measures in place">
+          <img src="goondiwindi/goondiwindi2.jpg" alt="Police officers happily doing their job">
+          <img src="goondiwindi/goondiwindi3.jpg" alt="Road closure in a field">
+        </div>
+        <ol>
         <li>
           <b>Before the pandemic how well prepared do you think your community was for such an event?</b>
           <p>A pandemic not catered for – not prepared – not expected.  Our Council was well prepared for and experienced in responding to other natural disasters e.g. floods predominantly and bushfires but not a pandemic.</p>
@@ -414,12 +582,25 @@ community and were concerned at first. Frank and open communication was importan
             Would like to have more effectively deflected or referred community concerns to the State Government – not sure how though.</p>
         </li>
       </ol>
+        <div class="imgRow">
+          <img src="goondiwindi/goondiwindi4.jpg" alt="Tractor delivering E-gate">
+          <img src="goondiwindi/goondiwindi5.jpg" alt="Police and Lawrence on closed bridge">
+          <img src="goondiwindi/goondiwindi6.jpg" alt="Macintyre Bridge road boarder closure">
+        </div>
+      </div>
       
     </div>
 
     <div class="interview" id="isaac">
       <h2>Isaac</h2>
-      <ol>
+      <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+      <div class="interviewContent">
+        <div class="imgRow">
+          <img src="isaac/isaac1.jpg" alt="COVID Car">
+          <img src="isaac/isaac2.jpg" alt="Counil pandemic Planning Matrix">
+          <img src="isaac/isaac3.jpg" alt="Council service behind safety screen">
+        </div>
+        <ol>
         <li>
           <b>Before the pandemic how well prepared do you think your community was for such an event?</b>
           <p>Our communities had limited preparation if any, being reliant on the government’s health system which had inherent weaknesses. However, the communities did possess built-up resilience through previous disasters. Rural and remote settings also create element of self-reliance. The mining sector also appeared to be unprepared, developing plans on the run.</p>
@@ -430,8 +611,8 @@ community and were concerned at first. Frank and open communication was importan
         </li>
         <li>
           <b>In the survey you indicated that you had an overarching Disaster Management Plan, an internal Emergency Management Plan and a draft Business Continuity Plan in place. How did they serve your needs? What aspects were worthwhile?</b>
-          <p>The Disaster Management Plan (DMP) did have a section relating to potential pandemic events but it was largely reliant on the State Government’s Department of Health (DoH) as the lead agency. The DMP document did provide a solid baseline to then adapt and update to this event.<br>
-            Council’s (internal) Emergency Management Plan (EMP) with its organisational focus was very useful and underpinned the allocation of roles distinct from the (external) DMP. The EMP had only been adopted in recent years and was to some extent still developing. The pandemic event (and other natural disasters) accelerated the finalisation of the system.<br>
+          <p>The Disaster Management Plan (DMP) did have a section relating to potential pandemic events but it was largely reliant on the State Government’s Department of Health (DoH) as the lead agency. The DMP document did provide a solid baseline to then adapt and update to this event.<br><br>
+            Council’s (internal) Emergency Management Plan (EMP) with its organisational focus was very useful and underpinned the allocation of roles distinct from the (external) DMP. The EMP had only been adopted in recent years and was to some extent still developing. The pandemic event (and other natural disasters) accelerated the finalisation of the system.<br><Br>
             The draft BCP was of limited use as it was incomplete and not practised. Base principles were used to develop COVID-19 specific “contingency plans” for overarching and specific areas. This has then been used to update and adopt the BCP. The organisational culture helped to get through it. The pandemic forced us to think out of box with the BCP and information technology resilience.</p>
         </li>
         <li>
@@ -452,12 +633,14 @@ community and were concerned at first. Frank and open communication was importan
         </li>
         <li>
           <b>On your website there is also a COVID-19 Strategic Recovery Plan. How did this eventually serve your needs? What aspects were most useful?</b>
-          <p>Council’s Strategic Recovery Plan contains 50 separate strategies in line with a strategic recoveryframework responding to:
-            <br>&ensp;• Business resilience,
-            <br>&ensp;• Council sustainability,
-            <br>&ensp;• Disaster recovery,
-            <br>&ensp;• Community resilience and
-            <br>&ensp;• Advocacy
+          <p>Council’s Strategic Recovery Plan contains 50 separate strategies in line with a strategic recovery framework responding to:<br>
+            <ul>
+              <li>Business resilience</li>
+              <li>Council sustainability</li>
+              <li>Disaster recovery</li>
+              <li>Community resilience and</li>
+              <li>Advocacy</li>
+            </ul>
             <br>Importantly it builds on Council’s existing five-year Economic Development Framework, and Tourism Strategy and Business Support Strategy and provides resourcing and capacity to accelerate a substantial body of that work.
           </p>
         </li>
@@ -477,7 +660,7 @@ were a small number of employees that due to underlying health issue had some co
         <li>
           <b>How did the wellbeing and safety initiatives for your employees evolve? How did your employees collectively respond? Tell me about the wellness check-in processes that you initiated.</b>
           <p>
-            Council already had well-established protocols for wellbeing and safety initiatives, however, this further evolved with the development of tools and information to assist staff. Many new initiatives were immediately implemented such as regular messaging and updates, daily roll call, absentee mapping, well-being declarations, health check-ins, case management of vulnerable employees, publishing of FAQ’s, publishing of procedures for social distancing and hygiene precautions, creation of COVID-19 special leave provisions, adoption of a financial hardship support policy, regularly updated supervisor guidelines and working from home (WFH) tips.<br>
+            Council already had well-established protocols for wellbeing and safety initiatives, however, this further evolved with the development of tools and information to assist staff. Many new initiatives were immediately implemented such as regular messaging and updates, daily roll call, absentee mapping, well-being declarations, health check-ins, case management of vulnerable employees, publishing of FAQ’s, publishing of procedures for social distancing and hygiene precautions, creation of COVID-19 special leave provisions, adoption of a financial hardship support policy, regularly updated supervisor guidelines and working from home (WFH) tips.<br><br>
             Overall, our employees responded very positively. Health check-ins involving a personal phone call from the HR or safety team were done for all employees (even the CEO). Council’s ‘SMART’ phone and internet application (WHS system) was commissioned to allow employees to submit to a daily roll call register their state of COVID-19 health risk at all times and to declare any risks (e.g. travel outside of the region). Operational leadership team meetings involving over 100 supervisors and managers from across the region were held regularly by videoconference to engage and inform. Regular messaging from the Chief Executive Officer and Mayor was also conducted using SMS alert messaging to all employees’ and Councillors’ mobile phones.
           </p>
         </li>
@@ -490,10 +673,21 @@ were a small number of employees that due to underlying health issue had some co
           <b>How did the community support initiatives evolve? How did the community respond to each of the initiatives?</b>
           <p>On 26 March 2020 Council adopted a suite of initiatives as elements of the ‘Strategic and Tactical
 Pandemic and Recession Response Framework’, including the ‘Community Support and Wellbeing Package’ along with the ‘Business and Community Support Compliance Response Package’ and the ‘Business Support and Initial Stimulus Package’. The Community Support and Wellbeing package included measures to immediately address the following:
-          <br> Community connectivity (including customer contact, libraries, on-line community engagement and shared virtual and distant experiences);  Community wellbeing (including strengthen connections, virtual connections and capacity building);  Financial support (including grants, rates and lease fee concessions and additional assistance); and  Vulnerable communities (including wellbeing initiatives for vulnerable individuals and groups with relevant agencies and service-providers).
-            <br>Further initiatives were added over time and were ultimately captured in Council’s ‘COVID-19 Strategic Recovery Plan’. As the final element of the ‘Strategic and Tactical Pandemic and Recession Response Framework’ this comprehensive document contained 50 separate strategies addressing the following:<br>
-             Business resilience;  Council sustainability;  Disaster recovery;  Community resilience; and  Strategic advocacy.<br>
-            The community responded very positively to the many initiatives and the special community grants were fully subscribed.</p>
+            <ul>
+              <li>Community connectivity (including customer contact, libraries, on-line community engagement and shared virtual and distant experiences);</li>
+              <li>Community wellbeing (including strengthen connections, virtual connections and capacity building); </li>
+              <li>Financial support (including grants, rates and lease fee concessions and additional assistance); and</li>
+              <li>Vulnerable communities (including wellbeing initiatives for vulnerable individuals and groups with relevant agencies and service-providers).</li>
+            </ul>
+            <br>Further initiatives were added over time and were ultimately captured in Council’s ‘COVID-19 Strategic Recovery Plan’. As the final element of the ‘Strategic and Tactical Pandemic and Recession Response Framework’ this comprehensive document contained 50 separate strategies addressing the following:<br><br>
+            <ul>
+              <li>Business resilience;</li>
+              <li>Council sustainability;</li>
+              <li>Disaster recovery;</li>
+              <li>Community resilience; and</li>
+              <li>Strategic advocacy.</li>
+            </ul>
+            <br>The community responded very positively to the many initiatives and the special community grants were fully subscribed.</p>
         </li>
         <li>
           <b>What were the main challenges in communicating and engaging with your community? How did you address these challenges?</b>
@@ -518,12 +712,27 @@ Pandemic and Recession Response Framework’, including the ‘Community Support
         <li>
           <b>In your survey response you listed some business support and economic stimulus initiatives. Would you like to tell me a little more about the most effective of these initiatives e.g. Community Chest grant, Local Preference Policy, Shop Local programme, development of a Regional Business Support Group, onboarding of specialist staff (Tourism Development Officer, Community Resilience Coordinator and Economic Business and Resilience Coordinator)?</b>
           <p>On 26 March 2020 Council adopted a suite of initiatives as elements of the ‘Strategic and Tactical Pandemic and Recession Response Framework’, including the ‘Community Support and Wellbeing Package’, the ‘Business and Community Support Compliance Response Package’ and the ‘Business Support and Initial Stimulus Package’. The Business and Community Support Compliance Response Package immediately addressed the following;<br>
-             Risk based compliance posture (tolerant of low risk), Focus on advisory support, Regulatory fee waivers.<br>
-            The Business Support and Initial Stimulus Package immediately established the following initiatives;<br>
-             Connection and well-being (including direct personal engagement, on-line communications and provision of information,  Economic stimulus (including acceleration of the ‘Shop Isaac’ buy local promotion, fee increase relief for operations such as the Clermont Saleyards, acceleration of capital projects),  Capacity building (including interim initiatives at Council facilities and acceleration of tourism initiatives).<br>
+            <ul>
+              <li>Risk based compliance posture (tolerant of low risk),</li>
+              <li>Focus on advisory support,</li>
+              <li>Regulatory fee waivers.</li>
+            </ul><br>
+            The Business Support and Initial Stimulus Package immediately established the following initiatives;<br><Br>
+            <ul>
+              <li>Connection and well-being (including direct personal engagement, on-line communications and provision of information,</li>
+              <li>Economic stimulus (including acceleration of the ‘Shop Isaac’ buy local promotion, fee increase relief for operations such as the Clermont Saleyards, acceleration of capital projects),</li>
+              <li>Capacity building (including interim initiatives at Council facilities and acceleration of tourism initiatives).</li>
+            </ul><br>
             Council also adopted its ‘Community Chest’ initiative on 26 March 2020, to provide a temporary fund for the alleviation and relief of hardship suffered by small to medium businesses. Contributions to the Community Chest Fund were sought from major corporates (including mining companies) to establish the funding pool. A Special Committee of Council was authorised to consider applications for grants of up to $10,000 and disburse the funds immediately. $**** has been distributed to *** companies to date.<br>
-            Further initiatives were added over time and were ultimately captured in Council’s ‘COVID-19 Strategic Recovery Plan’. As the final element of the ‘Strategic and Tactical Pandemic and Recession Response Framework’ this comprehensive document contained 50 separate strategies addressing the following;<br>
-             Business resilience  Council sustainability  Disaster recovery  Community resilience, and  Strategic advocacy.</p>
+            Further initiatives were added over time and were ultimately captured in Council’s ‘COVID-19 Strategic Recovery Plan’. As the final element of the ‘Strategic and Tactical Pandemic and Recession Response Framework’ this comprehensive document contained 50 separate strategies addressing the following;<br><Br>
+            <ul>
+              <li>Business resilience</li>
+              <li>Council sustainability</li>
+              <li>Disaster recovery</li>
+              <li>Community resilience, and</li>
+              <li>Strategic advocacy.</li>
+            </ul>
+          </p>
         </li>
         <li>
           <b>What were the best aspects of your organisation’s handling of the pandemic?</b>
@@ -533,17 +742,26 @@ Pandemic and Recession Response Framework’, including the ‘Community Support
           <b>What were the worst aspects of your organisation’s handling of the pandemic?</b>
           <p>Limited if any prior business continuity planning and testing, noting however that it was not likely to have addressed a pandemic scenario. Disaster Management Plan also included minimal pandemic planning.</p>
         </li>
-        <li>
-          <b></b>
-          <p></p>
-        </li>
       </ol>
+        <div class="imgRow4">
+          <img src="isaac/isaac4.jpg" alt="Helper distributing COVID information">
+          <img src="isaac/isaac5.jpg" alt="Team of workers in silly face masks">
+          <img src="isaac/isaac6.jpg" alt="Socially distanced gathering">
+        </div>
+      </div>
       
     </div>
 
     <div class="interview" id="moretonbay">
       <h2>Moreton Bay Regional Council</h2>
-      <ol>
+      <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+      <div class="interviewContent">
+        <div class="imgRow">
+          <img src="moreton_bay/mb1.jpg" alt="COVID signage at outdoor event">
+          <img src="moreton_bay/mb2.jpg" alt="Library delivering no-contact books">
+          <img src="moreton_bay/mb3.jpg" alt="Sanitising chairs at outdoor event">
+        </div>
+        <ol>
         <li>
           <b>Before the pandemic how well prepared do you think your community was for such an event?</b>
           <p>Broadly, community preparation for natural disasters is familiar, but not specific to pandemic.  We didn’t realise how much it would impact daily routines and access/movement.  It came as somewhat of a shock to community.  Some people adapted well and some pushed back.</p>
@@ -563,7 +781,7 @@ sub-plan.  BCP and Disaster Management (DM) were maintained as separate operati
         </li>
         <li>
           <b>In the survey you said you developed a suite of pandemic specific plans including COVID-19 safe business plans, procedures, work instructions, better communication plans, venue risk management plans (16 venues), Specific Business Continuity Plans including work from home plans and Procedures/Work Instructions. How did they eventually serve your needs?  What aspects were most useful?</b>
-          <p>‘EMBARC’ the home page for Council information was maintained specifically for COVID-19.  The People and Safety Team and the Enterprise Risk Management Team did much of the work.  Content was developed progressively and then reviewed for efficacy.  EMBARC was first published in about April 2020.  Council also produced its “COVID-19 triggers and response activity guidance” document which relates to Metro North Hospital and Health Services (HHS) three-tiered response framework in its published Pandemic Response Plan.  Queensland State Government’s Department of Health (DoH) being lead agency in Disaster Management framework which was in contrast with normal hierarchy for other disasters.<br>
+          <p>‘EMBARC’ the home page for Council information was maintained specifically for COVID-19.  The People and Safety Team and the Enterprise Risk Management Team did much of the work.  Content was developed progressively and then reviewed for efficacy.  EMBARC was first published in about April 2020.  Council also produced its “COVID-19 triggers and response activity guidance” document which relates to Metro North Hospital and Health Services (HHS) three-tiered response framework in its published Pandemic Response Plan.  Queensland State Government’s Department of Health (DoH) being lead agency in Disaster Management framework which was in contrast with normal hierarchy for other disasters.<br><Br>
             Some decisions made by DoH without apparent consideration for local impacts on councils and communities caused difficulty.  The community looked to Council, but it wasn’t privy to the decisions and didn’t have forewarning.  The HHS and the State Health Emergency Coordination Committee (SHECC) didn’t let Council know when tiers were triggered.  Council had to chase the intelligence.  HHS and SHECC were apparently under-resourced.  The Disaster Management Act hasn’t changed so these issues haven’t been able to be changed in Local Disaster Management Plans.  Concepts also apply to disasters which transcend geographic and functional jurisdictions.</p>
         </li>
         <li>
@@ -571,7 +789,7 @@ sub-plan.  BCP and Disaster Management (DM) were maintained as separate operati
           <p>See also Q 5.  Documents were endorsed by the BCMT whose Chair is the Director of Finance.</p>
         </li>
         <li>
-          <b>7.           What was your community’s reaction to COVID-19 at first?  How did this evolve?</b>
+          <b>What was your community’s reaction to COVID-19 at first?  How did this evolve?</b>
           <p>There was significant pushback in the community which manifested as abuse by customers (in business and Council interfaces). There was some shocking behaviour by a minority of the community.  The broader community reacted better and there was good cohesion in some representative groups (e.g. indigenous groups).</p>
         </li>
         <li>
@@ -639,15 +857,23 @@ sub-plan.  BCP and Disaster Management (DM) were maintained as separate operati
           <p>Interaction with State Government agencies and DoH, and the coordination of public messaging.</p>
         </li>
       </ol>
+        <div class="imgRow5">
+          <img src="moreton_bay/mb4.jpg" alt="Socially distanced presentation">
+          <img src="moreton_bay/mb5.jpg" alt="Memorial service held on driveway">
+          <img src="moreton_bay/mb6.jpg" alt="Man recieving vaccination">
+        </div>
+      </div>
       
     </div>
+
+    <br><Br><Br>
     
   </div>
 
   <!-- Footer bar -->
   <div class="footbar">
-    <a id="left" href="/Case_Studies/Our_Characteristics/ourCharacteristics.html"> <  BACK</a>
-    <a id="right" href="/Case_Studies/Our_Highlights/ourHighlights.html">NEXT  > </a>
+    <a id="left" href="/Case_Studies/Our_Highlights/ourHighlights.html"> <  BACK</a>
+    <a id="right" href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">NEXT  > </a>
   </div>
 
   
@@ -656,28 +882,4 @@ sub-plan.  BCP and Disaster Management (DM) were maintained as separate operati
 </html>
 <script src="/nav.js"></script>
 
-<style>
 
-  body {
-    overflow-y: auto;
-  }
-  
-  table.councilLogos {
-    text-align:center;
-    vertical-align: middle;
-    position: relative;
-    margin: 70px auto;
-  }
-  td {
-    padding: 20px;
-  }
-  .councilLogos img {
-    width: 170px;
-    height: auto;
-  }
-
-  .interview {
-    padding: 30px;
-  }
-  
-</style>

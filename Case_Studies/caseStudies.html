@@ -7,6 +7,47 @@
   <title>LGMA QLD Covid Handbook</title>
   <link href="/style.css" rel="stylesheet" type="text/css" />
   <script src="/script.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+  
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <style>
+  
+    h3 {
+      font-size: 18px;
+      margin: 0px;
+      padding: 0px;
+      
+    }
+    p {
+      margin: 5px 0px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 90%;
+      margin: auto;
+      margin-top: 50px;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    td:first-of-type {
+      text-align: center;
+    }
+  
+    .material-symbols-outlined {
+      color: #495273;
+      font-size: 40px;
+    }
+    
+  </style>
+  
 </head>
 
 <body>
@@ -20,25 +61,27 @@
       <a href="/Overview/overview.html">Overview</a>
     </button>
       <div class="dropdown">
-        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
         <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
         <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
-        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
       </div>
     <button class="dropdownBtn">
       <a href="/Case_Studies/caseStudies.html" id="active">Case Studies</a>
     </button>
       <div class="dropdown">
-        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
-        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
-        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
+        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
       </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
+
+    <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
     
   </div>
 
@@ -46,7 +89,51 @@
   <!-- Page Content -->
   <div id="pageContent">
     <h1>Case Studies</h1>
-    <p class="by-line"></p>
+    <p class="by-line">The following section closely studies the pandemic response of 6 case study councils, showcasing the different approaches taken by different regions.</p>
+
+    <table>
+      <tr>
+        <td><span class="material-symbols-outlined">travel_explore</span></td>
+        <td>
+          <h3>Our Introduction</h3>
+          <p>Council leaders give a short summary of their councils pandemic experience.</p>
+        </td>
+        <td><a href="Our_Introduction/ourIntroduction.html">Jump to Section</a></td>
+      </tr>
+      <tr>
+        <td><span class="material-symbols-outlined">group</span></td>
+        <td>
+          <h3>Our Characteristics</h3>
+          <p>Comparison of the demographic information and characteristics of each council</p>
+        </td>
+        <td><a href="Our_Characteristics/ourCharacteristics.html">Jump to Section</a></td>
+      </tr>
+      <tr>
+        <td><span class="material-symbols-outlined">hotel_class</span></td>
+        <td>
+          <h3>Our Highlights</h3>
+          <p>The best aspects of each councils response</p>
+        </td>
+        <td><a href="Our_Highlights/ourHighlights.html">Jump to Section</a></td>
+      </tr>
+      <tr>
+        <td><span class="material-symbols-outlined">history_edu</span></td>
+        <td>
+          <h3>Our Story</h3>
+          <p>Detailed interviews from council leaders, delving deeper into their pandemic response.</p>
+        </td>
+        <td><a href="Our_Story/ourStory.html">Jump to Section</a></td>
+      </tr>
+      <tr>
+        <td><span class="material-symbols-outlined">local_library</span></td>
+        <td>
+          <h3>Our Lessons Learnt</h3>
+          <p>Councils reflect on the key lessons they take away from the pandemic.</p>
+        </td>
+        <td><a href="Our_Lessons_Learnt/ourLessonsLearnt.html">Jump to Section</a></td>
+      </tr>
+    </table>
+    
   </div>
 
   <!-- Footer bar -->
@@ -58,4 +145,5 @@
 </body>
 
 </html>
+
 <script src="/nav.js"></script>

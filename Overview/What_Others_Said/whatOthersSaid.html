@@ -8,7 +8,50 @@
   <link href="/style.css" rel="stylesheet" type="text/css" />
   <script src="/script.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+
+  <style>
   
+    #IDs {
+      text-align: center;
+    }
+    #IDs a {
+      text-decoration: none;
+    }
+    .idCard {
+      height: auto;
+      width: 270px;
+      border-radius: 20px;
+      border: 3px solid gray;
+      padding: 10px;
+      margin: 15px;
+      margin-top: 0px;
+      display:inline-block;
+      transition: 1s;
+      text-align: left;
+  
+      color: var(--text-colour-dark);
+    }
+    .idCard:hover {
+      border-width: 6px;
+    }
+    .idCard p {
+      margin: 0px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .idInfo {
+      padding: 5px;
+    }
+    .idInfo i {
+      padding-top: 10px;
+      display: block;
+      text-align: center;
+    }
+    .idImg {
+      width: 100%;
+      border-radius: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,81 +62,81 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
     
     <button class="dropdownBtn">
-      <a href="/Overview/overview.html">Overview</a>
+      Overview
     </button>
       <div class="dropdown">
-        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
         <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
         <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-        <a href="/Overview/What_Others_Said/whatOthersSaid.html" id="active">What Others Said</a>
-        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html" id="active">Stakeholder Reflections</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
       </div>
     <button class="dropdownBtn">
-      <a href="/Case_Studies/caseStudies.html">Case Studies</a>
+      Council Case Studies
     </button>
       <div class="dropdown">
-        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
-        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
-        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
+        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
       </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
+
+    <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
     
   </div>
 
 
   <!-- Page Content -->
   <div id="pageContent">
-    <h1>What Others Said</h1>
+    <h1>Stakeholder Reflections</h1>
     <p class="by-line">We asked three key leaders working with the local government sector about their observations of
 the responses by Queensland councils to the pandemic. Click on their image to find out what they
 said.</p>
     <div id="IDs">
-      <a href="#" target="_blank">
+      <a href="natalie.pdf" target="_blank">
         <div class="idCard">
-        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/01/cute-hedgehogs-in-hats-5890a0f187f35__700.jpg" class="idImg" alt="Pirate hedgehog">
+        <img src="natalie.jpg" class="idImg" alt="Headshot of Natalie Wilde">
         <div class="idInfo">
           <p>
-            <b>Name: </b> High-Sea Herbert <br>
-            <b>Organisation: </b> Piracy<br>
-            <b>Position: </b> Captain<br>
-            <br>
-            <i style="text-align:center;">"Maybe some cool quote to attract ppl"</i>
+            <b>Name: </b> Natalie Wilde<br>
+            <b>Organisation: </b>  Department of State Development, Infrastructure, Local Government and Planning<br>
+            <b>Position: </b> Deputy Director-General<br>
+            <i style="text-align:center;">"Be adaptable and work with change."</i>
           </p>
         </div>
       </div>
       </a>
-      <a href="#" target="_blank">
+      <a href="alison.pdf" target="_blank">
         <div class="idCard">
-        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/01/cute-hedgehogs-in-hats-5890a0f187f35__700.jpg" class="idImg" alt="Pirate hedgehog">
+        <img src="alison.jpg" class="idImg" alt="Headshot of Alison Smith">
         <div class="idInfo">
           <p>
-            <b>Name: </b> High-Sea Herbert <br>
-            <b>Organisation: </b> Piracy<br>
-            <b>Position: </b> Captain<br>
-            <br>
-            <i style="text-align:center;">"Maybe some cool quote to attract ppl"</i>
+            <b>Name: </b> Alison Smith<br>
+            <b>Organisation: </b> Local Government Association of Queensland<br>
+            <b>Position: </b> Chief Executive Officer<br>
+            <i style="text-align:center;">"There should be early engagement with, and updates from, the CHO and State Government.  "</i>
           </p>
         </div>
       </div>
       </a>
-      <a href="#" target="_blank">
+      <a href="peta.pdf" target="_blank">
         <div class="idCard">
-        <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/01/cute-hedgehogs-in-hats-5890a0f187f35__700.jpg" class="idImg" alt="Pirate hedgehog">
+        <img src="peta.jpg" class="idImg" alt="Headshot of Peta Irvine">
         <div class="idInfo">
           <p>
-            <b>Name: </b> High-Sea Herbert <br>
-            <b>Organisation: </b> Piracy<br>
-            <b>Position: </b> Captain<br>
-            <br>
-            <i style="text-align:center;">"Maybe some cool quote to attract ppl"</i>
+            <b>Name: </b> Peta Irvine<br>
+            <b>Organisation: </b> Local Government Managers Australia<br>
+            <b>Position: </b> Chief Executive Officer<br>
+            <i style="text-align:center;padding-left:5px;padding-right:5px;">"Need to take a breath at start rather than being too reactive and urgent."</i>
           </p>
         </div>
       </div>
       </a>
+      
     </div>
     
   </div>
@@ -110,44 +153,4 @@ said.</p>
 </html>
 <script src="/nav.js"></script>
 
-<style>
 
-  #IDs {
-    text-align: center;
-  }
-  #IDs a {
-    text-decoration: none;
-  }
-  .idCard {
-    height: 400px;
-    width: 240px;
-    border-radius: 20px;
-    border: 3px solid gray;
-    padding: 10px;
-    margin: 15px;
-    display:inline-block;
-    transition: 1s;
-    text-align: left;
-
-    color: var(--text-colour-dark);
-  }
-  .idCard:hover {
-    border-width: 6px;
-  }
-  .idCard p {
-    margin: 0px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .idInfo {
-    padding: 5px;
-  }
-  .idInfo i {
-    display: block;
-    text-align: center;
-  }
-  .idImg {
-    width: 100%;
-    border-radius: 20px;
-  }
-</style>

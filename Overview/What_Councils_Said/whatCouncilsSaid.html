@@ -15,6 +15,197 @@
   <!-- Load plotly.js into the DOM -->
   <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
 
+  <style>
+    body {
+      overflow-y: auto;
+    }
+  
+    #space {
+      height: 100%;
+    }
+  
+    h2 {
+      background-color: #3A415A;
+      color: #f7ae4f;
+      padding: 15px;
+      margin: 0px;
+    }
+  
+    .hexGraphic {
+      height: 500px;
+      width: 400px;
+      margin: auto;
+      margin-top: 70px;
+      opacity: 0;
+    }
+  
+    .hex:before {
+      content: " ";
+      width: 0;
+      height: 0;
+      border-bottom: 30px solid #495273;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+      position: absolute;
+      top: -30px;
+      left: 0px;
+    }
+  
+    .hex {
+      margin: 5px;
+      margin-top: 30px;
+      display: inline-block;
+      width: 104px;
+      height: 60px;
+      background-color: #495273;
+      position: relative;
+      text-align: center;
+      line-height: 60px;
+      text-decoration: none;
+      color: white;
+      z-index: 3;
+    }
+  
+    .hex:after {
+      content: "";
+      width: 0;
+      position: absolute;
+      bottom: -30px;
+      border-top: 30px solid #495273;
+      border-left: 52px solid transparent;
+      border-right: 52px solid transparent;
+      left: 0px;
+    }
+  
+    .hex:hover {
+      color: #f7ae4f;
+      background-color: #3A415A;
+    }
+  
+    .hex:hover:before {
+      border-bottom: 30px solid #3A415A;
+    }
+  
+    .hex:hover:after {
+      border-top: 30px solid #3A415A;
+    }
+  
+  
+    
+  
+  
+    #council.hex:before {
+      top: -40px;
+      border-bottom: 40px solid #3A415A;
+      border-left: 62px solid transparent;
+      border-right: 62px solid transparent;
+    }
+  
+    #council.hex:after {
+      bottom: -40px;
+      border-top: 40px solid #3A415A;
+      border-left: 62px solid transparent;
+      border-right: 62px solid transparent;
+    }
+  
+    #council.hex {
+      margin-top: 40px;
+      line-height: 70px;
+      height: 70px;
+      width: 124px;
+      background-color: #3A415A;
+      color: #f7ae4f;
+      z-index: 10;
+    }
+  
+    #council.hex:hover:before {
+      border-bottom: 40px solid #495273;
+    }
+  
+    #council.hex:hover:after {
+      border-top: 40px solid #495273;
+    }
+    #council.hex:hover {
+      background-color: #495273;
+      color: white;
+    }
+  
+    #advocacy.hex, #services.hex {
+      margin-left: 69px;
+      margin-right: 15px;
+      margin-top: 37px;
+    }
+  
+    .section {
+      width: 98%;
+    }
+    button.arrow {
+      position: relative;
+      float: right;
+      margin: 10px;
+      display: inline-block;
+      background-color: white;
+      color: #333;
+      border: none;
+    }
+  
+    .headerTab {
+      background-color: #495273;
+      width: 100%;
+      margin: 0px;
+    }
+  
+    .headerTab h3 {
+      width: 50%;
+      margin: 0px;
+      padding: 15px;
+      padding-left: 30px;
+      display: inline-block;
+      color: white;
+    }
+  
+    .headerTab .contentTab {
+      background-color: #eee;
+      padding: 0px;
+      height: 0px;
+      opacity: 0;
+      overflow: hidden;
+      transition: .5s;
+    }
+  
+  
+    .columns2 {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 40% 60%;
+      grid-template-rows: 1fr;
+      gap: 5px 5px;
+      grid-template-areas:
+        "lcol rcol";
+    }
+  
+    .lcol {
+      padding: 30px;
+    }
+  
+    .rcol {
+      text-align: center;
+    }
+  
+    .fade {
+      opacity: .2;
+      transition: opacity 1s;
+    }
+  
+    li {
+      padding:5px;
+    }
+    li::marker {
+      color: #f7ae4f;
+    }
+    
+  </style>
+
 </head>
 
 <body>
@@ -25,36 +216,38 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
 
     <button class="dropdownBtn">
-      <a href="/Overview/overview.html">Overview</a>
+      Overview
     </button>
     <div class="dropdown">
-      <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+      <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
       <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
       <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-      <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
-      <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html" id="active">What Councils Said</a>
+      <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
+      <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html" id="active">What Councils Reported</a>
     </div>
     <button class="dropdownBtn">
-      <a href="Case_Studies/caseStudies.html">Case Studies</a>
+      <a href="Case_Studies/caseStudies.html">Council Case Studies</a>
     </button>
     <div class="dropdown">
-      <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
-      <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
-      <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
-      <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+      <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+      <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
+      <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+      <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
       <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
     </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
 
+    <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
+    
   </div>
 
 
   <!-- Page Content -->
   <div id="pageContent">
     <a id="returnTop" href="#">Return to Top</a>
-    <h1>What Councils Said</h1>
+    <h1>What Councils Reported</h1>
     <p class="by-line">We surveyed local governments across Queensland and received detailed responses from 21 councils.
       Find out who they were by clicking on the ‘Councils’ icon and what they said collectively by clicking on any of
       the thematic icons representing the various aspects of their experiences.</p>
@@ -85,32 +278,49 @@
 
     <div class="section" id="councilList">
       <H2>Councils</H2>
-      <ul>
-        <li><a href="https://www.balonne.qld.gov.au/" target="_blank">Balonne Shire Council</a></li>
-        <li><a href="https://www.boulia.qld.gov.au/" target="_blank">Boulia Shire Council</a></li>
-        <li><a href="https://www.burke.qld.gov.au/" target="_blank">Burke Shire Council</a></li>
-        <li><a href="https://www.cairns.qld.gov.au/" target="_blank">Cairns Regional Council</a></li>
-        <li><a href="https://www.carpentaria.qld.gov.au/" target="_blank">Carpentaria Shire Council</a></li>
-        <li><a href="https://www.charterstowers.qld.gov.au/" target="_blank">Charters Towers Regional Council</a></li>
-        <li><a href="https://cherbourg.qld.gov.au/" target="_blank">Cherbourg Aboriginal Shire Council</a></li>
-        <li><a href="https://www.cook.qld.gov.au/" target="_blank">Cook Shire Council</a></li>
-        <li><a href="https://www.etheridge.qld.gov.au/" target="_blank">Etheridge Shire Council</a></li>
-        <li><a href="https://www.frasercoast.qld.gov.au/" target="_blank">Fraser Coast Regional Council</a></li>
-        <li><a href="https://www.grc.qld.gov.au/" target="_blank">Goondiwindi Regional Council</a></li>
-        <li><a href="https://www.hinchinbrook.qld.gov.au/" target="_blank">Hinchinbrook Shire Council</a></li>
-        <li><a href="https://www.isaac.qld.gov.au/" target="_blank">Isaac Regional Council</a></li>
-        <li><a href="https://www.longreach.qld.gov.au/" target="_blank">Longreach Regional Council</a></li>
-        <li><a href="https://msc.qld.gov.au/" target="_blank">Mareeba Shire Council</a></li>
-        <li><a href="https://www.moretonbay.qld.gov.au/Home" target="_blank">Moreton Bay Regional Council</a></li>
-        <li><a href="https://www.mountisa.qld.gov.au/" target="_blank">Mount Isa City Council</a></li>
-        <li><a href="https://www.rockhamptonregion.qld.gov.au/Home" target="_blank">Rockhampton Regional Council</a>
-        </li>
-        <li><a href="https://www.scenicrim.qld.gov.au/" target="_blank">Scenic Rim Regional Council</a></li>
-        <li><a href="https://www.southburnett.qld.gov.au/" target="_blank">South Burnett Regional Council</a></li>
-        <li><a href="https://www.sunshinecoast.qld.gov.au/" target="_blank">Sunshine Coast Council</a></li>
-        <li><a href="https://www.weipatownauthority.com.au/" target="_blank">Weipa Town Authority</a></li>
-        <li><a href="https://www.wdrc.qld.gov.au/" target="_blank">Western Downs Regional Council</a></li>
-      </ul>
+      <div style="background-color: #eee; padding: 15px;">
+        <p style="margin-bottom:0px;">The following councils participated in the survey:</p>
+        <table style="width:90%;margin:auto;">
+          <tr style="vertical-align:top;">
+            <td>
+              <ul>
+                <li><a href="https://www.balonne.qld.gov.au/" target="_blank">Balonne Shire Council</a></li>
+                <li><a href="https://www.boulia.qld.gov.au/" target="_blank">Boulia Shire Council</a></li>
+                <li><a href="https://www.burke.qld.gov.au/" target="_blank">Burke Shire Council</a></li>
+                <li><a href="https://www.cairns.qld.gov.au/" target="_blank">Cairns Regional Council</a></li>
+                <li><a href="https://www.carpentaria.qld.gov.au/" target="_blank">Carpentaria Shire Council</a></li>
+                <li><a href="https://www.charterstowers.qld.gov.au/" target="_blank">Charters Towers Regional Council</a></li>
+                <li><a href="https://cherbourg.qld.gov.au/" target="_blank">Cherbourg Aboriginal Shire Council</a></li>
+                <li><a href="https://www.ipswich.qld.gov.au/" target="_blank">City of Ipswich</a></li>
+                <li><a href="https://www.cook.qld.gov.au/" target="_blank">Cook Shire Council</a></li>
+                <li><a href="https://www.etheridge.qld.gov.au/" target="_blank">Etheridge Shire Council</a></li>
+                <li><a href="https://www.frasercoast.qld.gov.au/" target="_blank">Fraser Coast Regional Council</a></li>
+                <li><a href="https://www.gladstone.qld.gov.au/" target="_blank">Gladstone Regional Council</a></li>
+                <li><a href="https://www.grc.qld.gov.au/" target="_blank">Goondiwindi Regional Council</a></li>
+                
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://www.hinchinbrook.qld.gov.au/" target="_blank">Hinchinbrook Shire Council</a></li>
+                <li><a href="https://www.isaac.qld.gov.au/" target="_blank">Isaac Regional Council</a></li>
+                <li><a href="https://www.longreach.qld.gov.au/" target="_blank">Longreach Regional Council</a></li>
+                <li><a href="https://www.mackay.qld.gov.au/" target="_blank">Mackay Regional Council</a></li>
+                <li><a href="https://msc.qld.gov.au/" target="_blank">Mareeba Shire Council</a></li>
+                <li><a href="https://www.moretonbay.qld.gov.au/Home" target="_blank">Moreton Bay Regional Council</a></li>
+                <li><a href="https://www.mountisa.qld.gov.au/" target="_blank">Mount Isa City Council</a></li>
+                <li><a href="https://www.rockhamptonregion.qld.gov.au/Home" target="_blank">Rockhampton Regional Council</a>
+                </li>
+                <li><a href="https://www.scenicrim.qld.gov.au/" target="_blank">Scenic Rim Regional Council</a></li>
+                <li><a href="https://www.southburnett.qld.gov.au/" target="_blank">South Burnett Regional Council</a></li>
+                <li><a href="https://www.sunshinecoast.qld.gov.au/" target="_blank">Sunshine Coast Council</a></li>
+                <li><a href="https://www.weipatownauthority.com.au/" target="_blank">Weipa Town Authority</a></li>
+                <li><a href="https://www.wdrc.qld.gov.au/" target="_blank">Western Downs Regional Council</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <div class="section" id="plansSection">
@@ -121,19 +331,25 @@
           <h3>Existing Plans</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What Relevant plans/strategies were in place prior to the pandemic?</h4>
-            <div id="q4word">
-              <p id="p1">Disaster Management Plans</p>
-              <p id="p2">Business Continuity Plans</p>
-              <p id="p3">Risk Management Plan</p>
-              <p id="p4">Emergency Management Plans</p>
-              <p id="p5">Pandemic Plans</p>
-              <p id="p6">Aged Care Standards</p>
-              <p id="p7">Workplace Health and Safety Plans</p>
+
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>Although councils had not faced a pandemic before, many had relevant plans already existing that could be referenced. For many councils - and particularly those prone to natural disasters - this came in the form of <b>disaster management plans</b>, as well as <b>business continuity plans</b>.</p>
+                <p></p>
+                <p style="text-align:center;"><i><b style="font-size:20px;">'' </b>Pandemic was a word in our disaster Management Plan that had no meaning except for the fact that it was there<b> ,,</b></i></p>
+              </div>
+              <div class="rcol">
+                <div id="q4"></div>
+              </div>
+            </div><Br><br>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p><br><br>When trying to fit the existing plans to the circumstances, councils saw varying success. For some, they served as a reference point when creating new plans, while others found they needed to start over again to fit unique pandemic conditions.</p>
+              </div>
+              <div class="rcol">
+                <div id="q6"></div>
+              </div>
             </div>
-            <div id="q4"></div>
-            <h4>To what extent were they suited to the circumstances?</h4>
-            <div id="q6"></div>
           </div>
         </div>
 
@@ -143,9 +359,31 @@
           <h3>New Plans</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What plans/strategies were developed specifically for the pandemic response during the pandemic
-              experience?</h4>
-            <h4>To what extent were they suited to the circumstances?</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <br>
+                <p>Many new plans were created or updated during the pandemic experience to adjust to the unique circumstances, the most common of these being adjusted <b>business continuity plans</b>. Councils also developed specific <b>pandemic management plans</b>, and made amendments to <b>leave policies</b> and <b>risk assesments</b> to account for COVID in the workplace.</p>
+                <p>These plans were innacted a various stages throughout the pandemic, dependent on the circumstances of the time, as well as how severely the community was effected.</p>
+              </div>
+              <div class="rcol">
+                <div id="q8"></div>
+              </div>
+            </div>
+            <br>
+            <div class="columns2 fade">
+              <div class="lcol" style='padding-top:10px;'>
+                <p>The plans were rated by councils to be much more fit for purpose than the previous plans, with <b>50%</b> of responses saying they fit the circumstances "a great deal".</p>
+                <p>Despite this, <b>90%</b> of councils reported making changes to these plans as the pandemic progressed, adapting to new circumstances. Reported reasons for this included;</p>
+                <ul>
+                  <li>Changing health advice from the state and federal governments</li>
+                  <li>Reduction in severity in community</li>
+                  <li>Inclusion of new policies as they were developed</li>
+                </ul>
+              </div>
+              <div class="rcol">
+                <div id="q13"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -164,8 +402,7 @@
             <div class="columns2 fade">
               <div class="lcol">
                 <br>
-                All the surveyed organisations reported that the pandemic had some financial impact, with most reporting
-                <B>moderate</B> impacts.<br>
+                All the surveyed organisations reported that the pandemic had some financial impact, with most reporting <B>moderate</B> impacts.<br>
                 Reported reasons for this impact include;
                 <ul class="fadeList">
                   <li>Costs associated with waiving fees and charges</li>
@@ -178,18 +415,16 @@
                 <div id="q15"></div>
               </div>
             </div>
-            <br>
-            <br>
+            <br><br>
             <div class="columns2 fade">
               <div class="lcol">
-                <br><br>
                 <p>To try and mitigate these impacts, councils had to introduce precautionary measures and make
                   adjustments. Of these, <b>budget adjustments</b> and <b>reviews</b> were most common, alongside
                   increased <b>financial planning</b> and <b>consultation</b>.</p>
                 <p>These new measures saw mixed success, with most councils only reporting <b>moderate success</b> in
                   their implimentation.</p>
-                <p style="text-align:center;"><i>"Like most councils we reduced the amount of expenditure on the nice to
-                    have items and focused mainly on the essentials."</i></p>
+                <p style="text-align:center;"><i><b style="font-size:20px;">'' </b>Like most councils we reduced the amount of expenditure on the nice to
+                    have items and focused mainly on the essentials.<b> ,,</b></i></p>
               </div>
               <div class="rcol">
                 <div id="q17"></div>
@@ -210,12 +445,9 @@
           <h3>Working from Home</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>Did you apply a working from home regime?</h4>
-            <h4>What were the positive and negative implications of the regime?</h4>
             <div class="columns2 fade">
               <div class="lcol">
-                <p>Over <b>90%</b> of the councils surveyed applied a working from home regime during the pandemic. This
-                  came with positives and negatives, including;</p>
+                <p>Over <b>90%</b> of the councils surveyed applied a working from home regime during the pandemic. This came with positives and negatives, including;</p>
                 <ul style="color:green;">
                   <li>Operations could continue and staff remained employed</li>
                   <li>Improved technology skills</li>
@@ -234,7 +466,7 @@
                 </ul>
               </div>
               <div class="rcol">
-                <div id="q18" style="padding-left:50px;"></div>
+                <div id="q18" style="padding-left:50px;padding-top:30px;"></div>
               </div>
             </div>
           </div>
@@ -259,6 +491,7 @@
                 <div id="q23"></div>
               </div>
             </div>
+            <br>
             <div class="columns2 fade">
               <div class="lcol">
                 <p>These measures were generally considered to be <b>very successful</b>, being rated as such by
@@ -295,7 +528,7 @@
                 </ul>
               </div>
               <div class="rcol">
-                <div id="q26"></div>
+                <div id="q26" style="padding-top: 30px;"></div>
               </div>
             </div>
           </div>
@@ -328,12 +561,47 @@
           <h3>Programmes and Services</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>To what extent were your services affected by the pandemic</h4>
-            <h4>Which services were impacted most?</h4>
-            <h4>To what extent were they successful?</h4>
-            <h4>To what extent were your regulation and enforcement functions affected by the pandemic?</h4>
-            <h4>What measures did you put in place to mitigate these impacts?</h4>
-            <h4>To what extent were they successful?</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>Many of the services provided by councils were affected by the pandemic, largely due to the restrictions enforced by the health directives. Services that relied on face-to-face contact were most affected, although this was somewhat countered if the service had the ability to go online.</p>
+                <p>Despite the limitations, responses were quite varied when rating degree of impact that the pandemic had on services, reflecting the differing experiences that councils had. <b>43%</b> of councils said the pandemic only had "a little" impact on their service delivery, while <b>24%</b> said it affected them "a great deal". Only one council reported having no impact.</p>
+              </div>
+              <div class="rcol">
+                <div id="q33"></div>
+              </div>
+            </div>
+            <br>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>In order to try mitigate the affects of the pandemic on council services, a number of measures were put in place, including;
+                  <ul>
+                    <li>Moving events community groups/events online or outdoors</li>
+                    <li>Using protective shields for customer facing positions</li>
+                    <li>Adjusting services to be contactless where possible</li>
+                  </ul>
+                These measures were generally seen to be <b>moderately successful</b> in preventing or reducing the impact of the pandemic on council services.
+                </p>
+              </div>
+              <div class="rcol">
+                <div id="q35"></div>
+              </div>
+            </div>
+            <br>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>The pandemic also had an affect on the enforcement and regulation functions of councils, although this effect was generally lesser. Affected functions included;
+                <ul>
+                  <li>Inspections, such as health and home inspections</li>
+                  <li>Local law enforcement, dealing particularly with an increased service volume</li>
+                  <li>Animal management</li>
+                </ul>
+                Despite these challenges, the surveyed councils all rated their responses to well, saying on average that they had <b>a lot</b> of success in mitigating these impacts.
+                </p>
+              </div>
+              <div class="rcol">
+                <div id="q36"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -348,10 +616,28 @@
           <h3>Community Support</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What did you put in place to support the community financially (eg grants, fee waiver etc)?</h4>
-            <h4>To what extent were these successful?</h4>
-            <h4>What other initiatives did you put in place to support the community (eg events)?</h4>
-            <h4>To what extent were these successful?</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>To support the community <B>financially</B>, councils put in place several financial relief initiatives. The most common of these involved freezes or extentions to rates, as well as additional funding for community grants.</p>
+                <p>The success of these initiatives was considered to be very high, with <b>40%</b> of respondents saying they had "a great deal" of success. A further <b>30%</b> claimed they had "a lot" of success, with the remaining claiming a "moderate amount" of success. None of the surveyed councils claimed these initiatives had little or no success.</p>
+              </div>
+              <div class="rcol">
+                <div id="q40"></div>
+              </div>
+            </div>
+            <br>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>Other, non-financial methods were also put in place by councils to support the community. This primarily came in the form of <b>events</b>- modified to run according to COVID health guidelines- that helped to boost the mental wellbeing of the community. Other initiatives included;
+                <ul>
+                  <li>Education and training programmes</li>
+                  <li>Campaigns to encourage kindness in the community</li>
+                  <li>Provided tools and assisted with communication and coordination</li>
+                  <li>Increased cleaning/sanitation of public ammenities</li>
+                </ul></p>
+              </div>
+              <div class="rcol"><div id="q42"></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -360,11 +646,15 @@
           <h3>Business Community Support</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What did you put in palce to support the business community financially (eg grants, fee waiver etc)?
-            </h4>
-            <h4>To what extent were they successful?</h4>
-            <h4>What other initiatives did you put in place to support the business community (eg events)?</h4>
-            <h4>To what extent were these successful?</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>The COVID-19 pandemic hit businesses particularly hard, especially in a financial sense. To support their local businesses through this challenging time, councils put in place a number of measures, like <b>waiving</b> or <b>reducing</b> fees and encouraging <b>local spending</b>, helping to reduce the financial burden faced. These measures were seen to be quite successful, with nearly half of respondent councils saying they had <b>"a lot"</b> of sucesses, and a similar percentage claiming <b>"moderate"</b> success.</p>
+                <p>Outside of the financial support, other methods were used to help in other ways. These included hosting <b>events</b> that allowed businesses to showcase their skills, and creating <b>support networks</b> so businesses could continue to help eachother. The success of these measures was also quite high, with <b>55%</b> of councils reporting <b>a lot</b> of success.</p>
+              </div>
+              <div class="rcol">
+                <div id="q44"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -373,8 +663,21 @@
           <h3>Economy</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What broader economic stimuls initiatives did you put in place?</h4>
-            <h4>To what extent were these successful?</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>In addition to the financial and business support initiatives, some councils employed other methods to stimulate the broader economy. These included;
+                <ul>
+                  <li>Onboarding additional specialised staff to oversee the COVID recovery efforts</li>
+                  <li>Focusing on local spending</li>
+                  <li>Undertaking more projects</li>
+                  <li>Taking greater risks</li>
+                  <li>Establishing relief funds</li>
+                </ul></p>
+              </div>
+              <div class="rcol">
+                <p style="text-align:center;margin:90px;background:rgba(255,255,255,0.3);padding:30px;"><i><b style="font-size:20px;">'' </b>Council recognised the importance of its own local spend in the economy and sought to continue to maintain operational and capital spending in spite of the impacts of COVID on its own budget<b> ,,</b></i></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -391,6 +694,7 @@
           <div class="contentTab">
             <div class="columns2 fade">
               <div class="lcol">
+                <Br><BR>
                 <p>In keeping community members informed, councils took many different approaches. A popular method
                   involved using <b>social media</b> channels such as facebook to post information to their relevant
                   audience. Council <b>websites</b> were used in a similar way, acting as an online hub for information.
@@ -403,6 +707,7 @@
                 <div id="q50"></div>
               </div>
             </div>
+            <br>
             <div class="columns2 fade">
               <div class="lcol">
                 <p>These initiatives were seen to have a largely positive effect, with the vast majority of councils
@@ -420,8 +725,16 @@
           <h3>Organisation</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What communication initiatives did you put in place to keep Councillors and employees informed?</h4>
-            <h4>To what extent were these successful?</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <br><Br>
+                <p>To keep councillors and employees informed, many communication initiatives were put in place. The most popular of these were <b>meetings</b> and <b>updates</b>, with an emphasis placed on their <b>regular</b> nature. These, and other initiatives, were generally rated to be highly successful.</p>
+                <img src="q52WC.JPG" style="width:100%;" alt="Wordcloud">
+              </div>
+              <div class="rcol">
+                <div id="q53"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -430,9 +743,29 @@
           <h3>Governments</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <h4>What level and format of engagement did you have with governments (Commonwealth and State)?</h4>
-            <h4>To what extent was your advocacy effective?</h4>
-            <h4>To what extent was information from governments effective</h4>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>Engagement with Commonwealth and State goverments by councils was mixed, with different councils having differing levels and formats of interaction. Overall engagement was generally higher than pre-pandemic levels to account for the additional information that needed to be communicated. Trends included;</p>
+                <ul>
+                  <li>Engagement through LDMG</li>
+                  <li>Meetings with CFO / Premier for health updates</li>
+                  <li>Advocacy to obtain additional grants / support when neccessary.</li>
+                </ul>
+                <p>Councils typically rated the efficacy of their advocacy to be relatively high, with most saying it had "a lot" of effect.</p>
+              </div>
+              <div class="rcol">
+                <div id="q57"></div>
+              </div>
+            </div>
+            <div class="columns2 fade">
+              <div class="lcol">
+                <p>The ability of councils to advocate effectively was potentially impacted by the limits of the information provided by governments, which were often relyed on. When asked to rate the effectiveness of the governments information services, responses were mixed, with the majority falling in the <b>"somewhat useful"</b> category.</p>
+                <i style="display:block;text-align:center;">"...higher levels of government were constrained in sharing of information in timely manner due to leadership holding information ‘close-hold’ until public announcements were made"</i>
+              </div>
+              <div class="rcol">
+                <div id="q58"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -459,247 +792,112 @@
 </html>
 <script src="/nav.js"></script>
 
+
 <style>
-  body {
-    overflow-y: auto;
-  }
+  
+  /* Intro animations for prettiness */
 
-  #space {
-    height: 100%;
+  .hex#plans {
+    transform: translate(-60px, 110px);
+    animation: slideOutP ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+  } 
+  @keyframes slideOutP {
+    0% {
+        transform: translate(-60px, 110px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
   }
-
-  h2 {
-    background-color: darkblue;
-    color: white;
-    padding: 15px;
-    margin: 0px;
+  
+  .hex#money {
+    transform: translate(-130px, 0px);
+    animation: slideOutM ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+  } 
+  @keyframes slideOutM {
+    0% {
+        transform: translate(-130px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
+  }
+  
+  .hex#staff {
+    transform: translate(-60px, -100px);
+    animation: slideOutSta ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+  } 
+  @keyframes slideOutSta {
+    0% {
+        transform: translate(-60px, -100px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
+  }
+  
+  .hex#services {
+    transform: translate(60px, -100px);
+    animation: slideOutSer ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.8s;
+  } 
+  @keyframes slideOutSer {
+    0% {
+        transform: translate(60px, -100px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
+  }
+  
+  .hex#support {
+    transform: translate(130px, 0px);
+    animation: slideOutSup ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  } 
+  @keyframes slideOutSup {
+    0% {
+        transform: translate(130px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
+  }
+  
+  .hex#advocacy {
+    transform: translate(60px, 110px);
+    animation: slideOutA ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1.2s;
+  } 
+  @keyframes slideOutA {
+    0% {
+        transform: translate(60px, 110px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+     }
   }
 
   .hexGraphic {
-    height: 600px;
-    width: 400px;
-    margin: auto;
-  }
-
-  .hex:before {
-    content: " ";
-    width: 0;
-    height: 0;
-    border-bottom: 30px solid gray;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-    position: absolute;
-    top: -30px;
-    left: 0px;
-  }
-
-  .hex {
-    margin: 5px;
-    margin-top: 30px;
-    display: inline-block;
-    width: 104px;
-    height: 60px;
-    background-color: gray;
-    position: relative;
-    text-align: center;
-    line-height: 60px;
-    text-decoration: none;
-  }
-
-  .hex:after {
-    content: "";
-    width: 0;
-    position: absolute;
-    bottom: -30px;
-    border-top: 30px solid gray;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-    left: 0px;
-  }
-
-  .hex:hover {
-    color: white;
-    background-color: blue;
-  }
-
-  .hex:hover:before {
-    border-bottom: 30px solid blue;
-  }
-
-  .hex:hover:after {
-    border-top: 30px solid blue;
-  }
-
-
-  #council.hex:before {
-    top: -40px;
-    border-bottom: 40px solid gray;
-    border-left: 62px solid transparent;
-    border-right: 62px solid transparent;
-  }
-
-  #council.hex:after {
-    bottom: -40px;
-    border-top: 40px solid gray;
-    border-left: 62px solid transparent;
-    border-right: 62px solid transparent;
-  }
-
-  #council.hex {
-    margin-top: 40px;
-    line-height: 70px;
-    height: 70px;
-    width: 124px;
-  }
-
-  #council.hex:hover:before {
-    border-bottom: 40px solid blue;
-  }
-
-  #council.hex:hover:after {
-    border-top: 40px solid blue;
-  }
-
-  #advocacy.hex,
-  #services.hex {
-    margin-left: 69px;
-    margin-right: 15px;
-    margin-top: 37px;
-  }
-
-  button.arrow {
-    position: relative;
-    float: right;
-    margin: 10px;
-    display: inline-block;
-  }
-
-  .headerTab {
-    background-color: gray;
-    width: 100%;
-    margin: 0px;
-  }
-
-  .headerTab h3 {
-    width: 50%;
-    margin: 0px;
-    padding: 15px;
-    display: inline-block;
-  }
-
-  .headerTab .contentTab {
-    background-color: white;
-    padding: 0px;
-    height: 0px;
-    opacity: 0;
-    overflow: hidden;
-    transition: .5s;
-  }
-
-
-  /* Styling for specific questions */
-  #q4word {
-    margin: 20px;
-    text-align: right;
-    width: 100%;
-    height: 250px;
-    border: 2px solid gray;
-  }
-
-  #q4word p {
-    margin: 2px;
-    display: block;
-    transform-origin: 100% 50%;
-    transform: scaleX(0.7);
-    transition: 0.8s;
-  }
-
-  #q4word p:hover {
-    color: gray;
-  }
-
-  #q4word #p1 {
-    font-size: 50px;
-  }
-
-  #q4word #p1:hover {
-    font-size: 56px;
-  }
-
-  #q4word #p2 {
-    font-size: 40px;
-  }
-
-  #q4word #p2:hover {
-    font-size: 47px;
-  }
-
-  #q4word #p3 {
-    font-size: 25px;
-  }
-
-  #q4word #p3:hover {
-    font-size: 28px;
-  }
-
-  #q4word #p4 {
-    font-size: 18px;
-  }
-
-  #q4word #p4:hover {
-    font-size: 20px;
-  }
-
-  #q4word #p5 {
-    font-size: 15px;
-  }
-
-  #q4word #p5:hover {
-    font-size: 17px;
-  }
-
-  #q4word #p6 {
-    font-size: 12px;
-  }
-
-  #q4word #p6:hover {
-    font-size: 14px;
-  }
-
-  #q4word #p7 {
-    font-size: 12px;
-  }
-
-  #q4word #p7:hover {
-    font-size: 14px;
-  }
-
-  .columns2 {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 1fr;
-    gap: 5px 5px;
-    grid-template-areas:
-      "lcol rcol";
-  }
-
-  .lcol {
-    padding: 30px;
-  }
-
-  .rcol {
-    text-align: center;
-  }
-
-  .fade {
-    opacity: .2;
-    transition: opacity 1s;
-  }
-
-  .fadeList li {
     opacity: 1;
+    transition: 0.5s;
   }
+  
 </style>
 
 
@@ -758,48 +956,49 @@
 
 
   // Question 4
-  /*  var traceq4 = {
+  var traceq4 = {
     x: [1, 1, 2, 3, 5, 13, 19],
-    y: [1, 10, 20, 30, 40, 50, 60],
-    width: [1, 1, 2, 3, 5, 13, 19],
+    y: ['Workplace Health and Safety Plans ','Aged Care Standards ', 'Pandemic Plan ', 'Emergency Management Plans ', 'Risk Management Plan', 'Business Continuity Plans ', 'Disaster Management Plan '],
     type: 'bar',
     orientation: 'h',
-    text: ['Workplace Health and Safety Plans','Aged Care Standards', 'Pandemic Plan', 'Emergency Management Plans', 'Risk Management Plan', 'Business Continuity Plans', 'Disaster Management Plan'],
-    textfont: {
-      size: 40,
-    },
-    textposition: 'inside'
+    marker: {
+        color: 'rgb(247, 174, 79)'
+    }
   };
   
   var q4 = [traceq4];
   
   var layout = {
-    font:{
-      family: 'Raleway, sans-serif'
-    },
+    title: "What Relevant plans/strategies were in place prior to the pandemic?",
+    autosize: true,
+    width: 620,
+    height: 350,
     showlegend: false,
-    xaxis: {
-      tickangle: -45
-    },
     yaxis: {
-      zeroline: false,
-      gridwidth: 2
-    },
-    bargap :0.05
+      tickmode: 'array',
+      automargin: true
+    }
   };
   
-  Plotly.newPlot('q4', q4, layout); */
+  Plotly.newPlot('q4', q4, layout); 
 
   // Question 6
   var q6 = [
     {
       x: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
       y: [2, 4, 7, 7, 3],
-      type: 'bar'
+      type: 'bar',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ];
 
   var q6layout = {
+    title: 'Extent that existing plans were suited to circumstances',
+    autosize: true,
+    width: 620,
+    height: 350,
     showlegend: false,
     annotations: [
       {
@@ -829,40 +1028,110 @@
 
   Plotly.newPlot('q6', q6, q6layout);
 
+  var q8 = [
+    {
+      y: ['COVID Workplace Protocol ', 'COVID-19 Vaccination Policy ', 'COVID Recovery Plan ', 'Covid Management Plan ', 'Risk Assesment ', 'Communication Plans ', 'Disaster Management Plan ', 'Leave Management Plan ', 'Pandemic Plan ', 'Business Continuity Plan '],
+      x: [2, 2, 2, 2, 3, 3, 4, 4, 6, 7],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q8layout = {
+    title: "What new plans/strategies were developed specifically for the pandemic<br>response during the pandemic experience?",
+    autosize: true,
+    width: 620,
+    height: 350,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
+    }
+  }
+
+  Plotly.newPlot('q8', q8, q8layout);
 
 
+  var q13 = [
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [0, 1, 4, 6, 11],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q13layout = {
+    title: 'To what extent were the new measures suited to the circumstances?',
+    autosize: false,
+    width: 620,
+    height: 350,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q13', q13, q13layout);
+  
   var q15 = [
     {
-      y: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
       x: [0, 5, 9, 4, 5],
       type: 'bar',
-      orientation: 'h'
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ]
   var q15layout = {
-    title: "To what extent was your organisation's financial <br>position affected by the pandemic",
-    autosize: false,
-    width: 650,
-    height: 400,
-    showlegend: false
+    title: "Extent that organisation's financial <br>position  was affected by the pandemic",
+    autosize: true,
+    width: 620,
+    height: 350,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
   }
 
   Plotly.newPlot('q15', q15, q15layout);
 
   var q17 = [
     {
-      y: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
       x: [1, 4, 8, 4, 3],
       type: 'bar',
-      orientation: 'h'
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ]
   var q17layout = {
     title: 'To what extent did the measures succeed <br>in mitigating the financial impacts of the pandemic?',
     autosize: false,
-    width: 650,
-    height: 400,
-    showlegend: false
+    width: 620,
+    height: 350,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
   }
 
   Plotly.newPlot('q17', q17, q17layout);
@@ -874,11 +1143,11 @@
   }];
 
   var q18layout = {
-    title: 'Councils Applying a Working from home regime',
+    title: 'Councils Applying a Working from Home Regime',
     autosize: false,
     width: 500,
     height: 500,
-    showlegend: false
+    showlegend: true
   }
 
   Plotly.newPlot('q18', q18, q18layout);
@@ -886,35 +1155,49 @@
   var q23 = [
     {
       x: [16, 10, 9, 8, 8, 7, 7, 5, 4, 4, 4, 3, 2, 1, 1],
-      y: ['PPE', 'Cleaning Protocal', 'Working from Home', 'Communication', 'Social Distancing', 'Limit Density', 'Follow recommendations', 'Encourage Hygeine', 'Encourage Vaccination', 'Protective Screens', 'Education', 'Online Meetings', 'Fixed Teams', 'Temperature Checks', 'Rapid Testing'],
+      y: ['PPE ', 'Cleaning Protocal ', 'Working from Home ', 'Communication ', 'Social Distancing ', 'Limit Density ', 'Follow Recommendations ', 'Encourage Hygeine ', 'Encourage Vaccination ', 'Protective Screens ', 'Education ', 'Online Meetings ', 'Fixed Teams ', 'Temperature Checks ', 'Rapid Testing '],
       type: 'bar',
-      orientation: 'h'
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ];
   var q23layout = {
     title: 'Measures put in place to protect employees from infection',
     autosize: false,
-    width: 650,
+    width: 620,
     height: 400,
-    showlegend: false
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
   }
 
   Plotly.newPlot('q23', q23, q23layout);
 
   var q24 = [
     {
-      y: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
       x: [0, 1, 2, 8, 10],
       type: 'bar',
-      orientation: 'h'
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ]
   var q24layout = {
     title: 'To what extent were the measures successful?',
     autosize: false,
-    width: 650,
+    width: 620,
     height: 400,
-    showlegend: false
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
   }
 
   Plotly.newPlot('q24', q24, q24layout);
@@ -923,14 +1206,17 @@
     {
       x: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
       y: [1, 0, 3, 11, 5],
-      type: 'bar'
+      type: 'bar',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ]
 
   var q26layout = {
     title: 'To what extent were the measures successful?',
     autosize: false,
-    width: 650,
+    width: 620,
     height: 480,
     showlegend: false,
     annotations: [
@@ -953,7 +1239,7 @@
 
   var q28 = [
     {
-      y: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
       x: [0, 0, 2, 5, 14],
       type: 'bar',
       orientation: 'h'
@@ -962,12 +1248,195 @@
   var q28layout = {
     title: 'To what extent were the measures successful?',
     autosize: false,
-    width: 650,
+    width: 620,
     height: 400,
     showlegend: false
   }
 
   //Plotly.newPlot('q28', q28, q28layout);
+
+  var q33 = [
+    {
+      y: ['Education ', 'Airports ', 'Performing Arts ', 'Venues ', 'Staffing ', 'Construction', 'Galleries/Museums ', 'Tourism ', 'Sporting Facilities ', 'Events ', 'Libraries', 'Customer Facing Services '],
+      x: [1, 1, 1, 2, 2, 2, 2, 4, 4, 5, 8, 9],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q33layout = {
+    title: "Which services were impacted most by the pandemic?",
+    autosize: true,
+    width: 620,
+    height: 350,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 60,
+      t: 100,
+      pad: 4
+    }
+  }
+
+  Plotly.newPlot('q33', q33, q33layout);
+
+  var q35 = [
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [1,0,8,5,2],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q35layout = {
+    title: 'What level of success did the measures have in mitigating<br>the impacts of the pandemic on council services?',
+    autosize: false,
+    width: 620,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q35', q35, q35layout);
+
+  var q36 = [
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [2,	8,	6,	2,	2],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q36layout = {
+    title: 'To what extent were your regulation and enforcement functions affected by the pandemic?',
+    autosize: false,
+    width: 620,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q36', q36, q36layout);
+
+  var q42_1 =
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [0,	0,	5,	6,	7],
+      name: 'Financial',
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  var q42_2 =
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [0,	0,	3,	7,	4],
+      name: 'Other',
+      type: 'bar',
+      orientation: 'h',
+    }
+
+  var q42layout = {
+    title: 'To what extent were the community support initiatives successful?',
+    autosize: false,
+    width: 620,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  var q42 = [q42_1, q42_2];
+
+  Plotly.newPlot('q42', q42, q42layout);
+  
+  
+
+  var q40 = [
+    {
+      y: ['Waive / Reduce Fees ', 'Extend Rates Payments ', 'Rebates ', 'Freeze / Reduce Interests ', 'Additional Grants ', 'Relief Packages ', 'Delay Rises ', 'Handouts / Vouchers ', 'Purchase Locally '],
+      x: [8,8,2,4,7,3,4,1,2],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q40layout = {
+    title: 'Measures put in place to support the community financially',
+    autosize: false,
+    width: 620,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q40', q40, q40layout);
+
+  
+  var q44_1 = 
+    {
+      y: ['Fee Refunds ', 'Promote Tourisim ', 'Subsidies ', 'Invest in Infrastructure ', 'Payment Plans ', 'Freeze Rates ', 'Fee Waivers ', 'Buy Local ', 'Grants '],
+      x: [1,1,2,2,3,3,4,5,5],
+      name: 'Financial Support',
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+
+  var q44_2 = 
+    {
+      y: ['Training ', 'Support Networks ', 'Improve Communication ',  'Events '],
+      x: [2, 3, 3, 5],
+      name: 'Other Support',
+      type: 'bar',
+      orientation: 'h'
+    }
+  
+  var q44layout = {
+    title: 'What measures were put in place to support<br> the business community?',
+    autosize: false,
+    width: 620,
+    height: 450,
+    showlegend: true,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  var q44data = [q44_1, q44_2];
+  
+  Plotly.newPlot('q44', q44data, q44layout);
   
 
   var q50 = [{
@@ -984,30 +1453,118 @@
   var q50layout = {
     title: 'Measures to keep Community Informed',
     autosize: false,
-    width: 650,
+    width: 620,
     height: 500,
-    showlegend: false
+    showlegend: false,
+    marker: {
+        color: 'rgb(247, 174, 79)'
+      }
   }
 
   Plotly.newPlot('q50', q50, q50layout);
 
   var q51 = [
     {
-      y: ['None', 'A Little', 'A Moderate Amount', 'A Lot', 'A Great Deal'],
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
       x: [0, 1, 3, 10, 2],
       type: 'bar',
-      orientation: 'h'
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
     }
   ]
   var q51layout = {
     title: 'To what extent did the measures succeed <br>in mitigating the financial impacts of the pandemic?',
     autosize: false,
-    width: 650,
+    width: 620,
     height: 400,
-    showlegend: false
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
   }
 
   Plotly.newPlot('q51', q51, q51layout);
+
+  var q53 = [
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [0, 0, 3, 11, 3],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q53layout = {
+    title: 'Success of Employee Communication Initiatives',
+    autosize: false,
+    width: 650,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q53', q53, q53layout);
+
+  
+
+  
+  var q57 = [
+    {
+      y: ['None ', 'A Little ', 'A Moderate Amount ', 'A Lot ', 'A Great Deal '],
+      x: [0, 2, 5, 7, 2],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q57layout = {
+    title: 'To what extent was your advocacy effective?',
+    autosize: false,
+    width: 650,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q57', q57, q57layout);
+
+  var q58= [
+    {
+      y: ['Not at all Useful ', 'No so Useful ', 'Somewhat Useful ', 'Very Useful ', 'Extremely Useful '],
+      x: [0, 1, 9, 5, 1],
+      type: 'bar',
+      orientation: 'h',
+      marker: {
+        color: 'rgb(247, 174, 79)'
+      }
+    }
+  ]
+  var q58layout = {
+    title: 'To what extent was information from governments effective?',
+    autosize: false,
+    width: 650,
+    height: 400,
+    showlegend: false,
+    yaxis: {
+      tickmode: 'array',
+      automargin: true
+    }
+  }
+
+  Plotly.newPlot('q58', q58, q58layout);
 
 
 </script>

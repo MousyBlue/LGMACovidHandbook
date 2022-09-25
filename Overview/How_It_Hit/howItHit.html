@@ -9,72 +9,100 @@
   <script src="/script.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-   crossorigin=""></script>
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
-  
+
+
 </head>
 
 <body>
-  
+
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
-    
+
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
-    
+
     <button class="dropdownBtn">
-      <a href="/Overview/overview.html">Overview</a>
+      Overview
     </button>
-      <div class="dropdown">
-        <a href="/Overview/How_It_Hit/howItHit.html" id="active">How It Hit</a>
-        <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
-        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
-        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
-      </div>
+    <div class="dropdown">
+      <a href="/Overview/How_It_Hit/howItHit.html" id="active">How COVID Hit</a>
+      <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
+      <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
+      <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
+      <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
+    </div>
     <button class="dropdownBtn">
-      <a href="/Case_Studies/caseStudies.html">Case Studies</a>
+      Council Case Studies
     </button>
-      <div class="dropdown">
-        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
-        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
-        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
-        <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
-      </div>
+    <div class="dropdown">
+      <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+      <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
+      <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+      <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
+      <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
+    </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
+
+    <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
     
   </div>
 
   <!-- Page Content -->
   <div id="pageContent">
-    <h1>How it Hit</h1>
+    <h1>How COVID Hit</h1>
     <p class="by-line">Click on the icons on the map to learn more about Queensland’s experience, then find out more
-about the COVID-19 pandemic experience from a State, National and Global perspective by clicking
-on the ‘Facts and Figures’ links below the map.</p>
+      about the COVID-19 pandemic experience from a State, National and Global perspective by clicking
+      on the ‘Facts and Figures’ links below the map.</p>
 
     <div id="map"></div>
+
+    
+
+    <div id="tickbox">
+
+      <h3 style="top:6%;">Border Closures</h3>
+      <h3 style="top:22%;">Biosecurity Areas</h3>
+      <h3 style="top:38%;">Lockdowns</h3>
+      <h3 style="top:53.5%;">More Facts and Figures</h3>
+      
+      <div class="myToggler">
+        <div class="togglerContent">
+          <ul>
+            <li><b>Local Governments:</b> <a href="https://covidlive.com.au/qld/lga" target="_blank">Active Coronavirus Cases in Queensland LGAs - COVID Live</a></li>
+            <li><b>Queensland:</b> <a href="https://covidlive.com.au/qld" target="_blank">Coronavirus Cases in Queensland - COVID Live</a></li>
+            <li><B>Australia:</B> <a href="https://www.health.gov.au/health-alerts/covid-19/case-numbers-and-statistics" target="_blank">Coronavirus (COVID-19) case numbers and statistics - Australian Government Department of Health
+</a></li>
+            <li><b>Global:</b> <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">Coronavirus disease (COVID-19) - who.int
+</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+    
   </div>
 
 
   <!-- Footer bar -->
   <div class="footbar">
-    <a id="left" href="/Overview/overview.html"> <  BACK</a>
-    <a id="right" href="/Overview/What_Happened_When/whatHappenedWhen.html">NEXT  > </a>
+    <a id="left" href="/Overview/overview.html">
+      < BACK</a>
+        <a id="right" href="/Overview/What_Happened_When/whatHappenedWhen.html">NEXT > </a>
   </div>
-  
+
 </body>
 
 </html>
 <script src="/nav.js"></script>
 <style>
-  
-  #map { 
+  #map {
     height: 600px;
     width: 600px;
     right: -500px;
@@ -88,55 +116,131 @@ on the ‘Facts and Figures’ links below the map.</p>
 
   /* Styling for map info div */
   .info {
-    padding: 5px;
-    background-color: lightgray;
+    padding: 10px;
+    background-color: rgba(250, 250, 250, 0.8);
     position: relative;
-    height: 100px;
-    width: 200px;
+    height: 60px;
+    width: 180px;
     margin: 0px;
-    
+    font-size: 16px;
+    text-align: center;
   }
+  .info h4 {
+    font-size: 16px;
+    margin: 5px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  
+  .leaflet-bottom.leaflet-left {
+    z-index: 5;
+  }
+  .leaflet-control-layers, .leaflet-control-layers-expanded {
+    position: fixed;
+    left: 5.2%;
+    top: 50%;
+  }
+  .leaflet-control-layers-expanded {
+    width: 440px;
+  }
+
+  .leaflet-control-layers:nth-of-type(2), .leaflet-control-layers:nth-of-type(2).leaflet-control-layers-expanded {
+    position: fixed;
+    left: 5.2%;
+    top: 40%;
+  }
+
+  .leaflet-control-layers:nth-of-type(3), .leaflet-control-layers:nth-of-type(3).leaflet-control-layers-expanded {
+    position: fixed;
+    left: 5.2%;
+    top: 30%;
+  }
+
+  .myToggler {
+    height: 43px;
+    width: 43px;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    position: absolute;
+    left: 3px;
+    top: 51%;
+    border: 2px solid rgba(0,0,0,0.2);
+  }
+  .myToggler:hover {
+    width: 446px;
+    padding: 5px;
+    height: auto;
+  }
+  .myToggler .togglerContent {
+    display: none;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .myToggler .togglerContent ul {
+    padding-left: 25px;
+  }
+  .myToggler:hover > .togglerContent {
+    display: block;
+  }
+
+  #tickbox {
+    position: fixed;
+    z-index: 4;
+    background-color: whitesmoke;
+    left: 5%;
+    top: 28%;
+    width: 480px;
+    height: 440px;
+  }
+
+  #tickbox h3 {
+    position: absolute;
+    left: 70px;
+    font-size: 18px;
+    margin: 0px;
+  }
+
   
 </style>
 
 <script>
-  
+
   // Set up the leaflet map
   var map = L.map('map').setView([-20, 146], 5);
 
-  // Base map of QLD from open street map
+  // Add the base map of QLD from open street map
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
-  // control that shows lga name on hover
-	var info = L.control();
+  // Initialise the info div
+  var info = L.control();
+  // Add info
+  info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info');
+    this.update();
+    return this._div;
+  };
+  info.update = function (props) {
+    this._div.innerHTML = '<h4>Queensland LGAs</h4>' + (props ?
+      '<b>' + props.qld_lga__3 + '</b><br />' : '<small>Hover over a LGA</small>');
+  };
+  info.addTo(map);
 
-	info.onAdd = function (map) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
-	};
-
-	info.update = function (props) {
-		this._div.innerHTML = '<h4>QLD LGAs</h4>' +  (props ?
-			'<b>' + props.qld_lga__3 + '</b><br />' : 'Hover over a LGA');
-	};
-
-	info.addTo(map);
 
   // Style the map
   function style(feature) {
-		return {
-			weight: 2,
-			opacity: 1,
-			color: 'teal',
-			dashArray: '3',
-			fillOpacity: 0
-		};
-	}
-
+    return {
+      weight: 2,
+      opacity: 0.2,
+      color: 'darkblue',
+      dashArray: '3',
+      fillOpacity: 0
+    };
+  }
   var bioStyle = {
     "color": "#ff7800",
     "weight": 5,
@@ -147,104 +251,157 @@ on the ‘Facts and Figures’ links below the map.</p>
     "weight": 2,
     "opacity": 0.65
   }
+  var bcStyle = {
+    "color": "black",
+    "weight": 2,
+    "opacity": 0.1,
+    "fillOpacity": 0.2
+  }
 
   // Change style when highlighted
   function highlightFeature(e) {
-		var layer = e.target;
+    var layer = e.target;
 
-		layer.setStyle({
-			weight: 4,
-			color: '#666',
-			dashArray: '',
-			fillOpacity: 0.7
-		});
+    layer.setStyle({
+      weight: 2,
+      opacity: 0.2,
+      color: 'darkblue',
+      dashArray: '',
+      fillOpacity: 0.1
+    });
 
-		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-			layer.bringToFront();
-		}
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+      layer.bringToFront();
+    }
 
-		info.update(layer.feature.properties);
-	}
-  
+    info.update(layer.feature.properties);
+  }
 
-  // Variable for storing data
-  var geojson;
 
   // Event listeners
   function resetHighlight(e) {
-		geojson.resetStyle(e.target);
-	}
+    geojson.resetStyle(e.target);
+  }
 
-	function onEachFeature(feature, layer) {
-		layer.on({
-			mouseover: highlightFeature,
-			mouseout: resetHighlight
-		});
-	}
-  
+  function onEachFeature(feature, layer) {
+    layer.on({
+      mouseover: highlightFeature,
+      mouseout: resetHighlight
+    });
+  }
+
   // Filter data to only get certain LGAs
   var bioLGAs = ["AURUKUN", "COOK", "HOPE VALE", "KOWANYAMA", "LOCKHART RIVER", "MAPOON", "NAPRANUM", "NORTHERN PENINSULA AREA", "PORMPURAAW", "TORRES STRAIT ISLAND", "TORRES", "WUJAL WUJAL", "BURKE", "DOOMADGEE", "CHERBOURG", "MORNINGTON", "PALM ISLAND", "WOORABINDA", "YARRABAH"];
-  var ld210108a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND"];
-  var ld210329a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND"];
-  var ld210629a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND", "SUNSHINE COAST", "NOOSA", "SOMERSET", "LOCKYER VALLEY", "SCENIC RIM", "GOLD COAST", "TOWNSVILLE", "PALM ISLAND", "MAGNETIC ISLAND"];
-  var ld210731a = ["BRISBANE","LOGAN", "MORETON BAY", "IPSWICH", "REDLAND", "SUNSHINE COAST", "NOOSA", "SOMERSET", "LOCKYER VALLEY", "SCENIC RIM", "GOLD COAST"];
+  var ld210108a = ["BRISBANE", "LOGAN", "MORETON BAY", "IPSWICH", "REDLAND"];
+  var ld210329a = ["BRISBANE", "LOGAN", "MORETON BAY", "IPSWICH", "REDLAND"];
+  var ld210629a = ["BRISBANE", "LOGAN", "MORETON BAY", "IPSWICH", "REDLAND", "SUNSHINE COAST", "NOOSA", "SOMERSET", "LOCKYER VALLEY", "SCENIC RIM", "GOLD COAST", "TOWNSVILLE", "PALM ISLAND", "MAGNETIC ISLAND"];
+  var ld210731a = ["BRISBANE", "LOGAN", "MORETON BAY", "IPSWICH", "REDLAND", "SUNSHINE COAST", "NOOSA", "SOMERSET", "LOCKYER VALLEY", "SCENIC RIM", "GOLD COAST"];
   var ld210930a = ["BRISBANE", "GOLD COAST", "LOGAN", "MORETON BAY", "TOWNSVILLE", "MAGNETIC ISLAND", "PALM ISLAND"];
-  
 
-  function filterLGAs(bigJSON, array){
+
+  // Filtering Function to only get cerain lgas
+  function filterLGAs(bigJSON, array) {
     var returnJSON = bigJSON.features.filter(function (el) {
-      return array.indexOf(el.properties.qld_lga__3) >= 0; 
+      return array.indexOf(el.properties.qld_lga__3) >= 0;
     });
 
     return returnJSON;
   }
 
-  
-  $.getJSON('/QLDlgas.json', function (qldLGAs) {
-    geojson = L.geoJson(qldLGAs, {
-      style: style,
-      onEachFeature: onEachFeature
-    }).addTo(map);
+  // Variables for overlays
+  var baseLayers = {};
+  var BSoverlays;
+  var LDoverlays;
+  var BCoverlays;
+  var AUoverlays;
 
-    
-    // add filtered layers to the map
-    biosec = L.geoJson(filterLGAs(qldLGAs, bioLGAs),{
-      style: bioStyle
-    });
-    ld210108 = L.geoJson(filterLGAs(qldLGAs, ld210108a),{
-      style: lockdownStyle
-    });
-    ld210329 = L.geoJson(filterLGAs(qldLGAs, ld210329a),{
-      style: lockdownStyle
-    });
-    ld210629 = L.geoJson(filterLGAs(qldLGAs, ld210629a),{
-      style: lockdownStyle
-    });
-    ld210731 = L.geoJson(filterLGAs(qldLGAs, ld210731a),{
-      style: lockdownStyle
-    });
-    ld210930 = L.geoJson(filterLGAs(qldLGAs, ld210930a),{
-      style: lockdownStyle
-    });
-    
-    
+  // Variables for storing json data
+  var geojson; // This one is the one with the qld lgas
+  var qldBorder;
+  var qldBorderBC;
+  var auBorder;
 
-    var baseLayers = {
-  	};
-  	var overlays = {
-      'Biosecurity Areas': biosec,
-      'Lockdown 08 Jan 2021': ld210108,
-      'Lockdown 29 Mar 2021': ld210329,
-      'Lockdown 29 Jun 2021': ld210629,
-      'Lockdown 31 Jul 2021': ld210731,
-      'Lockdown 30 Sep 2021': ld210930
-    
-  	};
+  // Process qld border
+    $.getJSON('QLD.json', function (qldB) {
+      qldBorderBC = L.geoJson(qldB, {style: bcStyle
+      })
+      qldBorder = L.geoJson(qldB, {style: lockdownStyle
+      })
 
-    var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
-    
-    
-  });
+      // now do the au border
+      $.getJSON('au.json', function (AUB) {
+        console.log('hi')
+        auBorder = L.geoJson(AUB, {
+          style: {
+            "color": "red",
+            "weight": 2,
+            "opacity": 0.4,
+            "fillOpacity": 0.2
+          }
+        })
 
-  
+        // Finally, do the QLD Lgas
+          $.getJSON('/QLDlgas.json', function (qldLGAs) {
+
+            map.createPane("pane450").style.zIndex = 450; // layer between overlays and shadows
+            
+            geojson = L.geoJson(qldLGAs, {
+              pane: "pane450",
+              style: style,
+              onEachFeature: onEachFeature
+            }).addTo(map);
+        
+            // Filter the data into layers
+            biosec = L.geoJson(filterLGAs(qldLGAs, bioLGAs), {
+              style: bioStyle
+            });
+            
+            ld210108 = L.geoJson(filterLGAs(qldLGAs, ld210108a), {
+              style: lockdownStyle
+            });
+            ld210329 = L.geoJson(filterLGAs(qldLGAs, ld210329a), {
+              style: lockdownStyle
+            });
+            ld210629 = L.geoJson(filterLGAs(qldLGAs, ld210629a), {
+              style: lockdownStyle
+            });
+            ld210731 = L.geoJson(filterLGAs(qldLGAs, ld210731a), {
+              style: lockdownStyle
+            });
+            ld210930 = L.geoJson(filterLGAs(qldLGAs, ld210930a), {
+              style: lockdownStyle
+            });
+        
+            BSoverlays = {
+              'Biosecurity Areas': biosec
+            }
+            LDoverlays = {
+              '<b>March 30 2020:</b> All of Queensland entered its first lockdown, with travel outside the home banned except for essential reasons.  Restrictions would not start to ease until May 2, when people were permitted to travel up to 50 kilometres from home, and family picnics and other recreational activities could resume (with some limitations remaining).': qldBorder,
+              '<b>January 8 2021:</b> Greater Brisbane entered its first "snap" lockdown. The lockdown was lifted at 6:00pm the following Monday.': ld210108,
+              '<b>March 29 2021:</b> Greater Brisbane including the LGAs of Brisbane City Council, Logan City Council, Moreton Bay Regional Council, Ipswich City Council and Redland City Council was ordered into a second three-day lockdown.': ld210329,
+              '<b>June 29 2021:</b> Residents of all of southeast Queensland, including Brisbane, Ipswich, Logan City, Moreton Bay, Redlands, Sunshine Coast, Noosa, Somerset, Lockyer Valley, Scenic Rim and the Gold Coast will only be allowed to leave their homes for essential reasons from 6pm on Tuesday.  People in Townsville, Palm Island and Magnetic Island will also be locked down.  Lockdown will be extended for the Local Government Areas of Brisbane and Moreton Bay for another 24 hours until 6pm, Saturday 3 July.': ld210629,
+              '<b>July 31 2021:</b> There are 11 LGAs in south-east Queensland which will go into lockdown including; Brisbane City, Moreton Bay Regional Council, City of Gold Coast, Ipswich City Council, Lockyer Valley Regional Council, Logan City Council, Noosa Council, Redland City Council, Scenic Rim Regional Council, Somerset Regional Council and Sunshine Coast Council.  Lockdown restrictions for the 11 Local Government Areas (LGAs) continue until 8 August.': ld210731,
+              '<b>September 30 2021:</b> six local government areas (LGAs) are considered high-risk and are under stage two restrictions including; Brisbane City Council, City of Gold Coast, Logan City Council, Moreton Bay Regional Council, Townsville City Council (including Magnetic Island) and Palm Island Aboriginal Shire Council.': ld210930
+        
+            };
+        
+
+            // Layergroup for border closures
+            var borderClosures = L.layerGroup([qldBorderBC, auBorder]);
+            BCoverlays = {
+              '<b>Border Closures:</b> Australia closed its international borders on 20 March 2020 and Queensland closed its state borders on 26 March. Tighter restrictions imposed in following month with tightest constraints imposed on 11 April 2020.  Intermittent restrictions on travel from hotspots ensued during 2020 and 2021.  All domestic travel restrictions were removed by Queensland on 15 January 2022.  International borders reopened on 21 February 2022.': borderClosures
+            }
+            
+            var BClayerControl = L.control.layers(baseLayers, BCoverlays, {position: 'bottomleft'}).addTo(map);
+            var BSlayerControl = L.control.layers(baseLayers, BSoverlays, {position: 'bottomleft'}).addTo(map);
+            var LDlayerControl = L.control.layers(baseLayers, LDoverlays, {position: 'bottomleft'}).addTo(map);
+
+
+          });
+        
+      });
+      
+    });
+
+
 </script>

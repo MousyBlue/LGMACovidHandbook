@@ -13,6 +13,62 @@
   
 </head>
 
+<style>
+  body {
+    width: 800px;
+    height: 300px;
+    scroll-behavior: smooth;
+    border: none;
+  }
+  .page {
+    position: absolute;
+    margin-left: 800px;
+    transition: 1s;
+  }
+  .page#cairns {
+    margin-left: 0px;
+  }
+
+  table h3 {
+    border-bottom: 2px solid black;
+  }
+  
+  table.pagebox {
+    width: 800px;
+    height: 300px;
+    position: static;
+    background-color: white;
+  }
+  table td {
+    margin: 0px;
+    padding: 10px;
+  }
+  table td img {
+    max-height: 280px;
+    max-width: 280px;
+  }
+
+  table a:hover {
+    cursor: pointer;
+    color: gray;
+  }
+  table a span {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    bottom: -5px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  table a:first-of-type {
+    float: left;
+  }
+  table a:nth-of-type(2) {
+    float: right;
+  }
+  
+</style>
+  
 <body>
   <div class="pageSlider">
     <div class="page" id="cairns" style="z-index:1;">
@@ -153,62 +209,6 @@
 </body>
   
 </html>
-
-<style>
-  body {
-    width: 800px;
-    height: 300px;
-    scroll-behavior: smooth;
-    border: none;
-  }
-  .page {
-    position: absolute;
-    margin-left: 800px;
-    transition: 1s;
-  }
-  .page#cairns {
-    margin-left: 0px;
-  }
-
-  table h3 {
-    border-bottom: 2px solid black;
-  }
-  
-  table.pagebox {
-    width: 800px;
-    height: 300px;
-    position: static;
-    background-color: white;
-  }
-  table td {
-    margin: 0px;
-    padding: 10px;
-  }
-  table td img {
-    max-height: 280px;
-    max-width: 280px;
-  }
-
-  table a:hover {
-    cursor: pointer;
-    color: gray;
-  }
-  table a span {
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-    bottom: -5px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  table a:first-of-type {
-    float: left;
-  }
-  table a:nth-of-type(2) {
-    float: right;
-  }
-  
-</style>
 
 <script>
 

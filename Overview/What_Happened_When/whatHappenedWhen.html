@@ -9,6 +9,268 @@
   <script src="/script.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
+
+  <style>
+
+    p.by-line {
+      width: 380px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 2px;
+      margin-bottom: 6px;
+      padding: 0px;
+    }
+    .timeline p {
+      font-size: 16px;
+      margin: 0px;
+    }
+  
+    .timeline {
+      width: 700px;
+      height: 620px;
+      position: relative;
+      left: 410px;
+      top: -160px;
+      color: white;
+      background-color: #eee;
+      border: 5px solid #eee;
+    }
+  
+    .timeline .line {
+      width: 20px;
+      height: 100%;
+      position: relative;
+      left: 340px;
+      
+    }
+    .line div {
+      width: 2px;
+      position: absolute;
+      background-color: white;
+      border-width: 9px;
+      border-style: solid;
+    }
+    .line #line1 {
+      border-color: #495273;
+      border-top-color: #eee;
+      top: 0%;
+      height: 15%;
+    }
+    .line #line2 {
+      border-color: #486073;
+      top: 15%;
+      height: 30%;
+    }
+    .line #line3 {
+      border-color: #486e73;
+      top: 45%;
+      height: 20%;
+    }
+    .line #line4 {
+      border-color: #48736a;
+      top: 65%;
+      height: 15%;
+    }
+    .line #line5 {
+      border-color: #48735b;
+      top: 80%;
+      height: 17%;
+      border-bottom-color: #eee;
+    }
+  
+    .container {
+      width: 387px;
+      display: block;
+      position: absolute;
+    }
+    .container.right {
+      float: right;
+    }
+  
+    .desc {
+      width: 280px;
+      height: 20px;
+    }
+    .left .desc {
+      text-align: right;
+    }
+    .right .desc {
+      float: right;
+    }
+    .content {
+      width: 100px;
+      height: 20px;
+      padding: 10px;
+      display: inline-block;
+      overflow: clip;
+      transition: 0.5s;
+      max-height: 160px;
+      background-color: teal;
+      margin-top: 20px;
+    }
+    .left .content {
+      border-radius: 30px 0px 0px 30px;
+      padding-left: 20px;
+      float: left;
+      margin-left: 150px;
+    }
+    .right .content{
+      border-radius: 0px 30px 30px 0px;
+      padding-right: 20px;
+      float: right;
+      margin-right: 150px;
+    }
+  
+    .dot {
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      border: 3px solid white;
+      display: inline-block;
+      margin: 10px;
+      padding: 0px;
+      cursor: pointer;
+      color: white;
+    }
+    .dot .material-symbols-outlined {
+      line-height: 40px;
+      font-size: 40px;
+    }
+    #tl1 .material-symbols-outlined {
+      line-height: 50px;
+    }
+    #tl4 .material-symbols-outlined {
+      line-height: 45px;
+    }
+    
+    .right .dot {
+      float: left;
+    }
+    .left .dot {
+      float: right;
+    }
+  
+    .rArrow {
+      width: 0; 
+      height: 0; 
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 20px solid green;
+      position: absolute;
+      right: 87px;
+      top: 0px;
+      margin-top: 20px;
+      transition: 0.5s;
+    }
+    .lArrow {
+      width: 0; 
+      height: 0; 
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right: 20px solid green;
+      position: absolute;
+      left: 87px;
+      top: 0px;
+      margin-top: 20px;
+      transition: 0.5s;
+    }
+    
+    
+    .container#tl1{
+      top: 10%;
+    }
+    #tl1 .dot, #tl1 .content {
+      background-color: #495273;
+    }
+    #tl1 .rArrow{
+      border-left-color: #495273;
+    }
+    .container#tl2 {
+      top: 40%;
+      right: 0px;
+    }
+    #tl2 .dot, #tl2 .content {
+      background-color: #486073;
+    }
+    #tl2 .lArrow{
+      border-right-color: #486073;
+    }
+    .container#tl3 {
+      top: 60%;
+    }
+    #tl3 .dot, #tl3 .content {
+      background-color: #486e73;
+    }
+    #tl3 .rArrow{
+      border-left-color: #486e73;
+    }
+    .container#tl4 {
+      top: 75%;
+      right: 0px;
+    }
+    #tl4 .dot, #tl4 .content {
+      background-color: #48736a;
+    }
+    #tl4 .lArrow{
+      border-right-color: #48736a;
+    }
+  
+    .extraStuff {
+      position: relative;
+      top: -650px;
+      width: 350px;
+    }
+    .extraInfo {
+      display: none;
+    }
+  
+    .extraInfo .material-symbols-outlined {
+      font-size: 40px;
+      position: relative;
+      top: 10px;
+      padding: 7px;
+    }
+    .extraInfo h3 {
+      font-size: 20px;
+      margin: 5px;
+    }
+  
+    #extra1 {
+      color: #363c54;
+    }
+    #extra2 {
+      color: #354655;
+    }
+    #extra3 {
+      color: #355155;
+    }
+    #extra4 {
+      color: #35554e;
+    }
+  
+    .addRes {
+      margin-left: 20px;
+    }
+    .addRes h4 {
+      margin-top:20px;
+      margin-bottom: 0px;
+    }
+    
+    .addRes ul a {
+      text-decoration: none;
+      color: #222;
+    }
+    .addRes ul a:hover {
+      color: #555;
+    }
+    .addRes ul li {
+      margin-bottom: 20px;
+    }
+    
+  
+  </style>
   
 </head>
 
@@ -22,28 +284,30 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
     
     <button class="dropdownBtn">
-      <a href="/Overview/overview.html">Overview</a>
+      Overview
     </button>
       <div class="dropdown">
-        <a href="/Overview/How_It_Hit/howItHit.html">How It Hit</a>
+        <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
         <a href="/Overview/What_Happened_When/whatHappenedWhen.html" id="active">What Happened When</a>
         <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-        <a href="/Overview/What_Others_Said/whatOthersSaid.html">What Others Said</a>
-        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Said</a>
+        <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
+        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
       </div>
     <button class="dropdownBtn">
-      <a href="/Case_Studies/caseStudies.html">Case Studies</a>
+      Council Case Studies
     </button>
       <div class="dropdown">
-        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Our Introduction</a>
-        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Our Characteristics</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html">Our Story</a>
-        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Our Highlights</a>
+        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
+        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
       </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
+
+    <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
     
   </div>
 
@@ -172,268 +436,6 @@
 
 <script src="/nav.js"></script>
 
-
-<style>
-
-  p.by-line {
-    width: 380px;
-  }
-  h2 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 2px;
-    margin-bottom: 6px;
-    padding: 0px;
-  }
-  .timeline p {
-    font-size: 16px;
-    margin: 0px;
-  }
-
-  .timeline {
-    width: 700px;
-    height: 620px;
-    position: relative;
-    left: 410px;
-    top: -160px;
-    color: white;
-    background-color: #eee;
-    border: 5px solid #eee;
-  }
-
-  .timeline .line {
-    width: 20px;
-    height: 100%;
-    position: relative;
-    left: 340px;
-    
-  }
-  .line div {
-    width: 2px;
-    position: absolute;
-    background-color: white;
-    border-width: 9px;
-    border-style: solid;
-  }
-  .line #line1 {
-    border-color: #495273;
-    border-top-color: #eee;
-    top: 0%;
-    height: 15%;
-  }
-  .line #line2 {
-    border-color: #486073;
-    top: 15%;
-    height: 30%;
-  }
-  .line #line3 {
-    border-color: #486e73;
-    top: 45%;
-    height: 20%;
-  }
-  .line #line4 {
-    border-color: #48736a;
-    top: 65%;
-    height: 15%;
-  }
-  .line #line5 {
-    border-color: #48735b;
-    top: 80%;
-    height: 17%;
-    border-bottom-color: #eee;
-  }
-
-  .container {
-    width: 387px;
-    display: block;
-    position: absolute;
-  }
-  .container.right {
-    float: right;
-  }
-
-  .desc {
-    width: 280px;
-    height: 20px;
-  }
-  .left .desc {
-    text-align: right;
-  }
-  .right .desc {
-    float: right;
-  }
-  .content {
-    width: 100px;
-    height: 20px;
-    padding: 10px;
-    display: inline-block;
-    overflow: clip;
-    transition: 0.5s;
-    max-height: 160px;
-    background-color: teal;
-    margin-top: 20px;
-  }
-  .left .content {
-    border-radius: 30px 0px 0px 30px;
-    padding-left: 20px;
-    float: left;
-    margin-left: 150px;
-  }
-  .right .content{
-    border-radius: 0px 30px 30px 0px;
-    padding-right: 20px;
-    float: right;
-    margin-right: 150px;
-  }
-
-  .dot {
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    border: 3px solid white;
-    display: inline-block;
-    margin: 10px;
-    padding: 0px;
-    cursor: pointer;
-    color: white;
-  }
-  .dot .material-symbols-outlined {
-    line-height: 40px;
-    font-size: 40px;
-  }
-  #tl1 .material-symbols-outlined {
-    line-height: 50px;
-  }
-  #tl4 .material-symbols-outlined {
-    line-height: 45px;
-  }
-  
-  .right .dot {
-    float: left;
-  }
-  .left .dot {
-    float: right;
-  }
-
-  .rArrow {
-    width: 0; 
-    height: 0; 
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid green;
-    position: absolute;
-    right: 87px;
-    top: 0px;
-    margin-top: 20px;
-    transition: 0.5s;
-  }
-  .lArrow {
-    width: 0; 
-    height: 0; 
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid green;
-    position: absolute;
-    left: 87px;
-    top: 0px;
-    margin-top: 20px;
-    transition: 0.5s;
-  }
-  
-  
-  .container#tl1{
-    top: 10%;
-  }
-  #tl1 .dot, #tl1 .content {
-    background-color: #495273;
-  }
-  #tl1 .rArrow{
-    border-left-color: #495273;
-  }
-  .container#tl2 {
-    top: 40%;
-    right: 0px;
-  }
-  #tl2 .dot, #tl2 .content {
-    background-color: #486073;
-  }
-  #tl2 .lArrow{
-    border-right-color: #486073;
-  }
-  .container#tl3 {
-    top: 60%;
-  }
-  #tl3 .dot, #tl3 .content {
-    background-color: #486e73;
-  }
-  #tl3 .rArrow{
-    border-left-color: #486e73;
-  }
-  .container#tl4 {
-    top: 75%;
-    right: 0px;
-  }
-  #tl4 .dot, #tl4 .content {
-    background-color: #48736a;
-  }
-  #tl4 .lArrow{
-    border-right-color: #48736a;
-  }
-
-  .extraStuff {
-    position: relative;
-    top: -650px;
-    width: 350px;
-  }
-  .extraInfo {
-    display: none;
-  }
-
-  .extraInfo .material-symbols-outlined {
-    font-size: 40px;
-    position: relative;
-    top: 10px;
-    padding: 7px;
-  }
-  .extraInfo h3 {
-    font-size: 20px;
-    margin: 5px;
-  }
-
-  #extra1 {
-    color: #363c54;
-  }
-  #extra2 {
-    color: #354655;
-  }
-  #extra3 {
-    color: #355155;
-  }
-  #extra4 {
-    color: #35554e;
-  }
-
-  .addRes {
-    margin-left: 20px;
-  }
-  .addRes h4 {
-    margin-top:20px;
-    margin-bottom: 0px;
-  }
-  
-  .addRes ul a {
-    text-decoration: none;
-    color: #222;
-  }
-  .addRes ul a:hover {
-    color: #555;
-  }
-  .addRes ul li {
-    margin-bottom: 20px;
-  }
-  
-
-</style>
 
 <script>
   function timeline1() {
