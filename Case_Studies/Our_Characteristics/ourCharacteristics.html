@@ -10,58 +10,116 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
 
   <style>
-  
+    body {
+      border: 2px solid black;
+    }
+
     table {
       border-collapse: collapse;
       width: 100%;
+      font-size: 15px;
+      overflow: hidden;
     }
-    td, th {
+
+    td,
+    th {
       border: 1px solid #dddddd;
       padding: 8px;
+      position: relative;
     }
+
     td:first-of-type {
+      font-variant: all-small-caps;
+      font-size: 16px;
+      letter-spacing: 1px;
       font-weight: 700;
+      text-align: right;
+      background-color: white;
+      border: none;
+      padding: left;
+      0px;
     }
+
+    td:nth-of-type(2),
+    td:nth-of-type(5),
+    td:nth-of-type(6) {
+      text-align: center;
+      font-weight: 400;
+
+    }
+
     tr:nth-child(even) {
-      background-color: #dddddd;
+      background-color: rgba(200, 200, 200, 0.1);
+    }
+
+    tr:hover td {
+      background-color: rgba(100, 100, 100, 0.1);
+    }
+
+    th {
+      font-variant: all-small-caps;
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 18px;
+      vertical-align: bottom;
+      border: none;
+    }
+
+    th:first-of-type {
+      background-color: white;
+      width: 9%;
+    }
+
+    th:hover::after {
+      content: "";
+      position: absolute;
+      background-color: #4952731A;
+      left: 0;
+      top: -5000px;
+      height: 10000px;
+      width: 100%;
+      z-index: -1;
+    }
+
+    th:first-of-type::after {
+      background-color: white;
     }
   </style>
-  
+
 </head>
 
 <body>
-  
+
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
-    
+
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
-    
+
     <button class="dropdownBtn">
-      Overview
+      <a href="/Overview/overview.html">Overview</a>
     </button>
-      <div class="dropdown">
-        <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
-        <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
-        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
-        <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
-        <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
-      </div>
+    <div class="dropdown">
+      <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
+      <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
+      <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
+      <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
+    </div>
     <button class="dropdownBtn">
-      Council Case Studies
+      <a href="/Case_Studies/caseStudies.html" id="active">Case Studies</a>
     </button>
-      <div class="dropdown">
-        <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
-        <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html" id="active">Council Characteristics</a>
-        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
-        <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
-      </div>
+    <div class="dropdown">
+      <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
+      <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html" id="active">Council Characteristics</a>
+      <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+      <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
+      <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
+    </div>
     <button class="dropdownBtn">
       <a href="/Framework/Framework.html">Framework</a>
     </button>
 
     <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
-    
+
   </div>
 
 
@@ -70,6 +128,69 @@
     <h1>Council Characteristics</h1>
     <p class="by-line">The table below compares the diverse characteristics of the Case Study Councils.</p>
 
+    <p><button onclick="sortLetters(0)">RESET</button></p>
+
+    <table id="characteristics">
+      <tr>
+        <Th></Th>
+        <th onclick="sortNumbers(1)">Population</th>
+        <th>Main Communities</th>
+        <th>Traditional Owners</th>
+        <th onclick="sortNumbers(4)">Operating Income ($'000)</th>
+        <th onclick="sortNumbers(5)">Council Staff</th>
+      </tr>
+      <tr>
+        <td>Cairns</td>
+        <td>168,449</td>
+        <td>Cairns, Gordonvale, and Babinda</td>
+        <td>Djabugay; Yirrganydji; Buluwai, Gimuy Walubara Yidinji; Mandingalbay Yidinji; Gunggandji; Dulabed and
+          Malanbara Yidinji; Bundabarra and Wadjanbarra Yidinji; Wanyurr Majay; Mamu and NgadjonJii peoples</td>
+        <td>$322,059</td>
+        <td>1,178</td>
+      </tr>
+      <tr>
+        <td>Cherbourg</td>
+        <td>1,335</td>
+        <Td>Cherbourg</Td>
+        <td>Wakka Wakka people</td>
+        <td>$11,102</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Cook</td>
+        <td>4,595</td>
+        <td>Cooktown, Laura, Marton, Coen, Lakeland, Ayton, Rossville, Portland Roads and Lizard Island</td>
+        <td>Guugu Yimithirr people</td>
+        <td>$60,034</td>
+        <td>160</td>
+      </tr>
+      <tr>
+        <td>Goondiwindi</td>
+        <td>10,817</td>
+        <td>Goondiwindi, Inglewood, Texas, Yelarbon and Talwood</td>
+        <td>Bigambul people</td>
+        <td>$42,094</td>
+        <td>166</td>
+      </tr>
+      <tr>
+        <td>Isaac</td>
+        <td>20,987</td>
+        <td>Moranbah, Clermont, Middlemount, Dysart, Nebo, St Lawrence, Carmila, Green Hill and
+          Glenden</td>
+        <td>Barada Barna, Jangga, Wangan and Jagalingou, Widi and Wiri peoples</td>
+        <td>$113,161</td>
+        <td>413</td>
+      </tr>
+      <tr>
+        <td>Moreton Bay</td>
+        <td>479,639</td>
+        <td>Caboolture, Morayfield, Kallangur, North Lakes and Deception Bay</td>
+        <td>Kabi Kabi, Jinibara and Turrbal peoples</td>
+        <td>$572,173</td>
+        <td>1,773</td>
+      </tr>
+    </table>
+    <br><br><bR><BR><bR><bR>
     <table>
       <tr>
         <th></th>
@@ -96,12 +217,13 @@
         <td>Cooktown, Laura, Marton, Coen, Lakeland, Ayton, Rossville, Portland Roads and Lizard Island</td>
         <td>Goondiwindi, Inglewood, Texas, Yelarbon and Talwood</td>
         <td>Moranbah, Clermont, Middlemount, Dysart, Nebo, St Lawrence, Carmila, Green Hill and
-Glenden</td>
+          Glenden</td>
         <td>Caboolture, Morayfield, Kallangur, North Lakes and Deception Bay</td>
       </tr>
       <tr>
         <td>Traditional Owners</td>
-        <td>Djabugay; Yirrganydji; Buluwai, Gimuy Walubara Yidinji; Mandingalbay Yidinji; Gunggandji; Dulabed and Malanbara Yidinji; Bundabarra and Wadjanbarra Yidinji; Wanyurr Majay; Mamu and NgadjonJii peoples</td>
+        <td>Djabugay; Yirrganydji; Buluwai, Gimuy Walubara Yidinji; Mandingalbay Yidinji; Gunggandji; Dulabed and
+          Malanbara Yidinji; Bundabarra and Wadjanbarra Yidinji; Wanyurr Majay; Mamu and NgadjonJii peoples</td>
         <td>Wakka Wakka people</td>
         <td>Guugu Yimithirr people</td>
         <td>Bigambul people</td>
@@ -127,18 +249,119 @@ Glenden</td>
         <td>1,773</td>
       </tr>
     </table>
-    
+
   </div>
 
   <!-- Footer bar -->
   <div class="footbar">
-    <a id="left" href="/Case_Studies/Our_Introduction/ourIntroduction.html"> <  BACK</a>
-    <a id="right" href="/Case_Studies/Our_Highlights/ourHighlights.html">NEXT  > </a>
+    <a id="left" href="/Case_Studies/Our_Introduction/ourIntroduction.html">
+      < BACK</a>
+        <a id="right" href="/Case_Studies/Our_Highlights/ourHighlights.html">NEXT > </a>
   </div>
-  
+
 </body>
 
 </html>
 <script src="/nav.js"></script>
 
+<script>
+  function sortNumbers(col) {
+    
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("characteristics");
+    switching = true;
+    //Set the sorting direction to ascending:
+    dir = "asc"; 
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 1; i < (rows.length-1); i++) {
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("TD")[col];
+        y = rows[i + 1].getElementsByTagName("TD")[col];
+        //check if the two rows should switch place:
+        if (dir == "asc") {
+          if (parseFloat(x.innerHTML.replace(/[^0-9.-]+/g, '')) > parseFloat(y.innerHTML.replace(/[^0-9.-]+/g, ''))) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
+        }
+        else if (dir == "desc") {
+          if (parseFloat(x.innerHTML.replace(/[^0-9.-]+/g, '')) < parseFloat(y.innerHTML.replace(/[^0-9.-]+/g, ''))) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
+        }
+        
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        //Each time a switch is done, increase this count by 1:
+        switchcount ++;      
+      } 
+      else {
+        /*If no switching has been done AND the direction is "asc",
+        set the direction to "desc" and run the while loop again.*/
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
 
+  }
+  
+  function sortLetters(col) {
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("characteristics");
+    switching = true;
+    //Set the sorting direction to ascending:
+    dir = "asc"; 
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 1; i < (rows.length - 1); i++) {
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("TD")[col];
+        y = rows[i + 1].getElementsByTagName("TD")[col];
+        /*check if the two rows should switch place,
+        based on the direction, asc or desc:*/
+        
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch= true;
+            break;
+          }
+
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;    
+      } 
+    }
+  }
+
+</script>

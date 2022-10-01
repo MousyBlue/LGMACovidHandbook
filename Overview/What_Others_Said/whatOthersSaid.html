@@ -21,18 +21,21 @@
       height: auto;
       width: 270px;
       border-radius: 20px;
-      border: 3px solid gray;
+      border: 1px solid rgba(220, 220, 220, 1);
       padding: 10px;
       margin: 15px;
       margin-top: 0px;
       display:inline-block;
       transition: 1s;
       text-align: left;
+      background-color: rgb(250, 250, 250);
   
       color: var(--text-colour-dark);
     }
     .idCard:hover {
-      border-width: 6px;
+      background-color: white;
+      border-top-color: rgba(220, 220, 220, 0.5);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
     .idCard p {
       margin: 0px;
@@ -62,23 +65,22 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
     
     <button class="dropdownBtn">
-      Overview
+      <a href="/Overview/overview.html" id="active">Overview</a>
     </button>
       <div class="dropdown">
         <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
         <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
-        <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
         <a href="/Overview/What_Others_Said/whatOthersSaid.html" id="active">Stakeholder Reflections</a>
         <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
       </div>
     <button class="dropdownBtn">
-      Council Case Studies
+      <a href="/Case_Studies/caseStudies.html">Council Case Studies</a>
     </button>
       <div class="dropdown">
         <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
         <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
         <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
-        <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
+        <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
       </div>
     <button class="dropdownBtn">
@@ -143,7 +145,7 @@ said.</p>
 
   <!-- Footer bar -->
   <div class="footbar">
-    <a id="left" href="/Overview/Who_Did_What/whoDidWhat.html"> <  BACK</a>
+    <a id="left" href="/Overview/What_Happened_When/whatHappenedWhen.html"> <  BACK</a>
     <a id="right" href="/Overview/What_Councils_Said/whatCouncilsSaid.html">NEXT  > </a>
   </div>
 

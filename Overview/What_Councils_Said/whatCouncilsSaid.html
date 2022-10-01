@@ -216,12 +216,11 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
 
     <button class="dropdownBtn">
-      Overview
+      <a href="/Overview/overview.html" id="active">Overview</a>
     </button>
     <div class="dropdown">
       <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
       <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
-      <a href="/Overview/Who_Did_What/whoDidWhat.html">Who Did What</a>
       <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
       <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html" id="active">What Councils Reported</a>
     </div>
@@ -232,7 +231,7 @@
       <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
       <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
       <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
-      <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
+      <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
       <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
     </div>
     <button class="dropdownBtn">
@@ -695,13 +694,8 @@
             <div class="columns2 fade">
               <div class="lcol">
                 <Br><BR>
-                <p>In keeping community members informed, councils took many different approaches. A popular method
-                  involved using <b>social media</b> channels such as facebook to post information to their relevant
-                  audience. Council <b>websites</b> were used in a similar way, acting as an online hub for information.
-                </p>
-                <p>For members of the community less technologically inclined, more traditional initiatives were
-                  employed. These included the use of existing community <b>newsletters</b> and <b>radio</b> channels,
-                  as well as personal outreach methods like <b>door knocking</b> and <b>phone calls</b>.</p>
+                <p>In keeping community members informed, councils took many different approaches. A popular method involved using <b>social media</b> channels such as facebook to post information to their relevant audience. Council <b>websites</b> were used in a similar way, acting as an online hub for information.</p>
+                <p>For members of the community less technologically inclined, more traditional initiatives were employed. These included the use of existing community <b>newsletters</b> and <b>radio</b> channels, as well as personal outreach methods like <b>door knocking</b> and <b>phone calls</b>.</p>
               </div>
               <div class="rcol">
                 <div id="q50"></div>
@@ -710,8 +704,7 @@
             <br>
             <div class="columns2 fade">
               <div class="lcol">
-                <p>These initiatives were seen to have a largely positive effect, with the vast majority of councils
-                  considering them to have "a lot" of success.</p>
+                <p>These initiatives were seen to have a largely positive effect, with the vast majority of councils considering them to have "a lot" of success.</p>
               </div>
               <div class="rcol">
                 <div id="q51"></div>
@@ -1324,7 +1317,7 @@
     }
   ]
   var q36layout = {
-    title: 'To what extent were your regulation and enforcement functions affected by the pandemic?',
+    title: 'To what extent were your regulation and enforcement<br> functions affected by the pandemic?',
     autosize: false,
     width: 620,
     height: 400,
@@ -1362,7 +1355,7 @@
     autosize: false,
     width: 620,
     height: 400,
-    showlegend: false,
+    showlegend: true,
     yaxis: {
       tickmode: 'array',
       automargin: true
@@ -1387,7 +1380,7 @@
     }
   ]
   var q40layout = {
-    title: 'Measures put in place to support the community financially',
+    title: 'What measures were put in place to support <br>the community financially?',
     autosize: false,
     width: 620,
     height: 400,
@@ -1451,11 +1444,18 @@
   }];
 
   var q50layout = {
-    title: 'Measures to keep Community Informed',
+    title: 'What measures were put in place to keep<br> the community informed',
     autosize: false,
     width: 620,
     height: 500,
     showlegend: false,
+    margin: {
+      l: 10,
+      r: 10,
+      b: 20,
+      t: 70,
+      pad: 4
+    },
     marker: {
         color: 'rgb(247, 174, 79)'
       }

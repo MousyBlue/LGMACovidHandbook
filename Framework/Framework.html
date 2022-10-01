@@ -9,6 +9,165 @@
   <script src="/script.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto|Merriweather">
 
+  <style>
+    body {
+      overflow-y: auto;
+    }
+
+    a#returnTop {
+      position: fixed;
+      right: 5%;
+      top: 5%;
+    }
+  
+    #mainTable {
+      width: 99%;
+    }
+  
+    #mainTable .tRow,
+    #mainTable .tRowD {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+    }
+  
+    .tRowD .tCell {
+      background-color: #eee;
+    }
+  
+  
+    .tHead {
+      text-align: center;
+      flex-basis: 88.5%;
+      border: 1px solid gray;
+      font-weight: 700;
+      line-height: 40px;
+    }
+  
+    .tCellBlank {
+      flex: 0 0 10%;
+      min-height: 30px;
+      padding: 6px;
+    }
+  
+    .tCell,
+    .tCellH {
+      flex: 0 0 10%;
+      transition: 0.2s;
+      padding: 5px;
+      border: 1px solid #3A415A;
+    }
+  
+    .tCellH {
+      font-weight: 500;
+      text-align: center;
+      line-height: 40px;
+      color: white;
+      background-color: #495273;
+      letter-spacing: 1px;
+      font-size: 15px;
+    }
+  
+    .tCell {
+      font-size: 15px;
+    }
+  
+    .tCell:first-of-type {
+      font-weight: 500;
+      color: white;
+      background-color: #495273;
+    }
+  
+    .tCell:not(:first-of-type):hover {
+      border-color: orange;
+      border-width: 2px;
+      padding: 4px;
+    }
+  
+    .tCell .cellTable {
+      display: none;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 20px;
+      width: 95%;
+    }
+    
+    .cellTable table tr:not(:first-of-type):hover {
+      background-color: gray;
+    }
+  
+    .cellTable a {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: darkslategray;
+    }
+    .cellTable td a:last-of-type {
+      margin-bottom: 0px;
+    }
+    .cellTable a.externalLink {
+      color: #495273;
+    }
+  
+    a.tableBack {
+      float: right;
+      padding: 20px;
+      color: #3A415A;
+      text-decoration: underline;
+    }
+  
+    a.tableBack:hover {
+      color: #495273;
+      cursor: pointer;
+    }
+  
+  
+  
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: white;
+    }
+  
+    table td:first-of-type {
+      font-weight: 700;
+      text-align: center;
+    }
+  
+    td,
+    th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+  
+    tr {
+      background-color: #ddd;
+    }
+    tr:nth-child(even) {
+      background-color: #eee;
+    }
+  
+    .mainTable a {
+      text-decoration: none;
+      color: #333;
+    }
+  
+    .mainTable td:not(:first-of-type):hover {
+      background-color: gray;
+    }
+  
+    h3 {
+      padding-top: 0px;
+    }
+  
+    .frameworkPage {
+      height: 100%;
+    }
+  
+    .frameworkPage table tr:not(:first-of-type):hover {
+      background-color: gray;
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -19,27 +178,26 @@
     <a href="javascript:void(0)" id="closeBtn" class="closebtn" onclick="toggleNav()">&times;</a>
 
     <button class="dropdownBtn">
-      Overview
+      <a href="/Overview/overview.html">Overview</a>
     </button>
     <div class="dropdown">
       <a href="/Overview/How_It_Hit/howItHit.html">How COVID Hit</a>
       <a href="/Overview/What_Happened_When/whatHappenedWhen.html">What Happened When</a>
-      <a href="/Overview/Who_Did_What/whoDidWhat.html" id="active">Who Did What</a>
       <a href="/Overview/What_Others_Said/whatOthersSaid.html">Stakeholder Reflections</a>
       <a href="/Overview/What_Councils_Said/whatCouncilsSaid.html">What Councils Reported</a>
     </div>
     <button class="dropdownBtn">
-      Council Case Studies
+      <a href="/Case_Studies/caseStudies.html">Council Case Studies</a>
     </button>
     <div class="dropdown">
       <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
       <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
       <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
-      <a href="/Case_Studies/Our_Story/ourStory.html">Council Storys</a>
+      <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
       <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
     </div>
     <button class="dropdownBtn">
-      <a href="/Framework/Framework.html">Framework</a>
+      <a href="/Framework/Framework.html" id="active">Framework</a>
     </button>
 
     <a id="logo" href="/index.html"><img src="/LGMA Stacked colour 2.png" alt="LGMA Logo"></a>
@@ -64,6 +222,15 @@
     </ol>
     <p>Just click on each of the cells in the table below to follow the respective links and then access templates and
       references by clicking on the links in the second tier matrices.</p>
+
+    <div id="timings">
+      <p class="immediately">Immediately</p>
+      <p class="early">Early</p>
+      <p class="ongoing">Ongoing</p>
+      <p class="periodically">Periodically</p>
+      <p class="asRequired">As Required</p>
+      <p class="opportunity">As Opportunity Arises</p>
+    </div>
 
     <div id="mainTable">
 
@@ -95,12 +262,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/R/1</td>
                 <td>Stand-up Emergency Management Committee</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20001%20Business%20Continuity%20Plan%20-%20Updated%20as%20at%20November%202021.pdf" target="_blank">GRC/001 Goondiwindi Business Continuity Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20006%20Emergency%20Response%20Management%20Plan%20September%202021.docx" target="_blank">IRC/006 Isaac Emergency Response Management Plan</a><br>
@@ -110,12 +277,14 @@
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20004%20Corporate%20COVID-Safe%20Plan%20January%202022.pdf" target="_blank">MBRC/004 Moreton Bay Corporate COVID-Safe Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/MSC%20001%20Various%20Information.docx" target="_blank">MSC/001 Mareeba Various Information</a><BR>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/SRRC%20001%20Various%20Information.docx" target="_blank">SRRC/001 Scenic Rim Various Information</a>
+                  <p class="story">Cairns Case Study Our Story Q2</p>
+                  <p class="story">Moreton Bay Case Study Our Story Q2</p>
                 </td>
               </tr>
               <tr>
                 <td>BC/R/2</td>
                 <td>Conduct organisation-wide risk assessment of emerging circumstances</td>
-                <td>Periodically</td>
+                <td><p class="periodically">Periodically</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20002%20Pandemic_and_Recession_Strategic_and_Tactical_Response_Framework_26_March_2020.pdf" target="_blank">IRC/002 Isaac Pandemic and Recession Strategic and Tactical Framework</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20008%20COVID-19%20Risk%20Assessment%20and%20Register%20May%202020.docx" target="_blank">IRC/008 Isaac Risk Assessment and Register</a><br>
@@ -127,25 +296,25 @@
               <tr>
                 <td>BC/R/3</td>
                 <td>Establish monitoring protocols to ensure that the latest facts are at hand</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/R/4</td>
                 <td>Establish and maintain regular meeting regime</td>
-                <td>Immediately and ongoing</td>
+                <td><p class="immediately">Immediately</p><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/R/5</td>
                 <td>Establish internal information dissemination protocols</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/R/6</td>
                 <td>Establish interaction protocols with LDCC</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20015%20Flowchart%20-%20Managing%20Tasking-%20COVID-19.docx" target="_blank">IRC/015 Isaac Flowchart Managing Tasking</a>
                 </td>
@@ -163,12 +332,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/P/1</td>
                 <td>Promote personal hygiene practices</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20022%20COVID-19%20Contractor%20Visitor%20Wellness%20Screen%20Form%20-May%202020.docx" target="_blank">IRC/022 Isaac Contractor Visitor Wellness Screen Form</a><Br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20026%20Pool%20Vehicle%20Usage%20and%20Appropriate%20Disinfecting%20-%20March%202020.pdf" target="_blank">IRC/026 Isaac Pool Vehicle Usage and Appropriate Disinfecting</a><br>
@@ -179,7 +348,7 @@
               <tr>
                 <td>BC/P/2</td>
                 <td>Implement social distancing regime</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20022%20COVID-19%20Contractor%20Visitor%20Wellness%20Screen%20Form%20-May%202020.docx" target="_blank">IRC/022 Isaac Contractor Visitor Wellness Screen Form</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20026%20Pool%20Vehicle%20Usage%20and%20Appropriate%20Disinfecting%20-%20March%202020.pdf" target="_blank">IRC/026 Isaac Pool Vehicle Usage and Appropriate Disinfecting</a><br>
@@ -191,18 +360,19 @@
               <tr>
                 <td>BC/P/3</td>
                 <td>Establish well-being engagement mechanisms including promotion of Employee Assistance Programs</td>
-                <td>Immediately and ongoing</td>
+                <td><p class="immediately">Immediately</p><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20005%20Our%20COVID19%20Employee%20Management%20Plan%20December%202021.docx" target="_blank">IRC/005 Isaac Our Employee Management Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20004%20Corporate%20COVID-Safe%20Plan%20January%202022.pdf" target="_blank">MBRC/004 Moreton Bay Corporate COVID-Safe Plan</a><BR>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-RRC%20001%20Rockhampton%20Regional%20Council%20Workplace%20Wellbeing.pdf" target="_blank">A-RRC/001 Rockhampton Workplace Wellbeing</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-SRRC%20001%20Scenic%20Rim%20Regional%20Council%20_Teamwork%20Approach%20to%20Worldwide%20(COVID-19)%20Pandemic.pdf" target="_blank">A-SRRC/001 Teamwork Approach to Worldwide Pandemic</a>
+                  <p class="story">Moreton Bay Case Study Our Story Q10,11</p>
                 </td>
               </tr>
               <tr>
                 <td>BC/P/4</td>
                 <td>Identify and support vulnerable individuals</td>
-                <td>Immediately and ongoing</td>
+                <td><p class="immediately">Immediately</p><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20005%20Our%20COVID19%20Employee%20Management%20Plan%20December%202021.docx" target="_blank">IRC/005 Isaac Our Employee Management Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20004%20Corporate%20COVID-Safe%20Plan%20January%202022.pdf" target="_blank">MBRC/004 Moreton Bay Corporate COVID-Safe Plan</a><br>
@@ -212,7 +382,7 @@
               <tr>
                 <td>BC/P/5</td>
                 <td>Establish work-from-home framework including triggers and thresholds</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20005%20Our%20COVID19%20Employee%20Management%20Plan%20December%202021.docx" target="_blank">IRC/005 Isaac Our Employee Management Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20018%20Flexible%20Working%20Framework%20August%202020.pdf" target="_blank">IRC/018 Isaac Flexible Working Framework</a><br>
@@ -223,7 +393,7 @@
               <tr>
                 <td>BC/P/6</td>
                 <td>Establish work-from-home procedures</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20019%20Working%20from%20Home%20Checklist%20August%202020.pdf" target="_blank">IRC/019 Isaac Working from Home Checklist</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20020%20Request%20for%20Flexible%20Work%20Form%20August%202020.pdf" target="_blank">IRC/020 Isaac Request for Flexible Work Form</a><br>
@@ -233,7 +403,7 @@
               <tr>
                 <td>BC/P/7</td>
                 <td>Establish special leave and other support provisions</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20003%20COVID%2019_Workplace_Policy.pdf" target="_blank">GRC/003 Goondiwindi COVID 19 Workplace Policy</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20005%20Our%20COVID19%20Employee%20Management%20Plan%20December%202021.docx" target="_blank">IRC/005 Isaac Our Employee Management Plan</a><br>
@@ -245,18 +415,19 @@
               <tr>
                 <td>BC/P/8</td>
                 <td>Conduct mental health awareness and support programs</td>
-                <td>Immediately and ongoing</td>
+                <td><p class="immediately">Immediately</p><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20023%20COVID-19%20Mental%20and%20Physical%20Wellness%20Tips%20-%20April%202020.pdf" target="_blank">IRC/023 Isaac Mental and Physical Wellness Tips</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20004%20Corporate%20COVID-Safe%20Plan%20January%202022.pdf" target="_blank">MBRC/004 Moreton Bay Corporate COVID-Safe Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-RRC%20001%20Rockhampton%20Regional%20Council%20Workplace%20Wellbeing.pdf" target="_blank">A-RRC/001 Rockhampton Workplace Wellbeing</a><br>
+                  <p class="story">Cherbourg Case Study Story Q9</p>
                 </td>
               </tr>
               <tr>
                 <td>BC/P/9</td>
                 <td>Establish absenteeism and redeployment monitoring system</td>
-                <td>Immediately</td>
-                <td></td>
+                <td><p class="immediately">Immediately</p></td>
+                <td><p class="story">Isaac Case Study Our Story Q12</p></td>
               </tr>
             </table>
             <a class="tableBack" onclick="backToTable('BC_P', 'BC', 'PEOPLE')">Back To Table</a>
@@ -272,18 +443,18 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/I/1</td>
                 <td>Identify and connect with reliable information sources</td>
-                <td>Immediately and ongoing</td>
+                <td><p class="immediately">Immediately</p><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/I/2</td>
                 <td>Establish messaging protocols to achieve accuracy, timeliness and consistency</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20007%20Team%20Member%20Exposure%20Toolkit.pdf" target="_blank">MBRC/007 Moreton Bay Team Member Exposure Toolkit</a>
                 </td>
@@ -291,51 +462,53 @@
               <tr>
                 <td>BC/I/3</td>
                 <td>Establish website/social media focal points for sharing pandemic information</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
-                  <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/SRRC%20001%20Various%20Information.docx" target="_blank">SRRC/001 Scenic Rim Various Information</a>
+                  <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/SRRC%20001%20Various%20Information.docx" target="_blank">SRRC/001 Scenic Rim Various Information</a><Br>
+                  <p class="story">Cherbourg Case Study Story Q12</p><Br>
+                  <p class="story">Moreton Bay Case Study Our Story Q5</p>
                 </td>
               </tr>
               <tr>
                 <td>BC/I/4</td>
                 <td>Establish public information release regime</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/I/5</td>
                 <td>Establish virtual call centre for routine operations</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/I/6</td>
                 <td>If required establish dedicated pandemic call centre</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Cook Case Study Story Q4</p></td>
               </tr>
               <tr>
                 <td>BC/I/7</td>
                 <td>Facilitate on-line broadcasting of Council meetings and events</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/I/8</td>
                 <td>Facilitate personal communications with vulnerable groups and individuals</td>
-                <td>Immediately</td>
-                <td></td>
+                <td><p class="immediately">Immediately</p></td>
+                <td><p class="story">Cherbourg Case Study Story Q12</p></td>
               </tr>
               <tr>
                 <td>BC/I/9</td>
                 <td>Promote use of virtual meeting capacity</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/I/10</td>
                 <td>Establish clear and regularly updated guidelines for supervisors</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20024%20COVID-19%20FAQ's%20March%202020.pdf" target="_blank">IRC/024 Isaac COVID 19 FAQ’s March 2020</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20006%20Leader%20COVID-19%20Exposure%20Toolkit%20February%202022.pdf" target="_blank">MBRC/006 Moreton Bay Leader COVID 19 Exposure Toolkit</a>
@@ -344,7 +517,7 @@
               <tr>
                 <td>BC/I/11</td>
                 <td>Engage with stakeholder groups including employee unions</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
 
@@ -361,51 +534,52 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/S/1</td>
                 <td>Prepare and implement Contingency Plans for high-risk activities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
+                  <p class="story">Isaac Case Study Our Story Q5</p><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20005%20COVID-19%20TRIGGERS%20AND%20RESPONSE%20ACTIVITY%20GUIDANCE%20April%202022.pdf" target="_blank">MBRC/005 Moreton Bay COVID-19 Triggers and Response Activity Guidance</a>
                 </td>
               </tr>
               <tr>
                 <td>BC/S/2</td>
                 <td>Optimise supply chain security for critical materials</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/S/3</td>
                 <td>Suspend high risk activities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/S/4</td>
                 <td>Redeploy resources to support critical services</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/S/5</td>
                 <td>Conduct event risk assessment regime</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/S/6</td>
                 <td>Cancel or defer high risk events</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/S/7</td>
                 <td>Establish comprehensive protocols for sensitive operations eg funerals/interments, child care, aged
                   care, home support services etc</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
 
@@ -423,12 +597,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/F/1</td>
                 <td>Conduct facility risk assessment</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20006%20Internal%20Audit%20Plan%20-%202020-2021.docx" target="_blank">GRC/006 Goondiwindi Internal Audit Plan</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20007%20Internal%20Audit%20Report%20on%20COVID%2019%20venue%20compliance.docx" target="_blank">GRC/007 Goondiwindi Internal Audit Report on Venue Compliance</a><br>
@@ -440,7 +614,7 @@
               <tr>
                 <td>BC/F/2</td>
                 <td>Establish hygiene, cleaning and social distancing protocols for all indoor venues</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20005%20COVID-19%20TRIGGERS%20AND%20RESPONSE%20ACTIVITY%20GUIDANCE%20April%202022.pdf" target="_blank">MBRC/005 Moreton Bay COVID-19 Triggers and Response Activity Guidance</a>
                 </td>
@@ -448,13 +622,13 @@
               <tr>
                 <td>BC/F/3</td>
                 <td>Establish cleaning and social distancing for outdoor facilities eg playgrounds</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/F/4</td>
                 <td>Establish check-in protocols for all patrons</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20008%20COVID%2019%20Venue%20Hire%20Compliance%20Agreement%20template.doc" target="_blank">GRC/008 Goondiwindi Venue Hire Compliance Agreement</a>
                 </td>
@@ -462,7 +636,7 @@
               <tr>
                 <td>BC/F/5</td>
                 <td>Analyse and mitigate implications of transport blockades</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20004%20Bluetooth%20e-padlock%20award%20nomination.pdf" target="_blank">GRC/004 Goondiwindi Bluetooth e-padlock</a>
                 </td>
@@ -470,19 +644,19 @@
               <tr>
                 <td>BC/F/6</td>
                 <td>Conduct backlog or future periodic works on facilities during shutdown periods</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/F/7</td>
                 <td>Ensure labour supply security for essential infrastructure operation</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/F/8</td>
                 <td>Ensure materials supply security for essential infrastructure operation</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
 
@@ -499,12 +673,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/C/1</td>
                 <td>Deploy resources to critical compliance needs eg public health and safety</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20013%20Business_and_Community_Support_Compliance_Response_Package_March_2020.pdf" target="_blank">IRC/013 Isaac Business and Community Support Compliance Package</a>
                 </td>
@@ -512,7 +686,7 @@
               <tr>
                 <td>BC/C/2</td>
                 <td>Ease enforcement activity on lesser compliance demands</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20013%20Business_and_Community_Support_Compliance_Response_Package_March_2020.pdf" target="_blank">IRC/013 Isaac Business and Community Support Compliance Package</a>
                 </td>
@@ -520,14 +694,14 @@
               <tr>
                 <td>BC/C/3</td>
                 <td>Fulfil pandemic-related compliance needs</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/C/4</td>
                 <td>Be prepared for activist disruption and community protest in conjunction with relevant authorities
                 </td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
 
@@ -544,18 +718,18 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/ST/1</td>
                 <td>Enhance on-line service provision</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/ST/2</td>
                 <td>Establish virtual programs/events/activities</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
@@ -573,43 +747,43 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>BC/CO/1</td>
                 <td>Analyse at-risk revenue streams and business activities and adopt mitigation measures</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/CO/2</td>
                 <td>Revise Long Term Financial Forecast to identify cumulate risks</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/CO/3</td>
                 <td>Revise Operational Plan and operation budget with a frugal posture to create the financial capacity
                   to offset lost revenue or unforeseen expenses</td>
-                <td>As opportunity arises</td>
+                <td><p class="opportunity">As opportunity arises</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/CO/4</td>
                 <td>Revise capital works program to prioritise works with local economic benefit</td>
-                <td>As opportunity arises</td>
+                <td><p class="opportunity">As opportunity arises</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>BC/CO/5</td>
                 <td>Establish probity controls on special grant programs</td>
-                <td>Ongoing</td>
-                <td><a href="">IRC Community Chest and Special Community Grant programs probity audit</a></td>
+                <td><p class="ongoing">Ongoing</p></td>
+                <td><p class="story">Isaac Case Study Our Story Q20</p></td>
               </tr>
               <tr>
                 <td>BC/CO/6</td>
                 <td>Monitor supply chain constraints’ impact on materials costs</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
 
@@ -630,19 +804,19 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/R/1</td>
                 <td>Stand-up Local Disaster Coordination Centre</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/SRRC%20001%20Various%20Information.docx" target="_blank">SRRC/001 Scenic Rim Various Information</a>
                 </td>
               </tr>
               <tr>
                 <td>DM/R/2</td>
                 <td>Identify any significant risks that require planning and response resourcing</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20001%20Rapid%20Social%20Needs%20Assessment%20JCU%20Sept%2020.pdf" target="_blank">CRC/001 Cairns Rapid Social Needs Assessment</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20002%20Pandemic_and_Recession_Strategic_and_Tactical_Response_Framework_26_March_2020.pdf" target="_blank">IRC/002 Isaac Pandemic and Recession Strategic and Tactical Framework</a>
@@ -651,7 +825,7 @@
               <tr>
                 <td>DM/R/3</td>
                 <td>Establish monitoring and reporting protocols</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20005%20LDMG%20instruction%20to%20Local%20Recovery%20Group%20example.pdf" target="_blank">GRC/005 Goondiwindi LDMG Instruction to Local Recovery Group</a>
                 </td>
@@ -659,7 +833,7 @@
               <tr>
                 <td>DM/R/4</td>
                 <td>Prepare a situation-specific Response and Recovery Plan</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20003%20Summary-Cairns-Local-Recovery-Plan-August-2020.pdf" target="_blank">CRC/003 Cairns Summary Local Recovery Plan</a><Br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20004%20Cairns%20Local%20Recovery%20Plan%20August%202020.pdf" target="_blank">CRC/004 Cairns Local Recovery Plan</a><BR>
@@ -694,27 +868,26 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/P/1</td>
                 <td>Clarify State and District Disaster Coordination Centres’ expectations of LDCC and local operatives
                 </td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/P/2</td>
-                <td>Clarify Commonwealth Government agencies’ expectations of LDCC and local operatives (eg Biosecurity
-                  Act Declaration exemption permit administration)</td>
-                <td>As required</td>
-                <td></td>
+                <td>Clarify Commonwealth Government agencies’ expectations of LDCC and local operatives (eg Biosecurity Act Declaration exemption permit administration)</td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Cook Case Study Our Story Q3,13</p></td>
               </tr>
               <tr>
                 <td>DM/P/3</td>
                 <td>Establish monitoring and analysis regime for all public health directives and related public health
                   initiatives</td>
-                <td>Immediately</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20011%20Cook,%20Wujal%20Wujal,%20Hope%20Vale%20COVID-19%20Entry%20Permit%20Application%20template%20March%202020.PDF" target="_blank">CSC/011 Cook Entry Permit Application form template</a><Br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20012%20COVID-19%20Remote%20and%20isolated%20area%20trip%20approval%20form%20template%20Cook%20Shire%20March%202020.DOC" target="_blank">CSC/012 Cook Remote and Isolated Area Trip Approval form template</a>
@@ -724,13 +897,13 @@
                 <td>DM/P/4</td>
                 <td>Facilitate emergency agencies’ reporting to LDCC particularly in relation to risks of exposed or
                   stressed resources</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/P/5</td>
                 <td>Explore local resource redeployment options to supplement emergency workers</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
 
@@ -749,12 +922,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/I/1</td>
                 <td>Establish structured incoming and outgoing communication channels</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20003%20Emergency%20Alert%20Request-Form%20-%20Cherbourg.doc" target="_blank">CASC/003 Cherbourg Emergency Alert Request Form</a>
                 </td>
@@ -762,21 +935,22 @@
               <td>DM/I/2</td>
               <td>Maintain consistent pro-active leadership posture to inform the community and to engender confidence
               </td>
-              <td>Ongoing</td>
-              <td></td>
+              <td><p class="ongoing">Ongoing</p></td>
+              <td><p class="story">Cherbourg Case Study Story Q6</p></td>
               </tr>
               <tr>
                 <td>DM/I/3</td>
                 <td>Actively advocate to State and Disaster Coordination Centres with local intelligence</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
-                  
+                  <p class="story">Goondiwindi Case Study Our Story Q7</p>
+                  <p class="story">Isaac Case Study Our Story Q16</p>
                 </td>
               </tr>
               <tr>
                 <td>DM/I/4</td>
                 <td>Establish monitoring and reporting protocols to ensure that the latest facts are at hand</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
 
@@ -793,36 +967,36 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/S/1</td>
                 <td>Monitor critical emergency service provision and advocate when risks emerge</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/S/2</td>
                 <td>Support establishment and operation of triage and medical response services</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/S/3</td>
                 <td>Support establishment and operation of testing services</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Cherbourg Case Study Our Story Q2</p></td>
               </tr>
               <tr>
                 <td>DM/S/4</td>
                 <td>Support establishment and operation of quarantine services</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/S/5</td>
                 <td>Support establishment and operation of border control services</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20011%20Cook,%20Wujal%20Wujal,%20Hope%20Vale%20COVID-19%20Entry%20Permit%20Application%20template%20March%202020.PDF" target="_blank">CSC/011 Cook Entry Permit Application form template</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20012%20COVID-19%20Remote%20and%20isolated%20area%20trip%20approval%20form%20template%20Cook%20Shire%20March%202020.DOC" target="_blank">CSC/012 Cook Remote and Isolated Area Trip Approval form template</a><br>
@@ -832,17 +1006,18 @@
               <tr>
                 <td>DM/S/6</td>
                 <td>Support establishment and operation of vaccination services</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Goondiwindi Case Study Our Story Q16</p></td>
               </tr>
               <tr>
                 <td>DM/S/7</td>
                 <td>Identify and facilitate support for vulnerable groups and individuals</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20001%20Cherbourg%20LDMG%20%20COVID%20isolation%20accommodation%20options%20and%20referral%20process%20for%20individuals%20and%20or%20families%20v0.7.docx" target="_blank">CASC/001 Cherbourg COVID Isolation Accommodation Options</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20004%20Flow%20chart%20for%20ordering%20of%20groceries%20Cherbourg.png" target="_blank">CASC/004 Cherbourg Flowchart for Ordering Groceries</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/MICC%20001%20Community%20Support%20initiative%20-%20food%20and%20other%20supplies.docx" target="_blank">MICC/001 Mount Isa Community Support Initiative – food and other supplies</a>
+                  <p class="story">Cherbourg Case Study Story Q10</p>
                 </td>
               </tr>
 
@@ -861,36 +1036,36 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/F/1</td>
                 <td>Advocate for establishment of supplementary triage and medical response facilities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/F/2</td>
                 <td>Advocate for establishment of supplementary testing facilities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/F/3</td>
                 <td>Advocate for establishment of supplementary quarantine facilities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/F/4</td>
                 <td>Advocate for establishment of border control infrastructure</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/F/5</td>
                 <td>Advocate for establishment of supplementary vaccination facilities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
 
@@ -907,18 +1082,18 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/C/1</td>
                 <td>Deploy resources to critical compliance needs eg public health and safety</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/C/2</td>
                 <td>Ease enforcement activity on lesser compliance demands</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-GCCC%20002%20City%20of%20Gold%20Coast_Queensland%20Border%20Closures.docx" target="_blank">A-GCCC/002 Gold Coast Queensland Border Closures</a>
                 </td>
@@ -926,15 +1101,11 @@
               <tr>
                 <td>DM/C/3</td>
                 <td>Fulfil pandemic-related compliance needs</td>
-                <td>As required</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>DM/C/4</td>
-                <td>Be prepared for activist disruption and community protest in conjunction with relevant authorities
+                <td><p class="asRequired">As Required</p></td>
+                <td>
+                  <p class="story">Cook Case Study Story Q4</p><br>
+                  <p class="story">Isaac Case Study Story Q16</p>
                 </td>
-                <td>Ongoing</td>
-                <td></td>
               </tr>
 
             </table>
@@ -951,13 +1122,14 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/ST/1</td>
                 <td>Identify and pursue innovative solutions to practical problems</td>
                 <td></td>
-                <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20004%20Bluetooth%20e-padlock%20award%20nomination.pdf" target="_blank">GRC/004 Goondiwindi Bluetooth e-padlock</a></td>
+                <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20004%20Bluetooth%20e-padlock%20award%20nomination.pdf" target="_blank">GRC/004 Goondiwindi Bluetooth e-padlock</a>
+                </td>
               </tr>
               <tr>
                 <td>DM/ST/2</td>
@@ -979,19 +1151,19 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>DM/CO/1</td>
                 <td>Monitor critical local economic influences including supply chain risks</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>DM/CO/2</td>
                 <td>Escalate unacceptable risks to State and District Disaster Coordination Centres</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Isaac Case Study Story Q16</p></td>
               </tr>
 
             </table>
@@ -1012,12 +1184,12 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/R/1</td>
           <td>Monitor published economic indicators and local intelligence</td>
-          <td>Ongoing</td>
+          <td><p class="ongoing">Ongoing</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20002%20Pulse%20of%20the%20Community%20Cairns%202021%20COVID_19.pdf" target="_blank">CRC/002 Cairns Pulse of the Community Survey</a><br>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20002%20Pandemic_and_Recession_Strategic_and_Tactical_Response_Framework_26_March_2020.pdf" target="_blank">IRC/002 Isaac Pandemic and Recession Strategic and Tactical Framework</a>
@@ -1026,7 +1198,7 @@
         <tr>
           <td>BS/R/2</td>
           <td>Facilitate business groups’ local analysis of risks</td>
-          <td>Early</td>
+          <td><p class="early">Early</p></td>
           <td>
             
           </td>
@@ -1034,20 +1206,20 @@
         <tr>
           <td>BS/R/3</td>
           <td>Analyse critical supply chain risks and advocate for mitigation</td>
-          <td>Ongoing</td>
+          <td><p class="ongoing">Ongoing</p></td>
           <td></td>
         </tr>
         <tr>
           <td>BS/R/4</td>
           <td>Identify and engage vulnerable sectors and advocate for mitigation of critical risks</td>
-          <td>Ongoing</td>
+          <td><p class="ongoing">Ongoing</p></td>
           <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20001%20Rapid%20Social%20Needs%20Assessment%20JCU%20Sept%2020.pdf" target="_blank">CRC/001 Cairns Rapid Social Needs Assessment</a></td>
         </tr>
 
       </table>
-            <a class="tableBack" onclick="backToTable('BS_R', 'BS', 'RISKS')">Back To Table</a>
-          </div>
-        </div>
+      <a class="tableBack" onclick="backToTable('BS_R', 'BS', 'RISKS')">Back To Table</a>
+      </div>
+      </div>
         <div class="tCell" id="BS_P" onclick="grow('BS_P', 'BS', 'PEOPLE')">
           <p>BS/P Facilitate support for health and well-being of small business operators</p>
           <div class="cellTable">
@@ -1057,18 +1229,18 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/P/1</td>
           <td>Promote/facilitate local networking support</td>
-          <td>Early</td>
+          <td><p class="early">Early</p></td>
           <td><a href="#">Cairns RC Resilient Businesses Network</a></td>
         </tr>
         <tr>
           <td>BS/P/2</td>
           <td>Facilitate crisis counselling services</td>
-          <td>As required</td>
+          <td><p class="asRequired">As Required</p></td>
           <td></td>
         </tr>
 
@@ -1085,18 +1257,18 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/I/1</td>
           <td>Establish pandemic driven engagement regime with local businesses</td>
-          <td>Early</td>
+          <td><p class="early">Early</p></td>
           <td></td>
         </tr>
         <tr>
           <td>BS/I/2</td>
           <td>Collect information regarding local business conditions and outlook</td>
-          <td>Ongoing</td>
+          <td><p class="ongoing">Ongoing</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20002%20Pulse%20of%20the%20Community%20Cairns%202021%20COVID_19.pdf" target="_blank">CRC/002 Cairns Pulse of the Community Survey</a><br>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20010%20Proposed%20Role%20and%20Functions%20-%20Economic%20Recovery%20Group%20-%20May%202020.PPTX" target="_blank">CSC/010 Cook Role and Functions of Economic Recovery Group</a><br>
@@ -1107,9 +1279,10 @@
         <tr>
           <td>BS/I/3</td>
           <td>Provide information and advice using webinar/podcast/social media</td>
-          <td>Ongoing</td>
+          <td><p class="ongoing">Ongoing</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20010%20Proposed%20Role%20and%20Functions%20-%20Economic%20Recovery%20Group%20-%20May%202020.PPTX" target="_blank">CSC/010 Cook Role and Functions of Economic Recovery Group</a><br>
+            <p class="story">Goondiwindi Case Study Our Story Q11,18</p>
           </td>
         </tr>
 
@@ -1126,18 +1299,18 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/S/1</td>
           <td>Facilitate mentor support services</td>
-          <td>As required</td>
+          <td><p class="asRequired">As Required</p></td>
           <td></td>
         </tr>
         <tr>
           <td>BS/S/2</td>
           <td>Host resilient business events</td>
-          <td>As required</td>
+          <td><p class="asRequired">As Required</p></td>
           <td></td>
         </tr>
 
@@ -1154,12 +1327,12 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/F/1</td>
           <td>Facilitate development of virtual business/commerce models</td>
-          <td>Ongoing</td>
+          <td><p class="ongoing">Ongoing</p></td>
           <td>
             
           </td>
@@ -1178,12 +1351,12 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/C/1</td>
           <td>Establish amnesty and moratoriums on non-critical non-compliances</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20013%20Business_and_Community_Support_Compliance_Response_Package_March_2020.pdf" target="_blank">IRC/013 Isaac Business and Community Support Compliance Package</a>
           </td>
@@ -1191,13 +1364,13 @@
         <tr>
           <td>BS/C/2</td>
           <td>Enhance advisory role on pandemic related compliance</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td></td>
         </tr>
         <tr>
           <td>BS/C/3</td>
           <td>Provide advice on alternative food delivery modes</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td></td>
         </tr>
 
@@ -1214,30 +1387,32 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/ST/1</td>
           <td>Encourage local procurement and facilitate/implement local buy program</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td>
             <a class="externalLink" href="https://www.cairnschamber.com.au/news/articles/10123-keep-it-in-cairns#:~:text=The%20%E2%80%9CKeep%20it%20in%20Cairns%E2%80%9D%20campaign%20is%20an,to%20serve%20as%20a%20reminder%20to%20people%20" target="_blank">CRC/005 Keep it in Cairns</a><br>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-RCC%20001%20Redland%20City%20Council_Covid%20Kindness%20Campaign.pdf" target="_blank">A-RCC/001 Redland COVID Kindness Campaign</a><br>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-WDRC%20002%20Western%20Downs%20Regional%20Council%20Grants%20and%20Conflicts%20of%20Interest.docx" target="_blank">A-WDRC/002 Western Downs Grants</a><br>
-            <a class="externalLink" href="https://www.isaac.qld.gov.au/shop-isaac" target="_blank">IRC/029 Shop Isaac</a>
+            <a class="externalLink" href="https://www.isaac.qld.gov.au/shop-isaac" target="_blank">IRC/029 Shop Isaac</a><br>
+            <p class="story">Cook Case Study Our Story Q12</p><br>
+            <p class="story">Goondiwindi Case Study Our Story Q18</p>
           </td>
         </tr>
         <tr>
           <td>BS/ST/2</td>
           <td>Recognise and reward small business resilience examples to engender business confidence</td>
-          <td>Early</td>
+          <td><p class="early">Early</p></td>
           <td></td>
         </tr>
         <tr>
           <td>BS/ST/3</td>
           <td>Reset economic development and tourism strategies to escalate and/or bring forward stimulant opportunities
           </td>
-          <td>Early</td>
+          <td><p class="early">Early</p></td>
           <td>
             
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20003%20Summary-Cairns-Local-Recovery-Plan-August-2020.pdf" target="_blank">CRC/003 Cairns Summary Local Recovery Plan</a><Br>
@@ -1249,7 +1424,7 @@
         <tr>
           <td>BS/ST/4</td>
           <td>Implement Emergency Stimulus Package</td>
-          <td>Early</td>
+          <td><p class="early">Early</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20012%20Business_Support_and_Initial_Stimulus_Package_March_2020.pdf" target="_blank">IRC/012 Isaac Business Support and Initial Stimulus Package</a><br>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20008%20Economic%20Stimulus%20Package%202020.docx" target="_blank">MBRC/008 Moreton Bay Emergency Stimulus Package</a><br>
@@ -1270,12 +1445,12 @@
           <th></th>
           <th>Potential Actions</th>
           <th>Timeframes</th>
-          <th>Templates/References</th>
+          <th>References</th>
         </tr>
         <tr>
           <td>BS/CO/1</td>
           <td>Waive some fees and charges</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20012%20Business_Support_and_Initial_Stimulus_Package_March_2020.pdf" target="_blank">IRC/012 Isaac Business Support and Initial Stimulus Package</a><br>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20008%20Economic%20Stimulus%20Package%202020.docx" target="_blank">MBRC/008 Moreton Bay Emergency Stimulus Package</a>
@@ -1284,22 +1459,23 @@
         <tr>
           <td>BS/CO/2</td>
           <td>Provide small crisis grants for small-medium business</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td>
             <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20014%20Isaac%20Community%20Chest%20Fund%20%20March%202020.pdf" target="_blank">IRC/014 Isaac Community Chest Fund</a><br>
-            <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-WDRC%20002%20Western%20Downs%20Regional%20Council%20Grants%20and%20Conflicts%20of%20Interest.docx" target="_blank">A-WDRC/002 Western Downs Grants</a>
+            <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-WDRC%20002%20Western%20Downs%20Regional%20Council%20Grants%20and%20Conflicts%20of%20Interest.docx" target="_blank">A-WDRC/002 Western Downs Grants</a><br>
+            <p class="story">Cook Case Study Our Story Q12</p>
           </td>
         </tr>
         <tr>
           <td>BS/CO/3</td>
           <td>Provide relief from rates and charges in cases of financial hardship</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td></td>
         </tr>
         <tr>
           <td>BS/CO/4</td>
           <td>Provide rent relief for businesses in Council assets</td>
-          <td>Immediate</td>
+          <td><p class="immediately">Immediately</p></td>
           <td></td>
         </tr>
 
@@ -1309,7 +1485,7 @@
         </div>
       </div>
 
-      <div class="tRowD">
+      <div class="tRow">
         <div class="tCell" id="CS">Community Support</div>
         <div class="tCell" id="CS_R" onclick="grow('CS_R', 'CS', 'RISKS')">
           <p>CS/R Understand community risks</p>
@@ -1320,12 +1496,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/R/1</td>
                 <td>Gather and analyse local intelligence on community well-being</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20001%20Rapid%20Social%20Needs%20Assessment%20JCU%20Sept%2020.pdf" target="_blank">CRC/001 Cairns Rapid Social Needs Assessment</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20002%20Pulse%20of%20the%20Community%20Cairns%202021%20COVID_19.pdf" target="_blank">CRC/002 Cairns Pulse of the Community Survey</a><br>
@@ -1335,19 +1511,20 @@
               <tr>
                 <td>CS/R/2</td>
                 <td>Facilitate community groups’ local analysis of risks</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/R/3</td>
                 <td>Analyse critical social needs risks and advocate for mitigation</td>
-                <td>Early</td>
-                <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20001%20Rapid%20Social%20Needs%20Assessment%20JCU%20Sept%2020.pdf" target="_blank">CRC/001 Cairns Rapid Social Needs Assessment</a></td>
+                <td><p class="early">Early</p></td>
+                <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cairns/CRC%20001%20Rapid%20Social%20Needs%20Assessment%20JCU%20Sept%2020.pdf" target="_blank">CRC/001 Cairns Rapid Social Needs Assessment</a>
+                </td>
               </tr>
               <tr>
                 <td>CS/R/4</td>
                 <td>Identify vulnerable sectors and their critical risks</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
       
@@ -1365,24 +1542,24 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/P/1</td>
                 <td>Promote/facilitate local networking support</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/P/2</td>
                 <td>Facilitate crisis counselling services</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/P/3</td>
                 <td>Promote hygiene and social distancing precautions</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20001%20COVID_19%20Plan%20Nov%202020.PDF" target="_blank">CSC/001 Cook COVID-19 Pandemic Management Plan</a>
                 </td>
@@ -1390,7 +1567,7 @@
               <tr>
                 <td>CS/P/4</td>
                 <td>Promote testing and isolation</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20001%20COVID_19%20Plan%20Nov%202020.PDF" target="_blank">CSC/001 Cook COVID-19 Pandemic Management Plan</a>
                 </td>
@@ -1398,7 +1575,7 @@
               <tr>
                 <td>CS/P/5</td>
                 <td>Promote vaccination</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cook/CSC%20013%20Vaccination%20roll%20out%20poster%20example.pdf" target="_blank">CSC/013 Cook Vaccination roll-out poster</a>
                 </td>
@@ -1407,12 +1584,13 @@
                 <td>CS/P/6</td>
                 <td>Work with local service organisations and government agencies to identify vulnerable groups and
                   individuals and facilitate and advocate for their support</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20001%20Cherbourg%20LDMG%20%20COVID%20isolation%20accommodation%20options%20and%20referral%20process%20for%20individuals%20and%20or%20families%20v0.7.docx" target="_blank">CASC/001 Cherbourg COVID Isolation Accommodation Options</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20004%20Flow%20chart%20for%20ordering%20of%20groceries%20Cherbourg.png" target="_blank">CASC/004 Cherbourg Flowchart for Ordering Groceries</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-TSC%20001%20Torres%20Shire%20Council_%20Stranded%20Students%20and%20Families.pdf" target="_blank">A-TSC/001 Stranded Students and Families</a><br>
-                  <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/MICC%20001%20Community%20Support%20initiative%20-%20food%20and%20other%20supplies.docx" target="_blank">MICC/001 Mount Isa Community Support Initiative – food and other supplies</a>
+                  <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Other%20Councils/MICC%20001%20Community%20Support%20initiative%20-%20food%20and%20other%20supplies.docx" target="_blank">MICC/001 Mount Isa Community Support Initiative – food and other supplies</a><br>
+                  <p class="story">Cherbourg Case Study Story Q11</p>
                 </td>
               </tr>
       
@@ -1429,48 +1607,48 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/I/1</td>
                 <td>Identify and connect with reliable information sources</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/I/2</td>
                 <td>Establish messaging protocols to achieve accuracy, timeliness and consistency</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/I/3</td>
                 <td>Establish website/social media focal points for sharing pandemic information</td>
-                <td>Immediate</td>
-                <td></td>
+                <td><p class="immediately">Immediately</p></td>
+                <td><p class="story">Moreton Bay Case Study Our Story Q5</p></td>
               </tr>
               <tr>
                 <td>CS/I/4</td>
                 <td>Establish information release regime</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/I/5</td>
                 <td>Establish virtual customer centre for routine operations</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/I/6</td>
                 <td>If required establish dedicated pandemic call centre</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Cook Case Study Our Story Q4</p></td>
               </tr>
               <tr>
                 <td>CS/I/7</td>
                 <td>Advise community groups regarding events and activities risk assessment and planning</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20016%20Event%20Risk%20Evaluation%20Guideline%20-%20March%202020.docx" target="_blank">IRC/016 Isaac Event risk Evaluation Guideline</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20017%20Event%20Risk%20Evaluation%20Form%20-%20March%202020.docx" target="_blank">IRC/017 Isaac Event Risk Evaluation Form
@@ -1491,38 +1669,39 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/S/1</td>
                 <td>Expand and promote libraries e-stock</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/S/2</td>
                 <td>Establish remote library borrowing</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
-                  <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-WDRC%20001%20Western%20Downs%20Regional%20Council%20Library%20Takeaway.docx" target="_blank">A-WDRC/001 Western Downs Library Takeaway</a>
+                  <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-WDRC%20001%20Western%20Downs%20Regional%20Council%20Library%20Takeaway.docx" target="_blank">A-WDRC/001 Western Downs Library Takeaway</a><br>
+                  <p class="story">Moreton Bay Case Study Our Story Q15</p>
                 </td>
               </tr>
               <tr>
                 <td>CS/S/3</td>
                 <td>Explore webinar/podcast modes for delivering services</td>
-                <td>Early</td>
-                <td></td>
+                <td><p class="early">Early</p></td>
+                <td><p class="story">Goondiwindi Case Study Our Story Q11,18</p></td>
               </tr>
               <tr>
                 <td>CS/S/4</td>
                 <td>Conduct activities outdoors to promote social distancing</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/S/5</td>
                 <td>Facilitate provision and delivery of essential supplies to vulnerable groups and individuals</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20001%20Cherbourg%20LDMG%20%20COVID%20isolation%20accommodation%20options%20and%20referral%20process%20for%20individuals%20and%20or%20families%20v0.7.docx" target="_blank">CASC/001 Cherbourg COVID Isolation Accommodation Options</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Cherbourg/CASC%20004%20Flow%20chart%20for%20ordering%20of%20groceries%20Cherbourg.png" target="_blank">CASC/004 Cherbourg Flowchart for Ordering Groceries</a><br>
@@ -1544,36 +1723,36 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/F/1</td>
                 <td>Support establishment of supplementary triage and medical response facilities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/F/2</td>
                 <td>Support establishment of supplementary testing facilities</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Isaac Case Study Our Story Q16</p></td>
               </tr>
               <tr>
                 <td>CS/F/3</td>
                 <td>Support establishment of supplementary quarantine facilities</td>
-                <td>As required</td>
-                <td></td>
+                <td><p class="asRequired">As Required</p></td>
+                <td><p class="story">Isaac Case Study Our Story Q16</p></td>
               </tr>
               <tr>
                 <td>CS/F/4</td>
                 <td>Support establishment of border control infrastructure</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td><a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Goondiwindi/GRC%20004%20Bluetooth%20e-padlock%20award%20nomination.pdf" target="_blank">GRC/004 Goondiwindi Bluetooth e-padlock</a></td>
               </tr>
               <tr>
                 <td>CS/F/5</td>
                 <td>Support establishment of supplementary vaccination facilities</td>
-                <td>As required</td>
+                <td><p class="asRequired">As Required</p></td>
                 <td></td>
               </tr>
       
@@ -1590,12 +1769,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/C/1</td>
                 <td>Establish amnesty and moratoriums on non-critical compliance</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20013%20Business_and_Community_Support_Compliance_Response_Package_March_2020.pdf" target="_blank">IRC/013 Isaac Business and Community Support Compliance Package</a>
                 </td>
@@ -1603,14 +1782,14 @@
               <tr>
                 <td>CS/C/2</td>
                 <td>Deploy resources to address pandemic-related compliance needs</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/C/3</td>
                 <td>Be prepared for activist disruption and community protest in conjunction with relevant authorities</td>
-                <td>Ongoing</td>
-                <td></td>
+                <td><p class="ongoing">Ongoing</p></td>
+                <td><p class="story">Moreton Bay Case Study Our Story Q7</p></td>
               </tr>
       
             </table>
@@ -1626,25 +1805,25 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/ST/1</td>
                 <td>Establish virtual community support and capacity building models</td>
-                <td>Early</td>
+                <td><p class="early">Early</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/ST/2</td>
                 <td>Promote concepts of volunteering and neighbourhood support</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/ST/3</td>
                 <td>Develop shared experiences on-line (eg virtual walking trail, virtual yarning/meeting place, virtual
                   choir/orchestra etc)</td>
-                <td>Ongoing</td>
+                <td><p class="ongoing">Ongoing</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-WDRC%20003%20Western%20Downs%20Regional%20Council%20Arts%20Online.docx" target="_blank">A-WDRC/003 Western Downs Arts Online</a>
                 </td>
@@ -1652,7 +1831,7 @@
               <tr>
                 <td>CS/ST/4</td>
                 <td>Conduct a major event virtually (eg Anzac on your driveway)</td>
-                <td>As opportunity arises</td>
+                <td><p class="opportunity">As Opportunity Arises</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-BSC%20001%20Burdekin%20Shire%20Council_Virtual%20Festival.pdf" target="_blank">A-BSC/001 Burdekin Virtual Festival</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-MRC%20001%20Mackay%20Regional%20Council%20-%20Online%20Sports%20Expo%20and%20Sign-On%20Event.pdf" target="_blank">A-MRC/001 Mackay Online Sports Expo and Sign-on Event</a><BR>
@@ -1675,12 +1854,12 @@
                 <th></th>
                 <th>Potential Actions</th>
                 <th>Timeframes</th>
-                <th>Templates/References</th>
+                <th>References</th>
               </tr>
               <tr>
                 <td>CS/CO/1</td>
                 <td>Waive some fees and charges</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20011%20Community_Support_and_Wellbeing_Package_March_2020.pdf" target="_blank">IRC/011 Isaac Community Support and Wellbeing Package</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Moreton%20Bay/MBRC%20008%20Economic%20Stimulus%20Package%202020.docx" target="_blank">MBRC/008 Moreton Bay Emergency Stimulus Package</a><br>
@@ -1690,7 +1869,7 @@
               <tr>
                 <td>CS/CO/2</td>
                 <td>Provide small crisis grants for community groups</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Isaac/IRC%20011%20Community_Support_and_Wellbeing_Package_March_2020.pdf" target="_blank">IRC/011 Isaac Community Support and Wellbeing Package</a><br>
                   <a href="https://www.lgmaqld.org.au/resources/Documents/COVID%20Handbook/Reference%20Documents/Awards/A-GCCC%20001%20City%20of%20Gold%20Coast_COVID-19%20Community%20Grants%20Programs.docx" target="_blank">A-GCCC/001 Gold Coast Community Grants Program</a><br>
@@ -1701,19 +1880,19 @@
               <tr>
                 <td>CS/CO/3</td>
                 <td>Provide relief from rates and charges in cases of individuals’ financial hardship</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/CO/4</td>
                 <td>Provide rent relief for clubs and organisations in Council assets</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
               <tr>
                 <td>CS/CO/5</td>
                 <td>Provide rates concessions for clubs and organisations</td>
-                <td>Immediate</td>
+                <td><p class="immediately">Immediately</p></td>
                 <td></td>
               </tr>
       
@@ -1742,160 +1921,111 @@
 <script src="/nav.js"></script>
 
 <style>
-  body {
-    overflow-y: auto;
-  }
 
-  a#returnTop {
-    position: fixed;
-    right: 5%;
-    top: 5%;
-  }
-
-  #mainTable {
-    width: 99%;
-  }
-
-  #mainTable .tRow,
-  #mainTable .tRowD {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
-  }
-
-  .tRowD .tCell {
-    background-color: #eee;
-  }
-
-
-  .tHead {
-    text-align: center;
-    flex-basis: 88.5%;
-    border: 1px solid gray;
-    font-weight: 700;
-    line-height: 40px;
-  }
-
-  .tCellBlank {
-    flex: 0 0 10%;
-    min-height: 30px;
-    padding: 6px;
-  }
-
-  .tCell,
-  .tCellH {
-    flex: 0 0 10%;
-    transition: 0.2s;
-    padding: 5px;
-    border: 1px solid #3A415A;
-  }
-
-  .tCellH {
-    font-weight: 500;
-    text-align: center;
-    line-height: 40px;
-    color: white;
-    background-color: #495273;
-    letter-spacing: 1px;
-    font-size: 15px;
-  }
-
-  .tCell {
-    font-size: 15px;
-  }
-
-  .tCell:first-of-type {
-    font-weight: 500;
-    color: white;
-    background-color: #495273;
-  }
-
-  .tCell:not(:first-of-type):hover {
-    border-color: orange;
-    border-width: 2px;
-    padding: 4px;
-  }
-
-  .tCell .cellTable {
-    display: none;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 20px;
-    width: 95%;
-  }
-  
-  .cellTable table tr:not(:first-of-type):hover {
-    background-color: gray;
-  }
-
-  .cellTable a {
+  #timings p {
     display: inline-block;
-    margin-bottom: 5px;
+    min-width: 98px;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 28px;
+    text-align: center;
+    margin: 2px;
+    padding: 0px 5px;
+    font-variant: all-small-caps;
+    font-weight: 700;
+    font-size: 18px;
   }
-  .cellTable td a:last-of-type {
-    margin-bottom: 0px;
+  .cellTable td:nth-of-type(3) {
+    padding: 1px;
   }
-  .cellTable a.externalLink {
-    color: orange;
+  .cellTable td:nth-of-type(3) p {
+    display: block;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 28px;
+    text-align: center;
+    margin: 2px;
+    font-variant: all-small-caps;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .immediately {
+      background-color: #c77b75;
+  }
+  .ongoing {
+    background-color: #f2e56f;
+  }
+  .asRequired {
+    background-color: #77b1ba;
+  }
+  .early {
+    background-color: #f5ad5b;
+  }
+  .opportunity {
+    background-color: #9280bd;
+  }
+  .cellTable .opportunity {
+    height: 54px !important;
+    line-height: 18px !important;
+  }
+  .periodically {
+    background-color: #9ed971;
   }
 
-  a.tableBack {
-    float: right;
-    padding: 20px;
-    color: #3A415A;
-    text-decoration: underline;
-  }
-
-  a.tableBack:hover {
-    color: #495273;
-    cursor: pointer;
-  }
-
-
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
+  .cellTable td {
+    vertical-align: top;
     background-color: white;
   }
 
-  table td:first-of-type {
+  .cellTable tr {
+    height: 30px;
+    transition: 1s;
+  }
+  .cellTable tr:not(first-of-type):hover td{
+    background-color: whitesmoke;
+  }
+
+  .cellTable th {
+    background-color: whitesmoke;
+    font-variant: all-small-caps;
+    letter-spacing: 1px;
+  }
+  .cellTable th:first-of-type {
+    width: 10%;
+  }
+  .cellTable th:nth-of-type(2) {
+    width: 40%;
+  }
+  .cellTable th:nth-of-type(3) {
+    width: 10%;
+  }
+  .cellTable th:nth-of-type(4) {
+    width: 40%;
+  }
+
+  .cellTable table p {
+    margin:4px;
+    display: inline-block;
+  }
+  .cellTable table td:nth-of-type(4) p::before {
+    content: "\2192  ";
     font-weight: 700;
-  }
-
-  td,
-  th {
-    border: 1px solid #dddddd;
-    padding: 8px;
-  }
-
-  tr {
-    background-color: #ddd;
-  }
-  tr:nth-child(even) {
-    background-color: #eee;
-  }
-
-  .mainTable a {
     text-decoration: none;
-    color: #333;
   }
 
-  .mainTable td:not(:first-of-type):hover {
-    background-color: gray;
+  .cellTable table a {
+    text-decoration: none;
   }
-
-  h3 {
-    padding-top: 0px;
+  .cellTable table a:hover {
+    text-decoration: underline;
   }
-
-  .frameworkPage {
-    height: 100%;
+  .cellTable table a::before {
+    content: "\2192  ";
+    font-weight: 700;
+    text-decoration: none;
   }
-
-  .frameworkPage table tr:not(:first-of-type):hover {
-    background-color: gray;
-  }
+  
 </style>
 
 <script>
