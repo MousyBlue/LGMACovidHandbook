@@ -192,7 +192,7 @@
     <div class="dropdown">
       <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
       <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
-      <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+      <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
       <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
       <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
     </div>
@@ -207,10 +207,21 @@
 
   <!-- Page Content -->
   <div id="pageContent">
-    <h1>Pandemic Management Framework</h1>
-    <p class="by-line">The structure of the framework is simply based on the following tiered progression;
+
+    <div id="timings">
+      <h3>Times</h3>
+      <p class="immediately">Immediately</p>
+      <p class="early">Early</p>
+      <p class="ongoing">Ongoing</p>
+      <p class="periodically">Periodically</p>
+      <p class="asRequired">As Required</p>
+      <p class="opportunity">As Opportunity Arises</p>
+    </div>
+    
+    <h1 style="width: 75%;">Pandemic Management Framework</h1>
+    <p class="by-line" style="width: 75%;">The structure of the framework is simply based on the following tiered progression;
     </p>
-    <ol>
+    <ol style="width: 75%;">
       <li>Broad matrix identifying response and recovery elements, ie things that can be influenced/controlled.</li>
       <li>Derivation of the internal (organisation business continuity) and external (community disaster management)
         objectives for each of the elements within the matrix.</li>
@@ -220,17 +231,11 @@
       <li>Links to other third tier template tools (eg risk assessment pro-forma) and download them for your use.</li>
       <li>Links to useful references.</li>
     </ol>
+    
     <p>Just click on each of the cells in the table below to follow the respective links and then access templates and
       references by clicking on the links in the second tier matrices.</p>
 
-    <div id="timings">
-      <p class="immediately">Immediately</p>
-      <p class="early">Early</p>
-      <p class="ongoing">Ongoing</p>
-      <p class="periodically">Periodically</p>
-      <p class="asRequired">As Required</p>
-      <p class="opportunity">As Opportunity Arises</p>
-    </div>
+    
 
     <div id="mainTable">
 
@@ -1922,8 +1927,15 @@
 
 <style>
 
+  #timings {
+    float: right;
+    position: relative;
+    width: 20%;
+    text-align: center;
+    padding: 20px;
+  }
   #timings p {
-    display: inline-block;
+    display: block;
     min-width: 98px;
     height: 30px;
     border-radius: 15px;

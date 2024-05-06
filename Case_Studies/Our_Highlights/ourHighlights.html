@@ -51,7 +51,7 @@
       <div class="dropdown">
         <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
         <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
-        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
         <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
       </div>
@@ -69,6 +69,69 @@
     <h1>Council Highlights</h1>
     <p class="by-line">The best practice aspects of each Council are highlighted below.</p>
 
+    <div class="container">
+      <div class="carousel">
+        <div class="card" id="cairns">
+          <img src="/Council_Logos/cairnsLogo.png" alt="Logo for Cairns Council">
+          <ul>
+            <li>Initial Recovery Plan adopted early</li>
+            <li>Subsequent Pathway to Recovery Plan from COVID-19</li>
+            <li>Business community engagement and support (including Investment Incentive Policy, establishment of the Cairns Resilient Businesses Network, ‘Meet the Buyer’ event, ‘Keep it in Cairns’ buy local campaign)</li>
+          </ul>
+        </div>
+        <div class="card" id="cherbourg">
+          <img src="/Council_Logos/cherbourgLogo.png" alt="Logo for Cherbourg Aboriginal Shire Council">
+          <ul>
+            <li>Initial response to closure</li>
+            <li>Community engagement and support</li>
+            <li>Honest but positive messaging</li>
+            <li>Mental health support initiatives</li>
+            <li>Re supply and food drops to families</li>
+            <li>Rapid mobilisation of testing and employee support</li>
+          </ul>
+        </div>
+        <div class="card" id="cook">
+          <img src="/Council_Logos/cookLogo.png" alt="Cook council logo">
+          <ul>
+            <li>Dedicated Call Centre</li>
+            <li>Sustained and demanding closure exemptions administration</li>
+            <li>Cooktown and Cape York Expo</li>
+            <li>Employee support and vaccination encouragement in remote towns</li>
+          </ul>
+        </div>
+        <div class="card" id="goondiwindi">
+          <img src="/Council_Logos/goondiwindiLogo.png" alt="Goondiwindi council logo">
+          <ul>
+            <li>E-gate innovation (remote gate access)</li>
+            <li>Community and business engagement (webinars)</li>
+            <li>Employee support</li>
+            <li>Vaccination results and advocacy</li>
+          </ul>
+        </div>
+        <div class="card" id="isaac">
+          <img src="/Council_Logos/isaacLogo.png" alt="Isaac council logo">
+          <ul>
+            <li>Early adoption of Strategic and Tactical Pandemic and Recession Response Framework and associated Response Packages</li>
+            <li>Comprehensive COVID-19 Recovery Plan,</li>
+            <li>Employee communication and support</li>
+            <li>Community support, business engagement and support and advocacy</li>
+          </ul>
+        </div>
+        <div class="card" id="moretonBay">
+          <img src="/Council_Logos/moretonbayLogo.png" alt="Moreton Bay council logo">
+          <ul>
+            <li>Dedicated Call Centre</li>
+            <li>EMBARC website</li>
+            <li>Emergency Stimulus Package</li>
+            <li>Trigger and Response Guideline</li>
+            <li>Employee support, business support and advocacy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <Br><Br>
+    
     <table>
       <tr>
         <th></th>
@@ -119,6 +182,53 @@
 </body>
 
 </html>
+
+<style>
+
+  body {
+    border: 2px solid black;
+  }
+
+  .container {
+    width: 100%;
+  }
+  .carousel {
+    position: relative;
+    display: flex;
+  }
+  .carousel .card {
+    height: 480px;
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid rgba(220, 220, 220, 1);
+    background-color: rgba(250, 250, 250, 1);
+  }
+  .carousel .card:hover {
+      background-color: white;
+      border-top-color: rgba(220, 220, 220, 0.5);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px 4px 8px -4px;
+  }
+  
+  .carousel .card img {
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5px;
+  }
+  .carousel .card ul {
+    margin: 0px;
+    padding-left: 18px;
+  }
+  .card ul li {
+    font-size: 15px;
+    padding: 2px 0px;
+  }
+  
+</style>
+
 <script src="/nav.js"></script>
 
 

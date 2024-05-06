@@ -41,7 +41,7 @@
     <div class="dropdown">
       <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
       <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
-      <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+      <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
       <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
       <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
     </div>
@@ -114,7 +114,7 @@
   }
 
   /* Styling for map info div */
-  .info {
+  .label {
     padding: 10px;
     background-color: rgba(250, 250, 250, 0.8);
     position: relative;
@@ -124,7 +124,7 @@
     font-size: 16px;
     text-align: center;
   }
-  .info h4 {
+  .label h4 {
     font-size: 16px;
     margin: 5px;
     font-weight: 400;
@@ -138,6 +138,7 @@
     position: fixed;
     left: 5.2%;
     top: 50%;
+    transition: 0.5s;
   }
   .leaflet-control-layers-expanded {
     width: 440px;
@@ -206,6 +207,7 @@
     top: 28%;
     width: 480px;
     height: 440px;
+    transition: 0.5s;
   }
 
   #tickbox h3 {
@@ -233,7 +235,7 @@
   var info = L.control();
   // Add info
   info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info');
+    this._div = L.DomUtil.create('div', 'label');
     this.update();
     return this._div;
   };

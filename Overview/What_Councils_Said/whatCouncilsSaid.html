@@ -21,7 +21,7 @@
     }
   
     #space {
-      height: 100%;
+      height: 100px;
     }
   
     h2 {
@@ -203,6 +203,27 @@
     li::marker {
       color: #f7ae4f;
     }
+
+    .quoteText {
+      text-align: center;
+      opacity: 0.9;
+      width: 90%;
+      margin: auto;
+    }
+    .quoteText i {
+      font-family: 'Merriweather', serif;
+    }
+
+    table {
+      position: relative;
+      margin: auto;
+      width: 95%;
+    }
+    table td {
+      width: 50%;
+      padding: 0% 5%;
+      vertical-align: top;
+    }
     
   </style>
 
@@ -230,7 +251,7 @@
     <div class="dropdown">
       <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
       <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
-      <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+      <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
       <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
       <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html">Lessons Learnt</a>
     </div>
@@ -334,8 +355,8 @@
             <div class="columns2 fade">
               <div class="lcol">
                 <p>Although councils had not faced a pandemic before, many had relevant plans already existing that could be referenced. For many councils - and particularly those prone to natural disasters - this came in the form of <b>disaster management plans</b>, as well as <b>business continuity plans</b>.</p>
-                <p></p>
-                <p style="text-align:center;"><i><b style="font-size:20px;">'' </b>Pandemic was a word in our disaster Management Plan that had no meaning except for the fact that it was there<b> ,,</b></i></p>
+                <br>
+                <p class="quoteText"><i><b style="font-size:20px;">'' </b>Pandemic was a word in our disaster Management Plan that had no meaning except for the fact that it was there<b> ,,</b></i></p>
               </div>
               <div class="rcol">
                 <div id="q4"></div>
@@ -343,7 +364,7 @@
             </div><Br><br>
             <div class="columns2 fade">
               <div class="lcol">
-                <p><br><br>When trying to fit the existing plans to the circumstances, councils saw varying success. For some, they served as a reference point when creating new plans, while others found they needed to start over again to fit unique pandemic conditions.</p>
+                <p><br><br>When trying to fit the existing plans to the circumstances, councils saw <b>varying success</b>. For some, they served as a <b>reference point</b> when creating new plans, while others found they needed to <b>start over</b> again to fit unique pandemic conditions.</p>
               </div>
               <div class="rcol">
                 <div id="q6"></div>
@@ -362,7 +383,7 @@
               <div class="lcol">
                 <br>
                 <p>Many new plans were created or updated during the pandemic experience to adjust to the unique circumstances, the most common of these being adjusted <b>business continuity plans</b>. Councils also developed specific <b>pandemic management plans</b>, and made amendments to <b>leave policies</b> and <b>risk assesments</b> to account for COVID in the workplace.</p>
-                <p>These plans were innacted a various stages throughout the pandemic, dependent on the circumstances of the time, as well as how severely the community was effected.</p>
+                <p>These plans were innacted a various stages throughout the pandemic, dependent on the circumstances of the time, as well as how severely the community was affected.</p>
               </div>
               <div class="rcol">
                 <div id="q8"></div>
@@ -400,7 +421,6 @@
             <br><br>
             <div class="columns2 fade">
               <div class="lcol">
-                <br>
                 All the surveyed organisations reported that the pandemic had some financial impact, with most reporting <B>moderate</B> impacts.<br>
                 Reported reasons for this impact include;
                 <ul class="fadeList">
@@ -422,7 +442,7 @@
                   increased <b>financial planning</b> and <b>consultation</b>.</p>
                 <p>These new measures saw mixed success, with most councils only reporting <b>moderate success</b> in
                   their implimentation.</p>
-                <p style="text-align:center;"><i><b style="font-size:20px;">'' </b>Like most councils we reduced the amount of expenditure on the nice to
+                <p class="quoteText"><i><b style="font-size:20px;">'' </b>Like most councils we reduced the amount of expenditure on the nice to
                     have items and focused mainly on the essentials.<b> ,,</b></i></p>
               </div>
               <div class="rcol">
@@ -444,29 +464,31 @@
           <h3>Working from Home</h3>
           <button class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
           <div class="contentTab">
-            <div class="columns2 fade">
-              <div class="lcol">
-                <p>Over <b>90%</b> of the councils surveyed applied a working from home regime during the pandemic. This came with positives and negatives, including;</p>
-                <ul style="color:green;">
-                  <li>Operations could continue and staff remained employed</li>
-                  <li>Improved technology skills</li>
-                  <li>Reduced commute</li>
-                  <li>Flexible, particularly for carers</li>
-                  <li>Improved efficiency and productivity</li>
-
-                </ul>
-                <ul style="color:red;">
-                  <li>Isolation</li>
-                  <li>Reduced connection between teams</li>
-                  <li>Mental health concerns</li>
-                  <li>Limited technical capabilities and cost associated with boosting it</li>
-                  <li>Harder to maintain balance between work and home</li>
-                  <li>Harder to support staff</li>
-                </ul>
-              </div>
-              <div class="rcol">
-                <div id="q18" style="padding-left:50px;padding-top:30px;"></div>
-              </div>
+            <div class="fade">
+              <p>Over <b>90%</b> of the councils surveyed applied a working from home regime during the pandemic.<br></br>This came with positives and negatives, including;</p>
+              <table class="invisibleTable">
+                <tr>
+                  <td>
+                    <ul style="color:#446e4f;">
+                      <li>Operations could continue and staff remained employed</li>
+                      <li>Improved technology skills</li>
+                      <li>Reduced commute</li>
+                      <li>Flexible, particularly for carers</li>
+                      <li>Improved efficiency and productivity</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul style="color:#6e4444;">
+                      <li>Isolation</li>
+                      <li>Reduced connection between teams</li>
+                      <li>Mental health concerns</li>
+                      <li>Limited technical capabilities and cost associated with boosting it</li>
+                      <li>Harder to maintain balance between work and home</li>
+                      <li>Harder to support staff</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -493,10 +515,11 @@
             <br>
             <div class="columns2 fade">
               <div class="lcol">
+                <br>
                 <p>These measures were generally considered to be <b>very successful</b>, being rated as such by
                   <b>48%</b> of councils. A further <b>38%</b> rated them as having a lot of success in protecting their
-                  employing from infection, while relatively few considered them only slightly effective. None of the
-                  surveyed councils thought the measures had no effect.</p>
+                  employing from infection, while relatively few considered them only slightly effective. <br>
+                  <Br>None of the surveyed councils thought the measures had no effect.</p>
               </div>
               <div class="rcol">
                 <div id="q24"></div>
@@ -674,7 +697,7 @@
                 </ul></p>
               </div>
               <div class="rcol">
-                <p style="text-align:center;margin:90px;background:rgba(255,255,255,0.3);padding:30px;"><i><b style="font-size:20px;">'' </b>Council recognised the importance of its own local spend in the economy and sought to continue to maintain operational and capital spending in spite of the impacts of COVID on its own budget<b> ,,</b></i></p>
+                <p class="quoteText" style="margin:90px;background:rgba(255,255,255,0.3);padding:30px;"><i><b style="font-size:20px;">'' </b>Council recognised the importance of its own local spend in the economy and sought to continue to maintain operational and capital spending in spite of the impacts of COVID on its own budget<b> ,,</b></i></p>
               </div>
             </div>
           </div>
@@ -738,13 +761,13 @@
           <div class="contentTab">
             <div class="columns2 fade">
               <div class="lcol">
-                <p>Engagement with Commonwealth and State goverments by councils was mixed, with different councils having differing levels and formats of interaction. Overall engagement was generally higher than pre-pandemic levels to account for the additional information that needed to be communicated. Trends included;</p>
+                <p>Engagement with Commonwealth and State goverments by councils was mixed, with different councils having differing levels and formats of interaction. Overall engagement was generally <b>higher</b> than pre-pandemic levels to account for the additional information that needed to be communicated. Trends included;</p>
                 <ul>
                   <li>Engagement through LDMG</li>
                   <li>Meetings with CFO / Premier for health updates</li>
                   <li>Advocacy to obtain additional grants / support when neccessary.</li>
                 </ul>
-                <p>Councils typically rated the efficacy of their advocacy to be relatively high, with most saying it had "a lot" of effect.</p>
+                <p>Councils typically rated the efficacy of their advocacy to be relatively high, with most saying it had <b>"a lot"</b> of effect.</p>
               </div>
               <div class="rcol">
                 <div id="q57"></div>
@@ -752,8 +775,8 @@
             </div>
             <div class="columns2 fade">
               <div class="lcol">
-                <p>The ability of councils to advocate effectively was potentially impacted by the limits of the information provided by governments, which were often relyed on. When asked to rate the effectiveness of the governments information services, responses were mixed, with the majority falling in the <b>"somewhat useful"</b> category.</p>
-                <i style="display:block;text-align:center;">"...higher levels of government were constrained in sharing of information in timely manner due to leadership holding information ‘close-hold’ until public announcements were made"</i>
+                <p>The ability of councils to advocate effectively was potentially impacted by the limits of the information provided by governments, which were often relyed on. When asked to rate the effectiveness of the governments information services, responses were mixed, with the majority falling in the <b>"somewhat useful"</b> category.</p><br>
+                <p class="quoteText"><i>"...higher levels of government were constrained in sharing of information in timely manner due to leadership holding information ‘close-hold’ until public announcements were made"</i></p>
               </div>
               <div class="rcol">
                 <div id="q58"></div>
@@ -962,14 +985,21 @@
   var q4 = [traceq4];
   
   var layout = {
-    title: "What Relevant plans/strategies were in place prior to the pandemic?",
+    title: "What Relevant plans/strategies were in place<br>prior to the pandemic?",
     autosize: true,
     width: 620,
-    height: 350,
+    height: 320,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   };
   
@@ -988,10 +1018,10 @@
   ];
 
   var q6layout = {
-    title: 'Extent that existing plans were suited to circumstances',
+    title: 'To what extent were the existing plans<br>suited to the circumstances?',
     autosize: true,
     width: 620,
-    height: 350,
+    height: 330,
     showlegend: false,
     annotations: [
       {
@@ -1016,7 +1046,14 @@
         ax: 0,
         ay: -40
       }
-    ]
+    ],
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
+    }
   };
 
   Plotly.newPlot('q6', q6, q6layout);
@@ -1066,14 +1103,21 @@
     }
   ]
   var q13layout = {
-    title: 'To what extent were the new measures suited to the circumstances?',
+    title: 'To what extent were the new measures suited<br>to the circumstances?',
     autosize: false,
     width: 620,
-    height: 350,
+    height: 360,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1091,7 +1135,7 @@
     }
   ]
   var q15layout = {
-    title: "Extent that organisation's financial <br>position  was affected by the pandemic",
+    title: "To what extent was your organisations financial position<br>affected by the pandemic?",
     autosize: true,
     width: 620,
     height: 350,
@@ -1099,6 +1143,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1119,11 +1170,18 @@
     title: 'To what extent did the measures succeed <br>in mitigating the financial impacts of the pandemic?',
     autosize: false,
     width: 620,
-    height: 350,
+    height: 360,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1143,7 +1201,7 @@
     showlegend: true
   }
 
-  Plotly.newPlot('q18', q18, q18layout);
+  //Plotly.newPlot('q18', q18, q18layout);
 
   var q23 = [
     {
@@ -1157,14 +1215,21 @@
     }
   ];
   var q23layout = {
-    title: 'Measures put in place to protect employees from infection',
+    title: 'What measures were put in place to protect<br> employees from infection?',
     autosize: false,
     width: 620,
-    height: 400,
+    height: 370,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 90,
+      pad: 4
     }
   }
 
@@ -1185,11 +1250,18 @@
     title: 'To what extent were the measures successful?',
     autosize: false,
     width: 620,
-    height: 400,
+    height: 350,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 70,
+      pad: 4
     }
   }
 
@@ -1210,7 +1282,7 @@
     title: 'To what extent were the measures successful?',
     autosize: false,
     width: 620,
-    height: 480,
+    height: 490,
     showlegend: false,
     annotations: [
       {
@@ -1263,7 +1335,7 @@
     title: "Which services were impacted most by the pandemic?",
     autosize: true,
     width: 620,
-    height: 350,
+    height: 360,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
@@ -1273,7 +1345,7 @@
       l: 50,
       r: 50,
       b: 60,
-      t: 100,
+      t: 60,
       pad: 4
     }
   }
@@ -1300,6 +1372,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1325,6 +1404,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1351,7 +1437,7 @@
     }
 
   var q42layout = {
-    title: 'To what extent were the community support initiatives successful?',
+    title: 'To what extent were the community support <br>initiatives successful?',
     autosize: false,
     width: 620,
     height: 400,
@@ -1359,6 +1445,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1383,11 +1476,18 @@
     title: 'What measures were put in place to support <br>the community financially?',
     autosize: false,
     width: 620,
-    height: 400,
+    height: 380,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1424,6 +1524,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1444,7 +1551,7 @@
   }];
 
   var q50layout = {
-    title: 'What measures were put in place to keep<br> the community informed',
+    title: 'What measures were put in place to keep<br> the community informed?',
     autosize: false,
     width: 620,
     height: 500,
@@ -1483,6 +1590,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1508,6 +1622,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1531,11 +1652,18 @@
     title: 'To what extent was your advocacy effective?',
     autosize: false,
     width: 650,
-    height: 400,
+    height: 420,
     showlegend: false,
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 
@@ -1561,6 +1689,13 @@
     yaxis: {
       tickmode: 'array',
       automargin: true
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 40,
+      t: 100,
+      pad: 4
     }
   }
 

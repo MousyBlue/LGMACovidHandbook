@@ -36,7 +36,7 @@
       <div class="dropdown">
         <a href="/Case_Studies/Our_Introduction/ourIntroduction.html">Council Introductions</a>
         <a href="/Case_Studies/Our_Characteristics/ourCharacteristics.html">Council Characteristics</a>
-        <a href="Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
+        <a href="/Case_Studies/Our_Highlights/ourHighlights.html">Council Highlights</a>
         <a href="/Case_Studies/Our_Story/ourStory.html">Council Stories</a>
         <a href="/Case_Studies/Our_Lessons_Learnt/ourLessonsLearnt.html" id="active">Lessons Learnt</a>
       </div>
@@ -54,6 +54,67 @@
     <h1>Lessons Learnt</h1>
     <p class="by-line">The main lessons learnt by each Council is outlined below.</p>
 
+    <div class="container">
+      <div class="carousel">
+        <div class="card" id="cairns">
+          <img src="/Council_Logos/cairnsLogo.png" alt="Logo for Cairns Council">
+          <ul>
+            <li>Involve the right people with the right skills.</li>
+            <li>Business continuity plan needs to include pandemic risk.</li>
+            <li>Look after your people.</li>
+            <li>Early transparent engagement and communication with feedback
+loop.</li>
+          </ul>
+        </div>
+        <div class="card" id="cherbourg">
+          <img src="/Council_Logos/cherbourgLogo.png" alt="Logo for Cherbourg Aboriginal Shire Council">
+          <ul>
+            <li>Structure with key relationships and communication with agencies.</li>
+            <li>Pandemic sub-plan in the disaster management plan.</li>
+            <li>Communication management must be well done.</li>
+            <li>Don’t be afraid to ask for help when needed.</li>
+          </ul>
+        </div>
+        <div class="card" id="cook">
+          <img src="/Council_Logos/cookLogo.png" alt="Cook council logo">
+          <ul>
+            <li>Adaptability is critical specially for small council.</li>
+              <li>Trust was really important (private information of others) – external and internal (e.g. job security).</li>
+              <li>Empathy for others (especially neighbouring councils) with critical circumstances.</li>
+          </ul>
+        </div>
+        <div class="card" id="goondiwindi">
+          <img src="/Council_Logos/goondiwindiLogo.png" alt="Goondiwindi council logo">
+          <ul>
+            <li>Include pandemic in disaster management plan and business
+  continuity plan.</li>
+            <li>Lead by example.</li>
+            <li>Immediacy of response and reprioritisation of work.</li>
+            <li>Celebrate successes.</li>
+          </ul>
+        </div>
+        <div class="card" id="isaac">
+          <img src="/Council_Logos/isaacLogo.png" alt="Isaac council logo">
+          <ul>
+            <li>Value in disaster management and business continuity planning and testing, including out of the box thinking.</li>
+              <li>Importance in flexibility and resilience of Information Technology
+  systems.</li>
+              <li>Support, trust and flexibility for staff is critical to manage sometimes
+  unknown situations.</li>
+          </ul>
+        </div>
+        <div class="card" id="moretonBay">
+          <img src="/Council_Logos/moretonbayLogo.png" alt="Moreton Bay council logo">
+          <ul>
+            <li>Regularly review and exercise the business continuity plan.</li>
+            <li>Ensure decisions and actions are supported by relevant risk assessment.</li>
+            <li>Communication at all levels is critical.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+
     <iframe src="lessonsLearntTable.html"></iframe>
     
   </div>
@@ -70,23 +131,42 @@
 <script src="/nav.js"></script>
 <style>
 
-  table {
-    border-collapse: collapse;
+  .container {
     width: 100%;
   }
-  td, th {
-    border: 1px solid #dddddd;
-    padding: 8px;
+  .carousel {
+    position: relative;
+    display: flex;
   }
-  tr:nth-child(even) {
-    background-color: #dddddd;
+  .carousel .card {
+    height: 480px;
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid rgba(220, 220, 220, 1);
+    background-color: rgba(250, 250, 250, 1);
   }
-
-  iframe {
+  .carousel .card:hover {
+      background-color: white;
+      border-top-color: rgba(220, 220, 220, 0.5);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 7px 13px -3px, rgba(0, 0, 0, 0.3) 0px 4px 8px -4px;
+  }
+  
+  .carousel .card img {
     display: block;
-    width: 800px;
-    height: 300px;
-    margin: 50px auto;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5px;
+  }
+  .carousel .card ul {
+    margin: 0px;
+    padding-left: 18px;
+  }
+  .card ul li {
+    font-size: 15px;
+    padding: 2px 0px;
   }
   
 </style>
